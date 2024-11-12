@@ -1,0 +1,91 @@
+// 自動產生編號：https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters
+
+// 選項次層
+.sub_menu {
+  ul,
+  ol {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 1em 0;
+    list-style-type: none;
+    justify-content: space-between;
+  }
+  li {
+    flex: 0 0 49%;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    font-size: 1.375em;
+    isolation: isolate;
+    @include screen('mobile') {
+      flex: 1 1 100%;
+      &:nth-child(odd) {
+        margin-right: 0;
+      }
+    }
+    a {
+      border-radius: 0;
+      background-color: #fff;
+      font-weight: bold;
+      padding: 1em 1.5em 1em 3em;
+      display: block;
+      vertical-align: top;
+      position: relative;
+      height: 100%;
+      box-sizing: border-box;
+      transition: 0.5s;
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+      @include aSetting_nocolor;
+      // @include text-overflow;
+
+      &:before {
+        content: '';
+        border: 25px solid $primaryColor;
+        border-color: $primaryColor transparent transparent $primaryColor;
+        position: absolute;
+        left: -8px;
+        top: -8px;
+        z-index: 1;
+        transition: 0.5s;
+      }
+      &:after {
+        content: '';
+        border: 30px solid $secondaryColor;
+        border-color: transparent $secondaryColor $secondaryColor transparent;
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+      }
+      .num {
+        position: absolute;
+        width: 1em;
+        top: 1em;
+        left: 0.5em;
+        text-align: right;
+        display: none;
+        &:after {
+          content: '.';
+        }
+      }
+      &:hover,
+      &:focus {
+        padding: 1em 1.5em 1em 2.5em;
+
+        color: $primaryColor;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        &:before {
+          content: '';
+          border: 30px solid $primaryColor;
+          border-color: $primaryColor transparent transparent $primaryColor;
+          position: absolute;
+          left: 0px;
+          top: 0px;
+          z-index: 1;
+
+          transition: 0.5s;
+        }
+      }
+    }
+  }
+}

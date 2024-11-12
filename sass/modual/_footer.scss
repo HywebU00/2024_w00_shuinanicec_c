@@ -1,0 +1,115 @@
+@import '../partials/mixin';
+@import '../partials/variable';
+
+footer {
+  position: relative;
+  z-index: 9;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .scrollToTop {
+    line-height: 0;
+    background: none;
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: auto;
+    height: auto;
+    border: none;
+    line-height: 0;
+    background: none;
+    text-indent: 0;
+    padding: 0;
+    margin: 0;
+
+    &:hover {
+      background: none;
+      opacity: 0.8;
+    }
+  }
+
+  .container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  .footerTop {
+    margin-bottom: 30px;
+  }
+
+  .shareBox {
+    ul {
+      display: flex;
+      gap: 10px;
+
+      a {
+        display: block;
+        width: 34px;
+        height: 34px;
+        background: url('../images/mp/share.png') left no-repeat;
+        @include transition(all, 0.3);
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+
+    .fb {
+      background-position: 0 0;
+    }
+
+    .yt {
+      background-position: -34px 0;
+    }
+
+    .ig {
+      background-position: -68px 0;
+    }
+
+    .x {
+      background-position: -102px 0;
+    }
+
+    .line {
+      background-position: -136px 0;
+    }
+
+    .tripadvisor {
+      background-position: -170px 0;
+    }
+  }
+
+  .footerBox {
+    color: #fff;
+    background: #333;
+    padding: 20px 0;
+
+
+    .logo {
+      filter: invert(1) brightness(10);
+    }
+
+    .linkBox {
+      display: flex;
+      gap: 20px;
+
+      a {
+        color: #fff;
+      }
+    }
+  }
+}

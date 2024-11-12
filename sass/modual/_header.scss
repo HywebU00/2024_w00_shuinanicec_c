@@ -1,0 +1,616 @@
+@import '../partials/mixin';
+@import '../partials/variable';
+
+header.cHeader {
+  --contentPadding: 40px;
+
+  @include screen('tablet') {
+    --contentPadding: 20px;
+  }
+
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  isolation: isolate;
+  z-index: 10;
+  padding: 50px 0;
+  @include transition(all, 0.3);
+
+  @include screen('tablet') {
+    padding: 15px 0;
+    background: #fff;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .container {
+    position: relative;
+    width: calc(100% - var(--contentPadding) * 2);
+    max-width: $domWidth;
+    padding-right: var(--contentPadding);
+    padding-left: var(--contentPadding);
+    margin: 0 auto;
+    box-sizing: content-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    @include screen('tablet') {
+      width: calc(100% - 20px * 2);
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+
+  .mobileBtn {
+    aspect-ratio: 1;
+    z-index: 100;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+
+    @include screen('tablet') {
+      display: block;
+      left: auto;
+      right: 10px;
+    }
+
+    &::after,
+    &::before {
+      content: '';
+      width: 22px;
+      height: 2px;
+      background: $secColor;
+      display: block;
+      box-shadow: 0 6px 0 0 $secColor, 0 -6px 0 0 $secColor;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      transform-origin: center;
+      @include transition(all, 0.3);
+    }
+
+    &::after {
+      display: none;
+      box-shadow: none;
+    }
+  }
+
+  .logo {
+    flex-shrink: 0;
+    width: 130px;
+    height: 68px;
+    background: url('../images/mp/logo.png') center no-repeat;
+    background-size: contain;
+    position: relative;
+    @include transition(all, 0.3);
+
+    @include screen('tablet') {
+      width: 267px;
+      height: 34px;
+      background: url('../images/mp/logo2.png') center no-repeat;
+      background-size: contain;
+    }
+
+    @include screen('mobile') {
+      width: 210px;
+      height: 34px;
+    }
+    a {
+      display: block;
+      height: 100%;
+    }
+  }
+
+  &.scrolled {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 20%, rgba(0, 0, 0, 0) 100%);
+    backdrop-filter: blur(2px);
+    padding: 20px 0;
+
+    .logo {
+      width: 100px;
+      height: 50px;
+      filter: invert(1) brightness(10);
+
+      @include screen('tablet') {
+        width: 200px;
+        height: 34px;
+      }
+    }
+
+    .mobileBtn {
+      &::before,
+      &::after {
+        filter: brightness(10);
+      }
+    }
+
+    .topNavBox {
+      .cSearch {
+        filter: brightness(10);
+      }
+    }
+
+    .menuBox {
+      margin-left: 90px;
+    }
+  }
+
+  &.menuOpen {
+    .mobileBtn {
+      &::before,
+      &::after {
+        width: 16px;
+      }
+
+      &::before {
+        transform: rotate(45deg) translateX(-50%) translateY(-50%);
+        box-shadow: 0 0 0 0 transparent;
+      }
+
+      &::after {
+        display: block;
+        transform: rotate(-45deg) translateX(-50%) translateY(-50%);
+      }
+    }
+  }
+
+  .menuBox {
+    @include transition(all, 0.3);
+    z-index: 2;
+    isolation: isolate;
+    position: relative;
+    margin-left: 60px;
+    // position: absolute;
+    // left: 50%;
+    // top: 50%;
+    // transform: translate(-50%, -50%);
+    z-index: 99;
+
+    @include screen('tablet') {
+      display: none;
+      max-width: 300px;
+      width: 100%;
+      margin-left: 0;
+      left: 0;
+      top: 0px;
+      padding: 65px 0 30px;
+      transform: translate(-100%, 0%);
+      position: fixed;
+      height: 100vh;
+      height: 100dvh;
+      background: rgba(#fff, 0.8) !important;
+    }
+
+    .hasChild {
+      @include screen('tablet') {
+        &.active {
+          a {
+            &::after {
+              border-color: #fff;
+            }
+          }
+
+          & > a {
+            &::after {
+              transform: translateY(-25%) rotate(225deg);
+            }
+          }
+        }
+
+        & > a {
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border: 1px solid #000;
+            border-width: 0 1px 1px 0;
+            display: block;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-75%) rotate(45deg);
+            @include transition(all, 0.3);
+          }
+
+          &:hover {
+            &::after {
+              border-color: #fff;
+            }
+          }
+        }
+      }
+    }
+
+    & > ul {
+      width: fit-content;
+      margin-left: auto;
+      display: flex;
+      gap: 14px;
+
+      @include screen('tablet') {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        gap: 0;
+      }
+
+      & > li {
+        .bg {
+          content: '';
+          position: fixed;
+          max-height: 550px;
+          top: 0;
+          left: 0;
+          right: 0;
+          display: none;
+          background: url('../images/mp/menu_bg.jpg') center top no-repeat;
+          z-index: -1;
+          @include transition(all, 0.3);
+          clip-path: polygon(0 0, 100% 0, 100% 82%, 0% 100%);
+
+          @include screen('tablet') {
+            display: none !important;
+          }
+        }
+
+        & > a {
+          display: block;
+          padding: 8px 20px;
+          white-space: nowrap;
+          font-size: Rem(20);
+          color: #fff;
+          border: 1px solid #fff;
+          @include transition(all, 0.3);
+          // overflow: hidden;
+          position: relative;
+          isolation: isolate;
+          cursor: pointer;
+
+          @include screen('tablet') {
+            color: #000;
+            font-size: Rem(18);
+            border: none;
+            letter-spacing: 1px;
+          }
+
+          &::before {
+            content: '';
+            position: absolute;
+            right: -1px;
+            left: -1px;
+            top: -100px;
+            bottom: 0;
+            display: block;
+            background: #fff;
+            z-index: -1;
+            opacity: 0;
+            @include transition(all, 0.3);
+
+            @include screen('tablet') {
+              display: none;
+            }
+          }
+
+          &:hover {
+            @include screen('tablet') {
+              color: #fff;
+              background: $mainColor;
+            }
+          }
+        }
+
+        & > ul {
+          position: absolute;
+          left: 0;
+          right: 0;
+          display: flex;
+          display: none;
+          padding-top: 30px;
+
+          @include screen('tablet') {
+            padding: 10px 0px 10px;
+          }
+
+          & > li {
+            flex-grow: 1;
+
+            &.active > a {
+              color: #fff;
+            }
+
+            & > a {
+              font-size: Rem(18);
+              color: #fff;
+              display: block;
+              margin-bottom: 10px;
+
+              @include screen('tablet') {
+                padding: 0 20px;
+                font-size: Rem(16);
+                opacity: 0.9;
+              }
+
+              &:hover {
+                color: #fff;
+              }
+            }
+
+            ul {
+              a {
+                color: rgba(255, 255, 255, 0.6);
+                padding: 5px 0 5px 20px;
+                display: block;
+                position: relative;
+
+                &::before {
+                  content: '-';
+                  position: absolute;
+                  left: 0;
+                  top: 50%;
+                  transform: translateY(-50%);
+                }
+
+                &:hover {
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+
+        &.active {
+          .bg {
+            display: block;
+          }
+
+          & > a {
+            // border-color: $mainColor;
+            background: #fff;
+            color: $mainColor;
+
+            @include screen('tablet') {
+              color: #fff;
+              background: $mainColor;
+            }
+
+            &::before {
+              opacity: 1;
+            }
+          }
+
+          & > ul {
+            display: flex;
+            max-width: 680px;
+            width: 100%;
+            justify-content: flex-end;
+
+            @include screen('tablet') {
+              max-width: none;
+              background: rgba($mainColor, 0.8);
+              animation: menuFadeIn 0.5s forwards;
+              flex-direction: column;
+              position: relative;
+            }
+
+            &::before {
+              opacity: 1;
+            }
+
+            li {
+              &.active ul {
+                @include screen('tablet') {
+                  background: rgba(255, 255, 255, 0.2);
+                  display: block;
+                  margin-bottom: 10px;
+                  padding: 10px 0 10px 5px;
+                  animation: menuFadeIn 0.5s forwards;
+                }
+              }
+
+              ul {
+                @include screen('tablet') {
+                  display: none;
+                }
+
+                a {
+                  @include screen('tablet') {
+                    padding: 5px 20px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        @keyframes menuFadeIn {
+          0% {
+            opacity: 0;
+          }
+
+          100% {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .topNavBox {
+    @include screen('tablet') {
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    ul {
+      display: flex;
+    }
+
+    button,
+    a {
+      display: block;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: none;
+      border: none;
+      border-radius: 0;
+      color: #fff;
+      padding: 0;
+      margin: 0;
+
+      &.mail::before,
+      &.cSearch::before {
+        content: '';
+        width: 23px;
+        height: 23px;
+        display: block;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+
+    .language {
+      @include screen('tablet') {
+        display: none;
+      }
+    }
+
+    .mail {
+      @include screen('tablet') {
+        display: none;
+      }
+
+      &::before {
+        background-image: url('../images/mp/icon/icon_mail.png');
+        filter: invert(1);
+      }
+    }
+
+    .cSearch {
+      &::before {
+        background-image: url('../images/mp/icon/icon_search.png');
+        filter: invert(1);
+
+        @include screen('tablet') {
+          filter: invert(0);
+          background-image: url('../images/mp/icon/icon_search2.png');
+        }
+      }
+    }
+  }
+}
+
+#searchContent {
+  display: none;
+  background: #f3f3f5;
+  max-width: 800px;
+  width: 100%;
+
+  &.fancybox__content {
+    padding: 4rem;
+
+    & > .f-button.is-close-btn {
+      top: 10px;
+      right: 10px;
+      filter: brightness(0);
+    }
+  }
+
+  .content {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .searchBox {
+    display: flex;
+    align-items: center;
+    border-bottom: $secColor 1px solid;
+    margin-bottom: 30px;
+
+    input {
+      border: none;
+      background: none;
+      font-size: Rem(18);
+
+      &::placeholder {
+        color: $secColor;
+      }
+    }
+
+    .searchBtn {
+      display: block;
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: none;
+      border: none;
+      border-radius: 0;
+
+      &::before {
+        content: '';
+        background-image: url('../images/mp/icon/icon_search2.png');
+        background-size: contain;
+        width: 23px;
+        height: 23px;
+        display: block;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  .bottomBox {
+    display: flex;
+
+    .box {
+      width: 50%;
+    }
+
+    .title {
+      margin-bottom: 15px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    a {
+      color: #999;
+      @include transition(all, 0.3);
+
+      &:hover {
+        color: $secColor;
+      }
+    }
+  }
+}
