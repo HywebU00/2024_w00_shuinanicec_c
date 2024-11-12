@@ -202,12 +202,12 @@
           <div class="introduce_synagogue">
             <div class="container">
               <div class="synagogue_group">
-                <div class="introduce_block">
+                <div class="introduce_block wow fadeInLeft" data-wow-delay="0s">
                   <p>大會堂為國內少數擁有固定座位的大型展演場所，專為大型集會及演藝活動所設計，固定座位共3,122席(每張座椅均附抽取式側桌)，除舞台上設有貫穿2-6樓的860吋超大型天幕外，舞臺兩側及會場中段皆設有300吋升降式投影幕。此外，為配合重要貴賓蒞臨特設有貴賓休息室及直通舞台的電梯。</p>
                   <div class="subtitle">適合活動</div>
                   <p>展覽空間、會議空間、尾牙、婚宴、春酒</p>
                 </div>
-                <div class="synagogue_block">
+                <div class="synagogue_block wow fadeInRight" data-wow-delay="0s">
                   <img src="images/synagogue_pic01.png" alt="大會堂平面圖">
                 </div>
               </div>
@@ -217,7 +217,7 @@
           <div class="introduce_synagogue">
             <div class="container">
               <div class="synagogue_group">
-                <div class="synagogue_block onlypic">
+                <div class="synagogue_block onlypic  wow fadeInDown" data-wow-delay="0.2s">
                   <img src="images/synagogue_pic01.png" alt="大會堂平面圖">
                 </div>
               </div>
@@ -228,7 +228,7 @@
           <!-- 空間照片與大小 start -->
           <div class="space_photos_group">
             <div class="container">
-              <div class="space_photos_block">
+              <div class="space_photos_block  wow fadeInLeft" data-wow-delay="0.2s">
                 <div class="space_photos_slider">
                   <div class="space_photos_list"><a href="#"><img src="images/space_photos_pic_01.jpg" alt="圖１"></a></div>
                   <div class="space_photos_list"><a href="#"><img src="images/space_photos_pic_01.jpg" alt="圖１"></a></div>
@@ -236,7 +236,7 @@
                   <div class="space_photos_list"><a href="#"><img src="images/space_photos_pic_01.jpg" alt="圖１"></a></div>
                 </div>
               </div>
-              <div class="space_size_block">
+              <div class="space_size_block wow fadeInRight" data-wow-delay="0.2s">
                 <div class="subtitle">空間照片與大小</div>
                 <div class="directions">
                   <div class="directions_list">
@@ -255,8 +255,8 @@
           <!-- 格局與可容納人數 start -->
           <div class="pattern_numpeople_block">
             <div class="container">
-              <div class="subtitle">格局與可容納人數</div>
-              <div class="pattern_numpeople_slider">
+              <div class="subtitle wow fadeInDown" data-wow-delay="0.2s">格局與可容納人數</div>
+              <div class="pattern_numpeople_slider  wow fadeInDown" data-wow-delay="0.4s">
                 <!-- 1 -->
                 <div class="pattern_numpeople_list">
                   <a href="#">
@@ -310,8 +310,8 @@
           <!-- 空間設備 start -->
           <div class="space_equipment_block">
             <div class="container">
-              <div class="subtitle">空間設備</div>
-              <div class="space_equipment_group">
+              <div class="subtitle  wow fadeInDown" data-wow-delay="0.2s">空間設備</div>
+              <div class="space_equipment_group wow fadeInDown" data-wow-delay="0.4s">
                 <!-- 1 -->
                 <div class="space_equipment_list">
                   <a href="#">
@@ -420,12 +420,12 @@
           <!-- 活動照片start -->
           <div class="event_photos_block">
             <div class="container">
-              <div class="subtitle">活動照片</div>
+              <div class="subtitle  wow fadeInDown" data-wow-delay="0.2s">活動照片</div>
               <div class="event_photos_group">
-                <div class="event_photos_list"><a href="#"><img src="images/event_photos_pic01.jpg" alt=""></a></div>
-                <div class="event_photos_list"><a href="#"><img src="images/event_photos_pic02.jpg" alt=""></a></div>
-                <div class="event_photos_list"><a href="#"><img src="images/event_photos_pic03.jpg" alt=""></a></div>
-                <div class="event_photos_list"><a href="#"><img src="images/event_photos_pic04.jpg" alt=""></a></div>
+                <div class="event_photos_list wow fadeInLeft" data-wow-delay="0.2s"><a href="#"><img src="images/event_photos_pic01.jpg" alt=""></a></div>
+                <div class="event_photos_list wow fadeInDown" data-wow-delay="0.4s"><a href="#"><img src="images/event_photos_pic02.jpg" alt=""></a></div>
+                <div class="event_photos_list wow fadeInRight" data-wow-delay="0.2s"><a href="#"><img src="images/event_photos_pic03.jpg" alt=""></a></div>
+                <div class="event_photos_list wow fadeInRight" data-wow-delay="0.2s"><a href="#"><img src="images/event_photos_pic04.jpg" alt=""></a></div>
               </div>
             </div>
           </div>
@@ -582,6 +582,11 @@
   <!-- gsap -->
   <script src="vendor/gsap.min.js"></script>
   <script src="vendor/ScrollTrigger.min.js"></script>
+  <!-- wow -->
+  <script src="vendor/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
   <!-- hyUI -->
   <script src="js/main.js"></script>
   <!-- 客製js -->

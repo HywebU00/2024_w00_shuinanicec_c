@@ -1048,7 +1048,7 @@
   .container {
     .subtitle {
       font-size: 1.75em;
-      margin-bottom: 1em;
+      margin-bottom: 2em;
       font-weight: bold;
       color: $primaryColor;
     }
@@ -1187,17 +1187,49 @@
                 ul {
                   position: relative;
                   z-index: 2;
-                  margin: 0 10px;
-                  padding: 0;
+                  margin: 0 0;
+                  padding: 0 5px;
                   list-style-type: none;
                   display: flex;
                   justify-content: space-between;
-                  align-items: center;
+                  align-items: flex-start;
                   height: 30px;
 
                   li {
+                    flex: 0 1 auto;
+                    flex-basis: 50%;
+                    max-width: 50%;
                     color: #fff;
                     font-size: 1em;
+                    padding-left: 20px;
+
+                    &:nth-child(2) {
+                      text-align: right;
+                    }
+                    &.area {
+                      background-image: url('../images/exhibition_icon01.png');
+                      background-repeat: no-repeat;
+                      background-position: left center;
+                      background-size: 18px;
+                      width: 18px;
+                      height: 18px;
+                    }
+                    &.stall {
+                      background-image: url('../images/exhibition_icon02.png');
+                      background-repeat: no-repeat;
+                      background-position: left 10px center;
+                      background-size: 18px;
+                      width: 18px;
+                      height: 18px;
+                    }
+                    &.numpeople {
+                      background-image: url('../images/exhibition_icon03.png');
+                      background-repeat: no-repeat;
+                      background-position: left 10px center;
+                      background-size: 18px;
+                      width: 18px;
+                      height: 18px;
+                    }
                   }
                 }
               }

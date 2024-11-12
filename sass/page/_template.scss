@@ -57,11 +57,23 @@ body {
 ////////////////////////////////////////////////////////////
 // 為了與首頁區隔，請在內頁加上innerpage ClassName
 .innerpage {
-  background-image: url('../images/main_bottombg.jpg');
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  padding-bottom: 200px;
-
+  // background-image: url('../images/main_bottombg.jpg');
+  // background-repeat: no-repeat;
+  // background-position: center bottom;
+  // padding-bottom: 200px;
+  position: relative;
+  &:after {
+    content: '';
+    background-image: url('../images/main_bottombg.jpg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 696px;
+    z-index: -2;
+  }
   > .container {
     display: flex;
     align-items: flex-start;
@@ -70,7 +82,7 @@ body {
     @include gutter(140px); //gutter 代表左右要留白
     margin: 0 auto;
     max-width: $container-max; //請看_variable.scss
-    outline: 1px solid red;
+    // outline: 1px solid red;
     @include screen('mobile') {
       @include gutter(80px);
     }

@@ -9008,10 +9008,19 @@ body.noscroll {
 }
 
 .innerpage {
+  position: relative;
+}
+.innerpage:after {
+  content: "";
   background-image: url("../images/main_bottombg.jpg");
   background-repeat: no-repeat;
   background-position: center bottom;
-  padding-bottom: 200px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 696px;
+  z-index: -2;
 }
 .innerpage > .container {
   display: flex;
@@ -9025,7 +9034,6 @@ body.noscroll {
   box-sizing: border-box;
   margin: 0 auto;
   max-width: 1300px;
-  outline: 1px solid red;
 }
 @media screen and (max-width: 767px) {
   .innerpage .container {
@@ -12493,7 +12501,7 @@ p {
 }
 .exhibition_hall_block .container .subtitle {
   font-size: 1.75em;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   font-weight: bold;
   color: #0d0a8a;
 }
@@ -12625,17 +12633,48 @@ p {
 .exhibition_hall_block .container .exhibition_hall_slider .exhibition_floor_list .floor_pic_block .floor_pic_group .floor_pic_list a ul {
   position: relative;
   z-index: 2;
-  margin: 0 10px;
-  padding: 0;
+  margin: 0 0;
+  padding: 0 5px;
   list-style-type: none;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   height: 30px;
 }
 .exhibition_hall_block .container .exhibition_hall_slider .exhibition_floor_list .floor_pic_block .floor_pic_group .floor_pic_list a ul li {
+  flex: 0 1 auto;
+  flex-basis: 50%;
+  max-width: 50%;
   color: #fff;
   font-size: 1em;
+  padding-left: 20px;
+}
+.exhibition_hall_block .container .exhibition_hall_slider .exhibition_floor_list .floor_pic_block .floor_pic_group .floor_pic_list a ul li:nth-child(2) {
+  text-align: right;
+}
+.exhibition_hall_block .container .exhibition_hall_slider .exhibition_floor_list .floor_pic_block .floor_pic_group .floor_pic_list a ul li.area {
+  background-image: url("../images/exhibition_icon01.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+.exhibition_hall_block .container .exhibition_hall_slider .exhibition_floor_list .floor_pic_block .floor_pic_group .floor_pic_list a ul li.stall {
+  background-image: url("../images/exhibition_icon02.png");
+  background-repeat: no-repeat;
+  background-position: left 10px center;
+  background-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+.exhibition_hall_block .container .exhibition_hall_slider .exhibition_floor_list .floor_pic_block .floor_pic_group .floor_pic_list a ul li.numpeople {
+  background-image: url("../images/exhibition_icon03.png");
+  background-repeat: no-repeat;
+  background-position: left 10px center;
+  background-size: 18px;
+  width: 18px;
+  height: 18px;
 }
 .exhibition_hall_block .container .exhibition_hall_slider .exhibition_floor_list .caption {
   flex: 1 1 auto;
