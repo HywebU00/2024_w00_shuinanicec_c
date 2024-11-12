@@ -4,6 +4,7 @@
 footer {
   position: relative;
   z-index: 9;
+  background: #fff;
 
   ul {
     padding: 0;
@@ -28,6 +29,11 @@ footer {
     padding: 0;
     margin: 0;
 
+    @include screen('tablet') {
+      max-width: 80px;
+    }
+
+    &:focus,
     &:hover {
       background: none;
       opacity: 0.8;
@@ -38,7 +44,9 @@ footer {
     display: flex;
     gap: 20px;
     align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
+    padding: 0 20px;
 
     &::before,
     &::after {
@@ -47,7 +55,8 @@ footer {
   }
 
   .footerTop {
-    margin-bottom: 30px;
+    padding-top: 10px;
+    margin-bottom: 10px;
   }
 
   .shareBox {
@@ -96,8 +105,15 @@ footer {
   .footerBox {
     color: #fff;
     background: #333;
-    padding: 20px 0;
+    padding: 20px;
 
+    .container {
+
+      @include screen('tablet') {
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
 
     .logo {
       filter: invert(1) brightness(10);
@@ -109,6 +125,7 @@ footer {
 
       a {
         color: #fff;
+        white-space: nowrap;
       }
     }
   }

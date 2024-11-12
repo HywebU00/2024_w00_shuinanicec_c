@@ -75,9 +75,9 @@ header.cHeader {
       content: '';
       width: 22px;
       height: 2px;
-      background: $secColor;
+      background: $mainColor;
       display: block;
-      box-shadow: 0 6px 0 0 $secColor, 0 -6px 0 0 $secColor;
+      box-shadow: 0 6px 0 0 $mainColor, 0 -6px 0 0 $mainColor;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -98,7 +98,6 @@ header.cHeader {
     height: 68px;
     background: url('../images/mp/logo.png') center no-repeat;
     background-size: contain;
-    position: relative;
     @include transition(all, 0.3);
 
     @include screen('tablet') {
@@ -111,10 +110,6 @@ header.cHeader {
     @include screen('mobile') {
       width: 210px;
       height: 34px;
-    }
-    a {
-      display: block;
-      height: 100%;
     }
   }
 
@@ -135,15 +130,16 @@ header.cHeader {
     }
 
     .mobileBtn {
+
       &::before,
       &::after {
-        filter: brightness(10);
+        filter: brightness(50);
       }
     }
 
     .topNavBox {
       .cSearch {
-        filter: brightness(10);
+        filter: brightness(50);
       }
     }
 
@@ -154,6 +150,7 @@ header.cHeader {
 
   &.menuOpen {
     .mobileBtn {
+
       &::before,
       &::after {
         width: 16px;
@@ -183,11 +180,12 @@ header.cHeader {
     // transform: translate(-50%, -50%);
     z-index: 99;
 
+
     @include screen('tablet') {
       display: none;
       max-width: 300px;
       width: 100%;
-      margin-left: 0;
+      margin-left: 0 !important;
       left: 0;
       top: 0px;
       padding: 65px 0 30px;
@@ -311,11 +309,13 @@ header.cHeader {
           }
 
           &:hover {
+
             @include screen('tablet') {
               color: #fff;
               background: $mainColor;
             }
           }
+
         }
 
         & > ul {
@@ -355,6 +355,7 @@ header.cHeader {
             }
 
             ul {
+
               a {
                 color: rgba(255, 255, 255, 0.6);
                 padding: 5px 0 5px 20px;
@@ -417,6 +418,7 @@ header.cHeader {
 
             li {
               &.active ul {
+
                 @include screen('tablet') {
                   background: rgba(255, 255, 255, 0.2);
                   display: block;
@@ -427,6 +429,7 @@ header.cHeader {
               }
 
               ul {
+
                 @include screen('tablet') {
                   display: none;
                 }
@@ -525,17 +528,27 @@ header.cHeader {
 
 #searchContent {
   display: none;
-  background: #f3f3f5;
+  background: #F3F3F5;
   max-width: 800px;
   width: 100%;
 
   &.fancybox__content {
     padding: 4rem;
 
+    @include screen('tablet') {
+      padding: 3rem;
+    }
+
+    @include screen('mobile') {
+      padding: 3rem 2rem;
+    }
+
     & > .f-button.is-close-btn {
       top: 10px;
       right: 10px;
       filter: brightness(0);
+      background: none;
+      border-radius: 0;
     }
   }
 
@@ -554,6 +567,10 @@ header.cHeader {
       border: none;
       background: none;
       font-size: Rem(18);
+
+      @include screen('mobile') {
+        font-size: Rem(16);
+      }
 
       &::placeholder {
         color: $secColor;

@@ -107,8 +107,11 @@ window.onload = async function () {
     const video = document.querySelector('.cBanner video');
 
     window.addEventListener('resize', function () {
-      bannerHeight = document.querySelector('.cBanner').offsetHeight;
-      welcome.style.height = `${bannerHeight}px`;
+      setTimeout(function () {
+        bannerHeight = document.querySelector('.cBanner').offsetHeight;
+        console.log(bannerHeight);
+        welcome.style.height = `${bannerHeight}px`;
+      }, 50);
     });
     // 設置 canvas 的寬高為視口的寬高
     const resizeCanvas = () => {
