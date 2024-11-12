@@ -98,6 +98,7 @@ header.cHeader {
     height: 68px;
     background: url('../images/mp/logo.png') center no-repeat;
     background-size: contain;
+    position: relative;
     @include transition(all, 0.3);
 
     @include screen('tablet') {
@@ -110,6 +111,10 @@ header.cHeader {
     @include screen('mobile') {
       width: 210px;
       height: 34px;
+    }
+    a {
+      display: block;
+      height: 100%;
     }
   }
 
@@ -130,7 +135,6 @@ header.cHeader {
     }
 
     .mobileBtn {
-
       &::before,
       &::after {
         filter: brightness(50);
@@ -150,7 +154,6 @@ header.cHeader {
 
   &.menuOpen {
     .mobileBtn {
-
       &::before,
       &::after {
         width: 16px;
@@ -179,7 +182,6 @@ header.cHeader {
     // top: 50%;
     // transform: translate(-50%, -50%);
     z-index: 99;
-
 
     @include screen('tablet') {
       display: none;
@@ -309,13 +311,11 @@ header.cHeader {
           }
 
           &:hover {
-
             @include screen('tablet') {
               color: #fff;
               background: $mainColor;
             }
           }
-
         }
 
         & > ul {
@@ -355,7 +355,6 @@ header.cHeader {
             }
 
             ul {
-
               a {
                 color: rgba(255, 255, 255, 0.6);
                 padding: 5px 0 5px 20px;
@@ -418,7 +417,6 @@ header.cHeader {
 
             li {
               &.active ul {
-
                 @include screen('tablet') {
                   background: rgba(255, 255, 255, 0.2);
                   display: block;
@@ -429,7 +427,6 @@ header.cHeader {
               }
 
               ul {
-
                 @include screen('tablet') {
                   display: none;
                 }
@@ -528,7 +525,7 @@ header.cHeader {
 
 #searchContent {
   display: none;
-  background: #F3F3F5;
+  background: #f3f3f5;
   max-width: 800px;
   width: 100%;
 

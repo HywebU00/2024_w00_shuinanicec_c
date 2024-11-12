@@ -3217,6 +3217,7 @@ header.cHeader .logo {
   height: 68px;
   background: url("../images/mp/logo.png") center no-repeat;
   background-size: contain;
+  position: relative;
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 991px) {
@@ -3232,6 +3233,10 @@ header.cHeader .logo {
     width: 210px;
     height: 34px;
   }
+}
+header.cHeader .logo a {
+  display: block;
+  height: 100%;
 }
 header.cHeader.scrolled {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 20%, rgba(0, 0, 0, 0) 100%);
@@ -3574,7 +3579,7 @@ header.cHeader .topNavBox .cSearch::before {
 
 #searchContent {
   display: none;
-  background: #F3F3F5;
+  background: #f3f3f5;
   max-width: 800px;
   width: 100%;
 }
