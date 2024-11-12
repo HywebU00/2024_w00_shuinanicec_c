@@ -3197,9 +3197,9 @@ header.cHeader .mobileBtn::after, header.cHeader .mobileBtn::before {
   content: "";
   width: 22px;
   height: 2px;
-  background: #b69f7f;
+  background: #0d0a8a;
   display: block;
-  box-shadow: 0 6px 0 0 #b69f7f, 0 -6px 0 0 #b69f7f;
+  box-shadow: 0 6px 0 0 #0d0a8a, 0 -6px 0 0 #0d0a8a;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -3217,7 +3217,6 @@ header.cHeader .logo {
   height: 68px;
   background: url("../images/mp/logo.png") center no-repeat;
   background-size: contain;
-  position: relative;
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 991px) {
@@ -3233,10 +3232,6 @@ header.cHeader .logo {
     width: 210px;
     height: 34px;
   }
-}
-header.cHeader .logo a {
-  display: block;
-  height: 100%;
 }
 header.cHeader.scrolled {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 20%, rgba(0, 0, 0, 0) 100%);
@@ -3256,10 +3251,10 @@ header.cHeader.scrolled .logo {
   }
 }
 header.cHeader.scrolled .mobileBtn::before, header.cHeader.scrolled .mobileBtn::after {
-  filter: brightness(10);
+  filter: brightness(50);
 }
 header.cHeader.scrolled .topNavBox .cSearch {
-  filter: brightness(10);
+  filter: brightness(50);
 }
 header.cHeader.scrolled .menuBox {
   margin-left: 90px;
@@ -3288,7 +3283,7 @@ header.cHeader .menuBox {
     display: none;
     max-width: 300px;
     width: 100%;
-    margin-left: 0;
+    margin-left: 0 !important;
     left: 0;
     top: 0px;
     padding: 65px 0 30px;
@@ -3579,17 +3574,29 @@ header.cHeader .topNavBox .cSearch::before {
 
 #searchContent {
   display: none;
-  background: #f3f3f5;
+  background: #F3F3F5;
   max-width: 800px;
   width: 100%;
 }
 #searchContent.fancybox__content {
   padding: 4rem;
 }
+@media screen and (max-width: 991px) {
+  #searchContent.fancybox__content {
+    padding: 3rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  #searchContent.fancybox__content {
+    padding: 3rem 2rem;
+  }
+}
 #searchContent.fancybox__content > .f-button.is-close-btn {
   top: 10px;
   right: 10px;
   filter: brightness(0);
+  background: none;
+  border-radius: 0;
 }
 #searchContent .content {
   max-width: 520px;
@@ -3605,6 +3612,11 @@ header.cHeader .topNavBox .cSearch::before {
   border: none;
   background: none;
   font-size: 1.125rem;
+}
+@media screen and (max-width: 767px) {
+  #searchContent .searchBox input {
+    font-size: 1rem;
+  }
 }
 #searchContent .searchBox input::-moz-placeholder {
   color: #b69f7f;
@@ -4709,6 +4721,7 @@ header.cHeader .topNavBox .cSearch::before {
 footer {
   position: relative;
   z-index: 9;
+  background: #fff;
 }
 footer ul {
   padding: 0;
@@ -4732,7 +4745,12 @@ footer .scrollToTop {
   padding: 0;
   margin: 0;
 }
-footer .scrollToTop:hover {
+@media screen and (max-width: 991px) {
+  footer .scrollToTop {
+    max-width: 80px;
+  }
+}
+footer .scrollToTop:focus, footer .scrollToTop:hover {
   background: none;
   opacity: 0.8;
 }
@@ -4740,13 +4758,16 @@ footer .container {
   display: flex;
   gap: 20px;
   align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
+  padding: 0 20px;
 }
 footer .container::before, footer .container::after {
   display: none;
 }
 footer .footerTop {
-  margin-bottom: 30px;
+  padding-top: 10px;
+  margin-bottom: 10px;
 }
 footer .shareBox ul {
   display: flex;
@@ -4783,7 +4804,13 @@ footer .shareBox .tripadvisor {
 footer .footerBox {
   color: #fff;
   background: #333;
-  padding: 20px 0;
+  padding: 20px;
+}
+@media screen and (max-width: 991px) {
+  footer .footerBox .container {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 footer .footerBox .logo {
   filter: invert(1) brightness(10);
@@ -4794,6 +4821,7 @@ footer .footerBox .linkBox {
 }
 footer .footerBox .linkBox a {
   color: #fff;
+  white-space: nowrap;
 }
 
 .fatfooter {
@@ -9229,10 +9257,15 @@ p {
 }
 
 .indexPage {
-  --paddingUse: 20px;
   line-height: 1.6;
   padding: 0;
   margin: 0;
+  --contentPadding: 30px;
+}
+@media screen and (max-width: 991px) {
+  .indexPage {
+    --contentPadding: 20px;
+  }
 }
 .indexPage * {
   box-sizing: border-box;
@@ -9296,6 +9329,17 @@ p {
 .indexPage section {
   position: relative;
   z-index: 9;
+  padding: 80px 0px;
+}
+@media screen and (max-width: 991px) {
+  .indexPage section {
+    padding: 60px 0px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .indexPage section {
+    padding: 40px 0px;
+  }
 }
 .indexPage [type=text],
 .indexPage [type=password],
@@ -9549,7 +9593,10 @@ p {
   line-height: 1;
   opacity: 0;
 }
-.indexPage .banner::before {
+.indexPage .cBanner {
+  padding: 0;
+}
+.indexPage .cBanner::before {
   content: "";
   display: block;
   position: absolute;
@@ -9563,11 +9610,11 @@ p {
   z-index: 9;
 }
 @media screen and (max-width: 991px) {
-  .indexPage .banner::before {
+  .indexPage .cBanner::before {
     display: none;
   }
 }
-.indexPage .banner img {
+.indexPage .cBanner img {
   width: 100%;
   min-height: 500px;
 }
@@ -9576,6 +9623,10 @@ p {
   padding-top: 6%;
   isolation: isolate;
   background: #f3f3f5;
+  padding-bottom: 0;
+}
+.indexPage .main section:first-child {
+  padding-top: 0;
 }
 .indexPage .blockTitle {
   display: flex;
@@ -9611,22 +9662,17 @@ p {
 }
 .indexPage .countBox {
   position: relative;
-}
-@media screen and (max-width: 767px) {
-  .indexPage .countBox {
-    padding-bottom: 30px;
-  }
+  padding-bottom: 0;
 }
 .indexPage .countBox .listBox {
   display: flex;
   flex-wrap: wrap;
   max-width: 1155px;
   margin: 0 auto;
-  padding-bottom: 40px;
 }
 @media screen and (max-width: 1000px) {
   .indexPage .countBox .listBox {
-    gap: 40px 0;
+    gap: 20px 0;
     padding: 0;
   }
 }
@@ -9641,6 +9687,7 @@ p {
 @media screen and (max-width: 1000px) {
   .indexPage .countBox .listBox .item {
     width: 50%;
+    font-size: 1rem;
   }
 }
 .indexPage .countBox .listBox .item:not(:first-child) {
@@ -9653,7 +9700,7 @@ p {
 }
 @media screen and (max-width: 767px) {
   .indexPage .countBox .listBox .item:not(:first-child) {
-    padding-left: 20px;
+    padding-left: 18px;
   }
 }
 .indexPage .countBox .listBox .item:not(:first-child)::before {
@@ -9676,6 +9723,7 @@ p {
 @media screen and (max-width: 767px) {
   .indexPage .countBox .listBox .item:not(:first-child)::before {
     width: 1px;
+    transform: rotate(20deg);
   }
 }
 @media screen and (max-width: 1000px) {
@@ -9708,6 +9756,7 @@ p {
 @media screen and (max-width: 767px) {
   .indexPage .countBox .listBox .count {
     font-size: 1rem;
+    margin-bottom: 10px;
   }
 }
 .indexPage .countBox .listBox .count span {
@@ -9719,12 +9768,12 @@ p {
 }
 @media screen and (max-width: 1200px) {
   .indexPage .countBox .listBox .count span {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 }
 @media screen and (max-width: 767px) {
   .indexPage .countBox .listBox .count span {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 }
 @media screen and (max-width: 767px) {
@@ -9732,12 +9781,58 @@ p {
     font-size: 1rem;
   }
 }
+.indexPage .editorBox .container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+@media screen and (max-width: 767px) {
+  .indexPage .editorBox .container {
+    flex-direction: column;
+  }
+}
+.indexPage .editorBox .pic {
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 60%;
+  box-shadow: 10px 10px 20px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+@media screen and (max-width: 767px) {
+  .indexPage .editorBox .pic {
+    max-width: none;
+    margin: 0 auto;
+  }
+}
+.indexPage .editorBox .pic::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 30%;
+  aspect-ratio: 1;
+  left: -10%;
+  top: 0px;
+  background: url("../images/mp/d5.png") top no-repeat;
+  background-size: contain;
+  z-index: 1;
+}
+.indexPage .editorBox .editor {
+  width: calc(40% - 30px);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+@media screen and (max-width: 767px) {
+  .indexPage .editorBox .editor {
+    width: 100%;
+    font-size: 1.125rem;
+  }
+}
 .indexPage .newsBox {
   position: relative;
   background: #f3f3f5;
   isolation: isolate;
-  padding: 0 var(--paddingUse);
-  padding-top: 3%;
+  overflow: hidden;
 }
 @media screen and (max-width: 991px) {
   .indexPage .newsBox {
@@ -9943,16 +10038,14 @@ p {
   bottom: 20px;
   left: 20px;
 }
+.indexPage .newsBox .contentBox .side .tag::before, .indexPage .newsBox .contentBox .side .tag::after {
+  display: none;
+}
 .indexPage .hotBox {
-  padding-bottom: 4%;
   isolation: isolate;
   position: relative;
+  padding-top: 0;
   background: #fff;
-}
-@media screen and (max-width: 767px) {
-  .indexPage .hotBox {
-    padding-bottom: 50px;
-  }
 }
 .indexPage .hotBox .content {
   display: flex;
@@ -9963,6 +10056,12 @@ p {
 @media screen and (max-width: 991px) {
   .indexPage .hotBox .content {
     flex-direction: column;
+  }
+}
+@media screen and (max-width: 550px) {
+  .indexPage .hotBox .content {
+    max-width: 408px;
+    margin: 0 auto;
   }
 }
 .indexPage .hotBox .titleBox {
@@ -10047,9 +10146,6 @@ p {
     position: static;
   }
 }
-.indexPage .hotBox .control .swiper-button {
-  background: url("../images/mp/ar.png") center no-repeat;
-}
 @media screen and (max-width: 991px) {
   .indexPage .hotBox .control .swiper-button {
     top: 40%;
@@ -10090,8 +10186,8 @@ p {
 }
 @media screen and (max-width: 991px) {
   .indexPage .hotBox .infoBox {
-    width: calc(100% - 100px);
-    margin: 0 50px 20px;
+    width: calc(100% - var(--contentPadding) * 2);
+    margin: 0 var(--contentPadding) 20px;
     padding: 0;
   }
 }
@@ -10136,6 +10232,10 @@ p {
 }
 .indexPage .hotBox .infoBox .title {
   font-size: 1.375rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 @media screen and (max-width: 991px) {
   .indexPage .hotBox .infoBox .title {
@@ -10153,7 +10253,7 @@ p {
   overflow: hidden;
   position: relative;
   isolation: isolate;
-  padding: 0 var(--paddingUse) 5%;
+  padding-top: 0;
   background: #fff url("../images/mp/vr_bg.jpg") top center no-repeat;
 }
 .indexPage .vrBox .content {
@@ -10197,6 +10297,8 @@ p {
   }
 }
 .indexPage .vrBox .pic img {
+  -o-object-fit: cover;
+     object-fit: cover;
   animation: zoomUse 200s infinite;
   min-height: 500px;
 }
@@ -10225,7 +10327,6 @@ p {
   }
 }
 .indexPage .informationBox {
-  padding: 0 var(--paddingUse);
   background: #fff;
 }
 .indexPage .informationBox .content {
@@ -10238,6 +10339,11 @@ p {
 @media screen and (max-width: 767px) {
   .indexPage .informationBox .content {
     flex-direction: column;
+  }
+}
+@media screen and (max-width: 767px) {
+  .indexPage .informationBox .content {
+    gap: 20px;
   }
 }
 .indexPage .informationBox .content .side {
@@ -10265,6 +10371,7 @@ p {
 @media screen and (max-width: 767px) {
   .indexPage .informationBox .blockTitle {
     font-size: 1.75rem;
+    margin-bottom: 10px;
   }
 }
 .indexPage .informationBox .picBox {
@@ -10275,6 +10382,11 @@ p {
 @media screen and (max-width: 991px) {
   .indexPage .informationBox .picBox {
     padding: 35px 40px 15px 35px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .indexPage .informationBox .picBox {
+    padding: 30px 30px 10px 30px;
   }
 }
 .indexPage .informationBox .picBox::before {
@@ -10305,6 +10417,11 @@ p {
 .indexPage .informationBox .picBox .pic {
   margin-bottom: 20px;
 }
+@media screen and (max-width: 767px) {
+  .indexPage .informationBox .picBox .pic {
+    margin-bottom: 10px;
+  }
+}
 .indexPage .informationBox .title {
   color: #fff;
   overflow: hidden;
@@ -10312,6 +10429,7 @@ p {
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   font-size: 2.25rem;
+  margin: 0;
   text-align: right;
 }
 @media screen and (max-width: 991px) {
@@ -10337,6 +10455,12 @@ p {
   .indexPage .informationBox button,
   .indexPage .informationBox a {
     font-size: 1.125rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .indexPage .informationBox button,
+  .indexPage .informationBox a {
+    padding: 6px 0 6px 35px;
   }
 }
 .indexPage .informationBox button::before,
@@ -10382,7 +10506,6 @@ p {
   width: 100%;
 }
 .indexPage .sustainabilityBox {
-  padding: 0 var(--paddingUse);
   padding-top: 100px;
   background: #fff url("../images/mp/sustainability_bg.jpg") top center no-repeat;
 }
@@ -10479,16 +10602,28 @@ p {
   opacity: 0.4;
   transition: all 0.3s ease;
 }
+.indexPage .sustainabilityBox .listBox .item a .pic {
+  overflow: hidden;
+}
+.indexPage .sustainabilityBox .listBox .item a .pic img {
+  transition: all 20s ease;
+}
 .indexPage .sustainabilityBox .listBox .item a:hover::before {
   opacity: 0.2;
 }
+.indexPage .sustainabilityBox .listBox .item a:hover .pic img {
+  transform: scale(1.5);
+}
 .indexPage .sustainabilityBox .listBox .item a:hover .title {
   left: 50%;
+  text-align: center;
   top: 50%;
   transform: translate(-50%, -50%);
   text-shadow: 0 0 5px #000;
 }
 .indexPage .sustainabilityBox .listBox .item .title {
+  white-space: nowrap;
+  font-size: 1.375rem;
   position: absolute;
   top: 30px;
   left: 30px;
@@ -10500,7 +10635,6 @@ p {
 .indexPage .carbonBox {
   position: relative;
   background: #f3f3f5;
-  padding: 0 var(--paddingUse);
   overflow: hidden;
 }
 @media screen and (max-width: 991px) {
@@ -10606,7 +10740,6 @@ p {
 .indexPage .capturedBox {
   background: #fff url("../images/mp/captured_bg.jpg") top center no-repeat;
   position: relative;
-  padding: 0 var(--paddingUse);
   isolation: isolate;
 }
 .indexPage .capturedBox::after {
@@ -10647,7 +10780,6 @@ p {
 .indexPage .capturedBox .content {
   max-width: 1070px;
   margin: 0 auto;
-  padding: 10% 0;
 }
 @media screen and (max-width: 991px) {
   .indexPage .capturedBox .content {
@@ -10729,7 +10861,6 @@ p {
 .indexPage .journeyBox {
   position: relative;
   isolation: isolate;
-  padding: 0 var(--paddingUse);
   isolation: isolate;
   min-height: 696px;
 }
