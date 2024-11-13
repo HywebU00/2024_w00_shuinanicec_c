@@ -82,7 +82,7 @@ body {
     @include gutter(140px); //gutter 代表左右要留白
     margin: 0 auto;
     max-width: $container-max; //請看_variable.scss
-    outline: 1px solid red;
+    // outline: 1px solid red;
     @include screen('mobile') {
       @include gutter(80px);
     }
