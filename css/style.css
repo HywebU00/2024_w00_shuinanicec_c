@@ -8516,7 +8516,7 @@ div.function ul li.icon_forward a:before {
   text-align: center;
   line-height: 40px;
   border-radius: 50%;
-  background: #f1f1f1;
+  background: #ddd;
   text-indent: -9999px;
   position: relative;
 }
@@ -9033,7 +9033,7 @@ body.noscroll {
 }
 .main h2 {
   line-height: 1.5em;
-  margin: 0 0 0;
+  margin: 0 0 1em;
   padding: 0;
 }
 .main h2.title {
