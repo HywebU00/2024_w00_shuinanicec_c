@@ -859,7 +859,7 @@
 }
 // 容納查詢
 .accommodate_search_block {
-  margin-bottom: 5em;
+  margin-bottom: 4em;
   .accommodate_search_group {
     background-color: #fff;
     padding: 0em;
@@ -1203,44 +1203,37 @@
                   padding: 0 5px;
                   list-style-type: none;
                   display: flex;
-                  justify-content: space-between;
+                  flex-wrap: wrap;
+                  justify-content: center;
                   align-items: flex-start;
                   height: 30px;
 
                   li {
-                    flex: 0 1 auto;
+                    flex: 0 0 auto;
                     flex-basis: 50%;
                     max-width: 50%;
                     color: #fff;
-                    font-size: 1em;
-                    padding-left: 20px;
-
-                    &:nth-child(2) {
-                      text-align: right;
+                    font-size: 0.938em;
+                    padding-left: 0;
+                    white-space: nowrap;
+                    img {
+                      float: left;
+                      margin-right: 2px;
+                      margin-top: 2px;
+                      width: 18px;
+                      height: 18px;
                     }
                     &.area {
-                      background-image: url('../images/exhibition_icon01.png');
-                      background-repeat: no-repeat;
-                      background-position: left center;
-                      background-size: 18px;
-                      width: 18px;
-                      height: 18px;
+                      text-align: left;
                     }
                     &.stall {
-                      background-image: url('../images/exhibition_icon02.png');
-                      background-repeat: no-repeat;
-                      background-position: left 10px center;
-                      background-size: 18px;
-                      width: 18px;
-                      height: 18px;
+                      display: flex;
+                      justify-content: flex-end;
                     }
                     &.numpeople {
-                      background-image: url('../images/exhibition_icon03.png');
-                      background-repeat: no-repeat;
-                      background-position: left 10px center;
-                      background-size: 18px;
-                      width: 18px;
-                      height: 18px;
+                      text-align: right;
+                      display: flex;
+                      justify-content: flex-end;
                     }
                   }
                 }
@@ -1274,7 +1267,8 @@
             }
           }
         }
-        @media (max-width: 900px) {
+
+        @media (max-width: 1000px) {
           display: block;
           .floor_plan_block {
             width: 100%;
@@ -1387,7 +1381,7 @@
           opacity: 1;
         }
       }
-      @media (max-width: 900px) {
+      @media (max-width: 1000px) {
         .slick-prev {
           left: calc(50% - 100px);
           bottom: -12px;

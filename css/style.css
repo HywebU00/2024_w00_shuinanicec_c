@@ -12467,7 +12467,7 @@ p {
 }
 
 .accommodate_search_block {
-  margin-bottom: 5em;
+  margin-bottom: 4em;
 }
 .accommodate_search_block .accommodate_search_group {
   background-color: #fff;
@@ -12799,44 +12799,38 @@ p {
   padding: 0 5px;
   list-style-type: none;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: flex-start;
   height: 30px;
 }
 .exhibition_hall_block .container .exhibition_hall_slider .exhibition_floor_list .floor_pic_block .floor_pic_group .floor_pic_list a ul li {
-  flex: 0 1 auto;
+  flex: 0 0 auto;
   flex-basis: 50%;
   max-width: 50%;
   color: #fff;
-  font-size: 1em;
-  padding-left: 20px;
+  font-size: 0.938em;
+  padding-left: 0;
+  white-space: nowrap;
 }
-.exhibition_hall_block .container .exhibition_hall_slider .exhibition_floor_list .floor_pic_block .floor_pic_group .floor_pic_list a ul li:nth-child(2) {
-  text-align: right;
+.exhibition_hall_block .container .exhibition_hall_slider .exhibition_floor_list .floor_pic_block .floor_pic_group .floor_pic_list a ul li img {
+  float: left;
+  margin-right: 2px;
+  margin-top: 2px;
+  width: 18px;
+  height: 18px;
 }
 .exhibition_hall_block .container .exhibition_hall_slider .exhibition_floor_list .floor_pic_block .floor_pic_group .floor_pic_list a ul li.area {
-  background-image: url("../images/exhibition_icon01.png");
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 18px;
-  width: 18px;
-  height: 18px;
+  text-align: left;
 }
 .exhibition_hall_block .container .exhibition_hall_slider .exhibition_floor_list .floor_pic_block .floor_pic_group .floor_pic_list a ul li.stall {
-  background-image: url("../images/exhibition_icon02.png");
-  background-repeat: no-repeat;
-  background-position: left 10px center;
-  background-size: 18px;
-  width: 18px;
-  height: 18px;
+  display: flex;
+  justify-content: flex-end;
 }
 .exhibition_hall_block .container .exhibition_hall_slider .exhibition_floor_list .floor_pic_block .floor_pic_group .floor_pic_list a ul li.numpeople {
-  background-image: url("../images/exhibition_icon03.png");
-  background-repeat: no-repeat;
-  background-position: left 10px center;
-  background-size: 18px;
-  width: 18px;
-  height: 18px;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
 }
 .exhibition_hall_block .container .exhibition_hall_slider .exhibition_floor_list .caption {
   flex: 1 1 auto;
@@ -12857,7 +12851,7 @@ p {
     height: calc((13.33665vw - 4px) * 160 / 170);
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .exhibition_hall_block .container .exhibition_hall_slider .exhibition_floor_list {
     display: block;
   }
@@ -12963,7 +12957,7 @@ p {
   background-color: transparent;
   opacity: 1;
 }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .exhibition_hall_block .container .exhibition_hall_slider .slick-prev {
     left: calc(50% - 100px);
     bottom: -12px;
