@@ -12660,10 +12660,17 @@ p {
   font-weight: bold;
   color: #0d0a8a;
 }
+@media (max-width: 900px) {
+  .exhibition_hall_block .container .subtitle {
+    margin-bottom: 1.5em;
+  }
+}
+.exhibition_hall_block .container .exhibition_hall_slider .exhibition_hall_group {
+  position: relative;
+}
 .exhibition_hall_block .container .exhibition_hall_slider .exhibition_floor_list {
   display: flex;
   flex-wrap: wrap;
-  position: relative;
 }
 .exhibition_hall_block .container .exhibition_hall_slider .exhibition_floor_list .floor_plan_btn {
   background-color: #000;
@@ -12671,7 +12678,7 @@ p {
   height: 46px;
   position: absolute;
   left: 0;
-  top: 0;
+  top: 0px;
   border-radius: 20px;
   font-size: 0;
   transition: 0.5s;
@@ -12898,6 +12905,9 @@ p {
 @media screen and (max-width: 575px) {
   .exhibition_hall_block .container .exhibition_hall_slider .exhibition_floor_list {
     flex-wrap: wrap;
+  }
+  .exhibition_hall_block .container .exhibition_hall_slider .exhibition_floor_list .floor_plan_block {
+    padding-top: 2em;
   }
   .exhibition_hall_block .container .exhibition_hall_slider .exhibition_floor_list .floor_pic_block {
     flex: 1 1 auto;
