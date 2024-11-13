@@ -1635,3 +1635,68 @@
     }
   }
 }
+// 友善空間
+.friendly_space_block {
+  position: relative;
+  padding-bottom: 40px;
+  .friendly_space_group {
+    position: relative;
+    ul.grid {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    .space_block {
+      margin-bottom: 0;
+      a {
+        display: block;
+        background-color: #fff;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        overflow: hidden;
+        position: relative;
+        // outline: 1px solid red;
+        transition: 0.5s;
+        &:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.5);
+          .image {
+            &:before {
+              background-color: rgba(0, 0, 0, 0.4);
+            }
+          }
+        }
+        &:focus {
+          box-shadow: 0 0px 0px 3px $color-yellow;
+        }
+      }
+      .image {
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        // height: 180px;
+        border-bottom: 1px solid #eee;
+        @include aspect-ratio(4, 3);
+        img {
+          object-fit: cover;
+        }
+      }
+
+      .content {
+        padding: 15px;
+        p {
+          margin: 0;
+          padding: 0;
+          color: #666;
+          line-height: 1.7em;
+          @include text-line(5, 1.7em);
+        }
+        .title {
+          color: #2a907c;
+          margin-bottom: 0.5em;
+          font-size: 1.375em;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
