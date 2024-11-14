@@ -303,8 +303,27 @@ $(function () {
   window.addEventListener('load', acMove);
   window.addEventListener('resize', acMove);
 
-  Fancybox.bind('[data-fancybox]', {
-    //
+  // 場地介紹
+  // Fancybox.bind('[data-fancybox="gallery-a"]', {
+  //   // Custom options for the first gallery
+  // });
+  Fancybox.bind('[data-fancybox="gallery-a"]', {
+    Toolbar: {
+      display: {
+        // left: ['infobar'],
+        // middle: [],
+        right: ['close'],
+      },
+    },
+  });
+  Fancybox.bind('[data-fancybox="gallery-b"]', {
+    Toolbar: {
+      display: {
+        // left: ['infobar'],
+        // middle: [],
+        right: ['close'],
+      },
+    },
   });
 });
 
