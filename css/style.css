@@ -7349,6 +7349,7 @@ table.table_sprite tr:nth-child(even) {
 }
 .tabSet .tabItems {
   display: flex;
+  flex-wrap: wrap;
   border-bottom: 4px solid #333333;
 }
 .tabSet .modeBBtn,
@@ -7363,6 +7364,7 @@ table.table_sprite tr:nth-child(even) {
   border-radius: 0;
   box-shadow: none;
   background: transparent;
+  white-space: nowrap;
   cursor: pointer;
 }
 .tabSet .modeBBtn:focus-visible,
@@ -7376,6 +7378,12 @@ table.table_sprite tr:nth-child(even) {
   background: transparent;
   color: #0d0a8a;
   border-bottom: 6px solid #0d0a8a;
+}
+@media screen and (max-width: 767px) {
+  .tabSet .modeBBtn,
+  .tabSet .tabBtn {
+    background-color: #eee;
+  }
 }
 .tabSet .tabContent {
   display: none;
@@ -7421,13 +7429,51 @@ table.table_sprite tr:nth-child(even) {
 .tabSet.modeB .tabContent .content a:focus-visible {
   outline: #eb0202 2px solid;
 }
+@media screen and (max-width: 767px) {
+  .tabSet.modeB .tabContent:nth-of-type(1) .content {
+    display: block;
+  }
+}
 .tabSet.modeB .modeBBtn {
   display: block;
+}
+
+.form_download_block .tabSet .tabItems {
+  border-bottom: 4px solid #333333;
+}
+.form_download_block .tabSet .tabItems button.tabBtn {
+  background: transparent;
+  font-size: 1.375em;
+  height: 2.8em;
+  font-weight: bold;
+}
+.form_download_block .tabSet .tabItems button.tabBtn.active {
+  cursor: default;
+  background: transparent;
+  color: #0d0a8a;
+  border-bottom: 6px solid #0d0a8a;
+}
+.form_download_block .tabSet .tabContentGroup .tabContent {
+  padding: 0;
+  border: none;
 }
 
 .maplocation_block .tabContentGroup .tabContent {
   padding: 2em;
   border: none;
+}
+@media screen and (max-width: 991px) {
+  .maplocation_block .tabContentGroup .tabContent {
+    padding: 2em 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .maplocation_block .tabContentGroup .tabContent {
+    padding: 0em 0;
+  }
+}
+.maplocation_block .tabContentGroup .tabContent .mappic {
+  text-align: center;
 }
 
 .thumbnail {
