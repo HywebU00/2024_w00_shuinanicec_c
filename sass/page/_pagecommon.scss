@@ -1639,6 +1639,7 @@
 .friendly_space_block {
   position: relative;
   padding-bottom: 40px;
+  margin-bottom: 3em;
   .friendly_space_group {
     position: relative;
     ul.grid {
@@ -1697,6 +1698,15 @@
           font-weight: bold;
         }
       }
+    }
+  }
+}
+// 地圖位置
+.maplocation_block {
+  .container {
+    .subtitle {
+      @extend %subtitle;
+      margin-bottom: 40px;
     }
   }
 }

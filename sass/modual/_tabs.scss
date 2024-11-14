@@ -3,19 +3,21 @@
 
   .tabItems {
     display: flex;
+    border-bottom: 4px solid $color-word;
   }
 
   .modeBBtn,
   .tabBtn {
     flex: 1 1 auto;
-    font-size: 1em;
+    font-size: 1.375em;
     height: 2.8em;
     text-align: center;
+    font-weight: bold;
     border: none;
     margin: 0;
     border-radius: 0;
     box-shadow: none;
-    background: #ddd;
+    background: transparent;
     cursor: pointer;
 
     &:focus-visible {
@@ -25,16 +27,17 @@
 
     &.active {
       cursor: default;
-      background: #00a4f9;
-      color: #fff;
+      background: transparent;
+      color: $primaryColor;
+      border-bottom: 6px solid $primaryColor;
     }
   }
 
   .tabContent {
     display: none;
     position: relative;
-    padding: 15px;
-    border: #bbb 1px solid;
+    padding: 0;
+    border: none;
 
     @include screen('mobile') {
       padding: 0;
@@ -93,28 +96,36 @@
     }
   }
 }
-.form_download_block {
-  .tabSet {
-    .tabItems {
-      border-bottom: 4px solid $color-word;
-      button.tabBtn {
-        background: transparent;
-        font-size: 1.375em;
-        height: 2.8em;
-        font-weight: bold;
-        &.active {
-          cursor: default;
-          background: transparent;
-          color: $primaryColor;
-          border-bottom: 6px solid $primaryColor;
-        }
-      }
-    }
-    .tabContentGroup {
-      .tabContent {
-        padding: 0;
-        border: none;
-      }
+// .form_download_block {
+//   .tabSet {
+//     .tabItems {
+//       border-bottom: 4px solid $color-word;
+//       button.tabBtn {
+//         background: transparent;
+//         font-size: 1.375em;
+//         height: 2.8em;
+//         font-weight: bold;
+//         &.active {
+//           cursor: default;
+//           background: transparent;
+//           color: $primaryColor;
+//           border-bottom: 6px solid $primaryColor;
+//         }
+//       }
+//     }
+//     .tabContentGroup {
+//       .tabContent {
+//         padding: 0;
+//         border: none;
+//       }
+//     }
+//   }
+// }
+.maplocation_block {
+  .tabContentGroup {
+    .tabContent {
+      padding: 2em;
+      border: none;
     }
   }
 }
