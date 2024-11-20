@@ -11700,7 +11700,7 @@ p {
 
 .maplocation_block .container .subtitle, .consult_block .container .consult_group .subtitle, .event_photos_block .subtitle, .space_equipment_block .subtitle, .pattern_numpeople_block .subtitle, .space_photos_group .space_size_block .subtitle {
   font-size: 2.75em;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   color: #333;
   font-weight: bold;
   text-align: center;
