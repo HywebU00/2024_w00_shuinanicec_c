@@ -105,18 +105,22 @@ footer {
   .footerBox {
     color: #fff;
     background: #333;
-    padding: 20px;
+    padding: 20px 0;
 
     .container {
-
       @include screen('tablet') {
+        font-size: Rem(14);
         flex-direction: column;
-        justify-content: center;
+        align-items: flex-start;
       }
     }
 
     .logo {
       filter: invert(1) brightness(10);
+
+      @include screen('tablet') {
+        display: none;
+      }
     }
 
     .linkBox {

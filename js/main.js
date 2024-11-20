@@ -859,6 +859,13 @@ window.addEventListener('resize', acMove);
 
   const mobileBtn = document.querySelector('.mobileBtn');
   const menuBox = document.querySelector('.menuBox');
+  const topNavBox = document.querySelector('.topNavBox');
+  const mobileNav = topNavBox.cloneNode(true);
+  const lastLi = mobileNav.querySelector('li:last-child');
+  if (lastLi) lastLi.remove();
+
+  menuBox.append(mobileNav);
+
   mobileBtn.addEventListener('click', () => {
     header.classList.toggle('menuOpen');
 
@@ -889,8 +896,9 @@ window.addEventListener('resize', acMove);
 (function () {
   const mainMenu = document.querySelector('.menuBox');
   const hasChildUl = mainMenu.querySelectorAll('li ul');
-  hasChildUl.forEach((i) => {
-    i.parentNode.classList.add('hasChild');
+  const firstHasChildUl = document.querySelectorAll('.menuBox > ul > li > ul');
+  hasChildUl.forEach((i) => i.parentNode.classList.add('hasChild'));
+  firstHasChildUl.forEach((i) => {
     let bg = document.createElement('div');
     bg.classList.add('bg');
     i.parentNode.append(bg);
@@ -900,21 +908,11 @@ window.addEventListener('resize', acMove);
   hasChildA.forEach((i) => {
     let bg = i.querySelector('.bg');
     i.addEventListener('mouseenter', (e) => {
-      console.log(window.getComputedStyle(bg).display);
-
       if (window.outerWidth > 1000) {
         e.preventDefault();
         i.classList.add('active');
-
-        bg.style.height = `${document.querySelector('.cBanner').clientHeight - 50}px`;
-        // if (window.getComputedStyle(bg).display === 'none') {
-        //   bg.style.display = 'block';
-        //   setTimeout(() => {
-        //     bg.style.transitionDuration = `300ms`;
-        //     bg.style.transitionProperty = 'all';
-        //     bg.style.opacity = 1;
-        //   });
-        // }
+        let bgHeight = i.querySelector('ul').offsetHeight + document.querySelector('header').offsetHeight;
+        bg.style.height = `${bgHeight + 30}px`;
       }
     });
     i.addEventListener('mouseleave', (e) => {

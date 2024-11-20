@@ -7,10 +7,6 @@ new WOW({
   live: true, // default
 }).init();
 
-let swiperBanner = new Swiper('.cBanner', {
-  slidesPerView: 1,
-  effect: 'fade',
-});
 let swiperNews = new Swiper('.newsBox .swiper1 .swiper', {
   slidesPerView: 1,
   pagination: {
@@ -107,11 +103,8 @@ window.onload = async function () {
     const video = document.querySelector('.cBanner video');
 
     window.addEventListener('resize', function () {
-      setTimeout(function () {
-        bannerHeight = document.querySelector('.cBanner').offsetHeight;
-        console.log(bannerHeight);
-        welcome.style.height = `${bannerHeight}px`;
-      }, 50);
+      bannerHeight = document.querySelector('.cBanner').offsetHeight;
+      welcome.style.height = `${bannerHeight}px`;
     });
     // 設置 canvas 的寬高為視口的寬高
     const resizeCanvas = () => {
@@ -185,6 +178,16 @@ window.onload = async function () {
     setTimeout(() => {
       // video.play();
       body.classList.remove('loading');
+
+      let swiperBanner = new Swiper('.cBanner', {
+        slidesPerView: 1,
+        effect: 'fade',
+        autoplay: {
+          delay: 5000,
+          stopOnLastSlide: false,
+          disableOnInteraction: true,
+        },
+      });
     });
   }
 
@@ -199,7 +202,7 @@ window.onload = async function () {
         targets: `${target} .line`,
         opacity: [0.5, 1],
         easing: 'easeOutExpo',
-        duration: 700,
+        duration: 100,
       })
       .add({
         targets: `${target} .line`,
@@ -214,7 +217,7 @@ window.onload = async function () {
         easing: 'easeOutExpo',
         duration: 600,
         offset: '-=775',
-        delay: (el, i) => 34 * (i + 1),
+        delay: (el, i) => 30 * (i + 1),
       })
       .add({
         targets: `${target} .line`,
@@ -237,21 +240,21 @@ window.onload = async function () {
     allBox.forEach((item) => (item.style.opacity = 1));
     // $(box).css('opacity', '1');
     // 執行動畫並等待完成
-    await fontFn(box);
+    fontFn(box);
     // 執行後置函數（如果有）
     if (afterFn) afterFn();
   }
 
   // 依次處理每個字體框
-  await processFontBox('.fontBox1', 1000, () => bgT[0].classList.add('active'));
-  await processFontBox('.fontBox2', 1000, null);
-  await processFontBox('.fontBox3', 1000, () => bgT[1].classList.add('active'));
-  await processFontBox('.fontBox4', 1000, () => setTimeout(() => topT.classList.add('active'), 2000));
+  await processFontBox('.fontBox1', 500, () => bgT[0].classList.add('active'));
+  await processFontBox('.fontBox2', 500, null);
+  await processFontBox('.fontBox3', 500, () => bgT[1].classList.add('active'));
+  await processFontBox('.fontBox4', 500, () => setTimeout(() => topT.classList.add('active'), 1000));
 
   // 所有動畫完成後執行另一個函數
   setTimeout(() => {
     loading();
-  }, 3000);
+  }, 1500);
 
   const informationBoxPic = document.querySelector('.informationBox .picBox img');
   const informationBoxTitle = document.querySelector('.informationBox .picBox .title');
@@ -280,9 +283,9 @@ window.onload = async function () {
     if (entries[0].isIntersecting && !check.classList.contains('active')) {
       check.classList.add('active');
       setTimeout(() => {
-        animateNumber(count1, 0, 25000, 3000);
-        animateNumber(count2, 0, 150000, 4000);
-        animateNumber(count3, 0, 2185, 1000);
+        animateNumber(count1, 0, 25000, 2000);
+        animateNumber(count2, 0, 150000, 2000);
+        animateNumber(count3, 0, 2185, 2000);
         animateNumber(count4, 0, 4250, 2000);
       }, 500);
     }

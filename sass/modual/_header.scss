@@ -112,6 +112,7 @@ header.cHeader {
       width: 210px;
       height: 34px;
     }
+
     a {
       display: block;
       height: 100%;
@@ -263,6 +264,7 @@ header.cHeader {
           right: 0;
           display: none;
           background: url('../images/mp/menu_bg.jpg') center top no-repeat;
+          opacity: 0.7;
           z-index: -1;
           @include transition(all, 0.3);
           clip-path: polygon(0 0, 100% 0, 100% 82%, 0% 100%);
@@ -292,23 +294,23 @@ header.cHeader {
             letter-spacing: 1px;
           }
 
-          &::before {
-            content: '';
-            position: absolute;
-            right: -1px;
-            left: -1px;
-            top: -100px;
-            bottom: 0;
-            display: block;
-            background: #fff;
-            z-index: -1;
-            opacity: 0;
-            @include transition(all, 0.3);
+          // &::before {
+          //   content: '';
+          //   position: absolute;
+          //   right: -1px;
+          //   left: -1px;
+          //   top: -100px;
+          //   bottom: 0;
+          //   display: block;
+          //   background: #fff;
+          //   z-index: -1;
+          //   opacity: 0;
+          //   @include transition(all, 0.3);
 
-            @include screen('tablet') {
-              display: none;
-            }
-          }
+          //   @include screen('tablet') {
+          //     display: none;
+          //   }
+          // }
 
           &:hover {
             @include screen('tablet') {
@@ -452,9 +454,37 @@ header.cHeader {
         }
       }
     }
+
+    .topNavBox {
+      display: none;
+      position: relative;
+      top: auto;
+      right: auto;
+      transform: none;
+
+      @include screen('tablet') {
+        display: block;
+      }
+
+      ul {
+        margin-top: 40px;
+
+        a {
+          display: flex !important;
+          filter: invert(1);
+
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
   }
 
   .topNavBox {
+    position: relative;
+    z-index: 0;
+
     @include screen('tablet') {
       position: absolute;
       right: 60px;
@@ -480,6 +510,8 @@ header.cHeader {
       color: #fff;
       padding: 0;
       margin: 0;
+      font-size: Rem(18);
+      font-weight: 400;
 
       &.mail::before,
       &.cSearch::before {
