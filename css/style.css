@@ -9321,7 +9321,11 @@ p {
 }
 
 .fancybox__backdrop {
-  background: rgba(200, 200, 200, 0.5);
+  background: rgba(200, 200, 200, 0.8);
+}
+
+.is-compact .fancybox__footer {
+  background: rgba(24, 24, 27, 0);
 }
 
 .indexPage {
@@ -9529,7 +9533,7 @@ p {
   transition: all 0.3s ease;
 }
 .indexPage .welcome.active .bgT svg.active {
-  stroke: #fff;
+  stroke: #FFF;
 }
 .indexPage .welcome canvas {
   display: block;
@@ -9863,6 +9867,7 @@ p {
 .indexPage .editorBox .content {
   max-width: 1280px;
   margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -10139,12 +10144,6 @@ p {
     flex-direction: column;
   }
 }
-@media screen and (max-width: 550px) {
-  .indexPage .hotBox .content {
-    max-width: 408px;
-    margin: 0 auto;
-  }
-}
 .indexPage .hotBox .titleBox {
   padding-top: 8%;
   flex-grow: 1;
@@ -10260,7 +10259,12 @@ p {
 }
 @media screen and (max-width: 991px) {
   .indexPage .hotBox .more {
+    border-radius: 40px;
+    padding: 15px;
     display: flex;
+  }
+  .indexPage .hotBox .more br {
+    display: none;
   }
 }
 .indexPage .hotBox .infoBox {
@@ -10273,6 +10277,12 @@ p {
     width: calc(100% - var(--contentPadding) * 2);
     margin: 0 var(--contentPadding) 20px;
     padding: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .indexPage .hotBox .infoBox {
+    max-width: 408px;
+    margin: 0 auto 20px;
   }
 }
 .indexPage .hotBox .infoBox a {

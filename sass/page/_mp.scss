@@ -238,7 +238,7 @@
 
       .bgT {
         svg.active {
-          stroke: #fff;
+          stroke: #FFF;
         }
       }
     }
@@ -287,6 +287,7 @@
         opacity: 0;
         @include transition(all, 0.3);
 
+
         @include screen('mobile') {
           right: 0;
           width: 20%;
@@ -297,6 +298,7 @@
           transform: rotate(0deg);
         }
       }
+
 
       .bgT {
         position: absolute;
@@ -417,6 +419,7 @@
     }
   }
 
+
   .main {
     position: relative;
     padding-top: 6%;
@@ -480,7 +483,7 @@
       }
 
       .item {
-        width: calc(100% / 4);
+        width: calc(100%/4);
         flex-grow: 1;
         font-size: Rem(18);
         text-align: center;
@@ -488,7 +491,7 @@
         position: relative;
 
         @media screen and (max-width: 1000px) {
-          width: calc(100% / 2);
+          width: calc(100%/2);
           font-size: Rem(16);
         }
 
@@ -543,6 +546,7 @@
         // }
         &:nth-child(1),
         &:nth-child(3) {
+
           @media screen and (max-width: 1000px) {
             padding: 0;
             padding-right: 40px;
@@ -600,11 +604,14 @@
     }
   }
 
+
   ///////////////////////////// editorBox
   .editorBox {
+
     .content {
       max-width: 1280px;
       margin: 0 auto;
+      padding: 0 20px;
       display: flex;
       align-items: center;
       gap: 30px;
@@ -736,6 +743,7 @@
         &:nth-child(2) {
           width: 60%;
 
+
           & > .item {
             &:nth-child(1) {
               position: relative;
@@ -796,7 +804,7 @@
           }
 
           .box {
-            width: calc((100% - 5px) / 2);
+            width: calc((100% - 5px)/2);
             position: relative;
 
             @include screen('mobile') {
@@ -904,11 +912,6 @@
       @include screen('tablet') {
         flex-direction: column;
       }
-
-      @media screen and (max-width: 550px) {
-        max-width: 408px;
-        margin: 0 auto;
-      }
     }
 
     .titleBox {
@@ -1002,6 +1005,7 @@
           top: 50%;
         }
 
+
         &::after {
           display: none;
         }
@@ -1025,7 +1029,13 @@
       display: none;
 
       @include screen('tablet') {
+        border-radius: 40px;
+        padding: 15px;
         display: flex;
+
+        br {
+          display: none;
+        }
       }
     }
 
@@ -1040,6 +1050,11 @@
         padding: 0;
       }
 
+      @media screen and (max-width: 767px) {
+        max-width: 408px;
+        margin: 0 auto 20px;
+      }
+
       a {
         color: #000;
         display: block;
@@ -1048,7 +1063,7 @@
         &:hover {
           .pic {
             img {
-              transform: scale(1.5);
+              transform: scale(1.5)
             }
           }
         }
@@ -1113,6 +1128,7 @@
         }
       }
     }
+
   }
 
   ///////////////////////////// vrBox
@@ -1357,8 +1373,10 @@
     }
 
     li {
+
       &.active,
       &:hover {
+
         a,
         button {
           color: $mainColor;
@@ -1490,7 +1508,7 @@
 
             .pic {
               img {
-                transform: scale(1.5);
+                transform: scale(1.5)
               }
             }
 
@@ -1575,6 +1593,7 @@
     }
 
     .listBox {
+
       .item {
         // width: calc((100% - 20px * 2) / 3);
         color: #333333;

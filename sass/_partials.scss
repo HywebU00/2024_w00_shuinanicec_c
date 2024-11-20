@@ -150,5 +150,8 @@
 }
 
 .fancybox__backdrop {
-  background: rgba(200, 200, 200, 0.5);
+  background: rgba(200, 200, 200, 0.8);
+}
+.is-compact .fancybox__footer {
+  background: rgba(24, 24, 27, 0);
 }
