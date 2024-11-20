@@ -99,7 +99,6 @@
     padding-bottom: 40px;
     padding-left: 30px;
     position: relative;
-    outline: 1px solid red;
     &:before {
       content: '';
       border: 50px solid $secondaryColor;
@@ -479,7 +478,6 @@
       flex-direction: column;
       justify-content: flex-end;
       align-items: center;
-      outline: 1px solid red;
       box-sizing: border-box;
       @media (max-width: 1200px) {
         margin-right: 60px;
