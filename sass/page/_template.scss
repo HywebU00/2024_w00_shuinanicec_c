@@ -49,9 +49,9 @@ body {
     margin: 0 0 0.8em;
     padding: 0;
     &.title {
-      font-size: 2.75em;
+      font-size: 2.5em;
       @include screen('xs_mobile') {
-        font-size: 2.25em;
+        font-size: 2em;
       }
     }
   }
