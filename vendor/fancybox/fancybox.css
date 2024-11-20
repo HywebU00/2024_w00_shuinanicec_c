@@ -600,6 +600,11 @@ html.with-fancybox body.hide-scrollbar {
   visibility: visible;
   background-color: #000;
   border-radius: 50px;
+  text-align: center;
+  @media (max-width: 575px) {
+    max-width: 90%;
+    margin: 20px auto;
+  }
 }
 .is-loading .fancybox__caption,
 .is-closing .fancybox__caption {
