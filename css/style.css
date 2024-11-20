@@ -11715,6 +11715,43 @@ p {
   }
 }
 
+.gourmet_food_block .gourmet_food_group .gourmet_food_list .content .title, .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content .title {
+  font-size: 2.25em;
+  color: #fff;
+  margin-bottom: 1.2em;
+  font-weight: bold;
+  position: relative;
+  transition: 0.5s;
+  line-height: 1.2em;
+}
+.gourmet_food_block .gourmet_food_group .gourmet_food_list .content .title:after, .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content .title:after {
+  content: "";
+  width: 70px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -22px;
+  left: 0;
+  transition: 0.5s;
+}
+@media screen and (max-width: 991px) {
+  .gourmet_food_block .gourmet_food_group .gourmet_food_list .content .title, .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content .title {
+    font-size: 2em;
+  }
+  .gourmet_food_block .gourmet_food_group .gourmet_food_list .content .title:after, .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content .title:after {
+    content: "";
+    width: 60px;
+    height: 2px;
+    bottom: -12px;
+  }
+}
+@media (max-width: 850px) {
+  .gourmet_food_block .gourmet_food_group .gourmet_food_list .content .title, .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content .title {
+    margin-bottom: 0.8em;
+    font-size: 1.875em;
+  }
+}
+
 .introduce_synagogue {
   margin: 0em 0 3em;
 }
@@ -13148,25 +13185,6 @@ p {
   box-sizing: border-box;
   transition: 0.5s;
 }
-.venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content .title {
-  font-size: 2.25em;
-  color: #fff;
-  margin-bottom: 1.2em;
-  font-weight: bold;
-  position: relative;
-  transition: 0.5s;
-  line-height: 1.2em;
-}
-.venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content .title:after {
-  content: "";
-  width: 70px;
-  height: 2px;
-  background-color: #fff;
-  position: absolute;
-  bottom: -22px;
-  left: 0;
-  transition: 0.5s;
-}
 .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content p {
   color: #fff;
   font-size: 1em;
@@ -13217,15 +13235,6 @@ p {
   }
   .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content {
     padding: 30px 20px 20px 30px;
-  }
-  .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content .title {
-    font-size: 2em;
-  }
-  .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content .title:after {
-    content: "";
-    width: 60px;
-    height: 2px;
-    bottom: -12px;
   }
   .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content .more {
     display: inline-block;
@@ -13295,10 +13304,6 @@ p {
   }
   .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content {
     padding: 20px;
-  }
-  .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content .title {
-    margin-bottom: 0.8em;
-    font-size: 1.875em;
   }
   .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content p {
     overflow: hidden;
@@ -13564,6 +13569,26 @@ p {
   flex-basis: 60%;
   padding: 2em;
   box-sizing: border-box;
+  outline: 1px solid red;
+}
+.gourmet_food_block .gourmet_food_group .gourmet_food_list .content .title {
+  color: #333;
+}
+.gourmet_food_block .gourmet_food_group .gourmet_food_list .content .title:after {
+  background-color: #333;
+}
+.gourmet_food_block .gourmet_food_group .gourmet_food_list .content .time .name {
+  margin-bottom: 0.3em;
+  font-weight: bold;
+  font-size: 1.188em;
+}
+.gourmet_food_block .gourmet_food_group .gourmet_food_list .content .time ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.gourmet_food_block .gourmet_food_group .gourmet_food_list .content .time ul li {
+  margin-bottom: 0.3em;
 }
 
 @media print {
