@@ -8,7 +8,7 @@
   margin-bottom: 50px;
   transition: 0.5s;
   @include screen('xs_mobile') {
-    font-size: 2.125em;
+    font-size: 2em;
     margin-bottom: 40px;
   }
 }
