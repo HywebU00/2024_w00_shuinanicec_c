@@ -27,7 +27,7 @@
     height: 2px;
     background-color: #fff;
     position: absolute;
-    bottom: -22px;
+    bottom: -18px;
     left: 0;
     transition: 0.5s;
   }
@@ -37,11 +37,9 @@
       content: '';
       width: 60px;
       height: 2px;
-      bottom: -12px;
     }
   }
   @media (max-width: 850px) {
-    margin-bottom: 0.8em;
     font-size: 1.875em;
   }
 }
@@ -1773,6 +1771,7 @@
           font-size: 1.5em;
           font-weight: bold;
           position: relative;
+          line-height: 1.2;
           &:after {
             content: '';
             width: 50px;
@@ -1804,37 +1803,53 @@
       display: flex;
       background-color: #fff;
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-      padding: 20px;
+      padding: 30px;
+      margin-bottom: 2em;
+      box-sizing: border-box;
+      align-items: flex-start;
+      &:nth-of-type(2n) {
+        .pic_block {
+          order: 2;
+        }
+        .content {
+          order: 1;
+          padding: 1em 2em 0 1em;
+        }
+      }
       .pic_block {
         flex: 0 0 auto;
-        flex-basis: 40%;
+        flex-basis: 350px;
+        max-width: 350px;
         position: relative;
-
-        .image {
-          @include aspect-ratio(4, 3);
-          img {
-            object-fit: cover;
-          }
+        @include aspect-ratio(4, 3);
+        img {
+          object-fit: cover;
         }
       }
       .content {
         flex: 0 0 auto;
-        flex-basis: 60%;
-        padding: 2em;
+        flex-basis: calc(100% - 350px);
+        max-width: calc(100% - 350px);
+        padding: 1em 0 0 2em;
         box-sizing: border-box;
-        outline: 1px solid red;
         .title {
           @extend %third_title;
-          color: #333;
+          color: $primaryColor;
           &:after {
-            background-color: #333;
+            background-color: $primaryColor;
           }
         }
         .time {
+          margin-bottom: 1em;
           .name {
             margin-bottom: 0.3em;
             font-weight: bold;
             font-size: 1.188em;
+            padding-left: 1.3em;
+            background-image: url('../images/icon_clock.svg');
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 18px;
           }
           ul {
             margin: 0;
@@ -1843,6 +1858,64 @@
             li {
               margin-bottom: 0.3em;
             }
+          }
+        }
+        .project_notes {
+          ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            li {
+              margin-bottom: 0.3em;
+              padding-left: 24px;
+              position: relative;
+              &:before {
+                content: '';
+                border: 7px solid $secondaryColor;
+                border-color: $secondaryColor transparent transparent $secondaryColor;
+                position: absolute;
+                left: 0;
+                top: 5px;
+              }
+            }
+          }
+        }
+      }
+      @include screen('tablet') {
+        flex-wrap: wrap;
+        .pic_block {
+          flex: 0 0 auto;
+          flex-basis: 50%;
+          max-width: 50%;
+        }
+        .content {
+          flex: 1 0 auto;
+          flex-basis: 50%;
+          max-width: 50%;
+        }
+      }
+      @include screen('mobile') {
+        flex-wrap: wrap;
+
+        .pic_block {
+          flex: 1 1 auto;
+          flex-basis: 100%;
+          max-width: 100%;
+          margin-bottom: 1em;
+        }
+        .content {
+          flex: 1 1 auto;
+          flex-basis: 100%;
+          max-width: 100%;
+          padding: 0;
+        }
+        &:nth-of-type(2n) {
+          .pic_block {
+            order: 1;
+          }
+          .content {
+            order: 2;
+            padding: 0;
           }
         }
       }
