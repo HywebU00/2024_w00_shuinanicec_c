@@ -237,6 +237,15 @@
             font-style: normal;
           }
         }
+        @include screen('xs_mobile') {
+          .pic {
+            flex-basis: 50px;
+            max-width: 50px;
+          }
+          .content {
+            font-size: 1.5em;
+          }
+        }
       }
     }
   }
@@ -622,6 +631,11 @@
           width: 50px;
           height: 50px;
         }
+        @media (max-width: 430px) {
+          margin-bottom: 0.5em;
+          width: 40px;
+          height: 40px;
+        }
       }
       .title {
         position: relative;
@@ -641,6 +655,9 @@
         margin-bottom: 5em;
         @media (max-width: 1200px) {
           margin-bottom: 2em;
+        }
+        @include screen('xs_mobile') {
+          margin-bottom: 1em;
         }
         a {
           display: inline-block;
@@ -865,7 +882,8 @@
             position: relative;
             overflow: hidden;
             transition: 0.5s;
-            line-height: 1.3;
+            line-height: 1.4;
+            letter-spacing: 0.1em;
             span {
               position: relative;
               z-index: 2;
@@ -1496,7 +1514,7 @@
               }
               p {
                 color: #fff;
-                font-size: 1em;
+                font-size: 1.063em;
                 margin-bottom: 1em;
                 @include text-line(3, 1.8em);
               }
@@ -1520,6 +1538,8 @@
                 color: #fff;
                 font-weight: normal;
                 margin-left: -200px;
+                line-height: 1.4;
+                letter-spacing: 0.1em;
               }
             }
             @media (max-width: 1100px) {
@@ -1543,6 +1563,8 @@
                   height: auto;
                   padding: 5px 20px;
                   border-radius: 50px;
+                  line-height: 1.3;
+                  letter-spacing: 0;
                 }
               }
             }
@@ -1630,8 +1652,9 @@
     }
   }
 }
-// 表單下載
-.form_download_block {
+// 表單下載 // 廣告版位
+.form_download_block,
+.ad_slot_block {
   .sort_block {
     border-bottom: 2px solid $color-word;
     padding: 0.2em 0;
@@ -1700,8 +1723,125 @@
           padding: 1em;
           padding-left: 3em;
           font-weight: bold;
+          color: $aColor;
           &:hover {
-            color: $color-orange;
+            color: $aHover;
+          }
+        }
+      }
+    }
+  }
+  // 廣告區域內容
+  .ad_slot_content {
+    padding: 20px 60px;
+    @include screen('tablet') {
+      padding: 20px 30px;
+    }
+    @media (max-width: 600px) {
+      padding: 20px 10px;
+    }
+    .ad_slot_list {
+      margin-bottom: 3em;
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        li {
+          flex: 0 0 auto;
+          flex-basis: 31%;
+          font-size: 1.125em;
+          margin: 0 1.16%;
+          margin-bottom: 0.8em;
+          @include screen('tablet') {
+            flex-basis: 48%;
+            margin: 0 1% 0.7em;
+          }
+          @media (max-width: 600px) {
+            flex-basis: 100%;
+            margin: 0 0 0.6em;
+          }
+          a {
+            display: block;
+            padding: 0.8em 0.8em;
+            color: #333;
+            position: relative;
+            background-color: #fff;
+            border: 1px solid #666;
+            text-align: center;
+            border-radius: 50px;
+            transition: 0.5s;
+
+            &:hover,
+            &.active {
+              background-color: $secondaryColor;
+              border: 1px solid $secondaryColor;
+            }
+          }
+        }
+      }
+    }
+    .title {
+      @extend %subtitle;
+      font-size: 2.125em;
+      position: relative;
+      display: block;
+      text-align: center;
+      &:before {
+        content: '';
+        border: 30px solid #f9a01d;
+        border-color: #f9a01d transparent transparent #f9a01d;
+        position: absolute;
+        left: 8%;
+        top: -20px;
+        transition: 0.5s;
+        @include screen('tablet') {
+          left: 0;
+        }
+        @include screen('xs_mobile') {
+          top: -30px;
+        }
+      }
+      @include screen('xs_mobile') {
+        padding-left: 1em;
+      }
+    }
+    .adpic {
+      position: relative;
+      @include aspect-ratio(4, 3);
+      margin-bottom: 2em;
+      img {
+        object-fit: cover;
+      }
+    }
+    .adTb {
+      font-size: 1.125em;
+      table {
+        background-color: #fff;
+        th {
+          text-align: left;
+          width: 15%;
+        }
+        th,
+        td {
+          padding: 0.8em;
+        }
+        td {
+          ol {
+            margin: 0;
+
+            li {
+              margin-bottom: 0.5em;
+            }
+          }
+        }
+        @include screen('xs_mobile') {
+          th,
+          td {
+            display: block;
+            width: 100%;
           }
         }
       }
@@ -1757,13 +1897,13 @@
       }
 
       .content {
-        padding: 20px 25px 20px;
+        padding: 20px 25px 10px;
         p {
           margin: 0;
           padding: 0;
           color: #666;
-          line-height: 1.7em;
-          @include text-line(5, 1.7em);
+          font-size: 1.063em;
+          @include text-line(5, 1.8em);
         }
         .title {
           color: $primaryColor;
@@ -1783,6 +1923,15 @@
             transition: 0.5s;
           }
         }
+        @include screen('mobile') {
+          padding: 20px 25px 20px;
+        }
+        @include screen('xs_mobile') {
+          padding: 20px 25px 30px;
+        }
+        @media (max-width: 480px) {
+          padding: 20px 25px 20px;
+        }
       }
     }
   }
@@ -1798,6 +1947,7 @@
 }
 // 美食饗宴
 .gourmet_food_block {
+  margin-bottom: 4em;
   .gourmet_food_group {
     .gourmet_food_list {
       display: flex;
@@ -1842,7 +1992,7 @@
         .time {
           margin-bottom: 1em;
           .name {
-            margin-bottom: 0.3em;
+            margin-bottom: 0.5em;
             font-weight: bold;
             font-size: 1.188em;
             padding-left: 1.3em;
@@ -1857,10 +2007,12 @@
             list-style-type: none;
             li {
               margin-bottom: 0.3em;
+              color: #333;
+              font-size: 1.063em;
             }
           }
         }
-        .project_notes {
+        .remarks {
           ul {
             margin: 0;
             padding: 0;
@@ -1869,6 +2021,8 @@
               margin-bottom: 0.3em;
               padding-left: 24px;
               position: relative;
+              color: #666;
+              font-size: 1.063em;
               &:before {
                 content: '';
                 border: 7px solid $secondaryColor;
@@ -1916,6 +2070,345 @@
           .content {
             order: 2;
             padding: 0;
+          }
+        }
+      }
+    }
+  }
+}
+// 地理位置
+.geography_location_block {
+  .container {
+    .geography_location {
+      position: relative;
+      &:before {
+        content: '';
+        border: 30px solid $secondaryColor;
+        border-color: $secondaryColor transparent transparent $secondaryColor;
+        position: absolute;
+        left: 12%;
+        top: -40px;
+      }
+      .subtitle {
+        @extend %subtitle;
+        margin-bottom: 40px;
+      }
+      .geography_pic {
+        text-align: center;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+// 會展服務
+.exhibition_services_block {
+  margin-bottom: 4em;
+  .exhibition_services_group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 3em;
+
+    .exhibition_services_list {
+      flex: 0 0 auto;
+      flex-basis: 48.5%;
+      max-width: 48.5%;
+      background-color: #fff;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      padding: 25px;
+      margin-bottom: 2em;
+      box-sizing: border-box;
+      @include screen('mobile') {
+        flex-basis: 100%;
+        max-width: 100%;
+      }
+      .pic_block {
+        position: relative;
+        @include aspect-ratio(4, 3);
+        img {
+          object-fit: cover;
+        }
+      }
+      .exhibition_content {
+        padding: 1em 0 0 0;
+        box-sizing: border-box;
+        .title {
+          @extend %third_title;
+          color: $primaryColor;
+          &:after {
+            background-color: $primaryColor;
+          }
+        }
+        p {
+          @include text-line(5, 1.8em);
+          color: #666;
+          font-size: 1.063em;
+        }
+
+        .contact_block {
+          span {
+            font-size: 1.25em;
+            margin-bottom: 0.6em;
+            display: inline-block;
+            color: $secondaryColor;
+            position: relative;
+            cursor: pointer;
+
+            padding-right: 30px;
+            &:before {
+              content: '';
+              width: 16px;
+              height: 2px;
+              background-color: $secondaryColor;
+              position: absolute;
+              right: 0;
+              top: calc(50% - 1px);
+            }
+            &:after {
+              content: '';
+              width: 16px;
+              height: 2px;
+              background-color: $secondaryColor;
+              position: absolute;
+              right: 0;
+              top: calc(50% - 1px);
+              transform: rotate(90deg);
+              transition: 0.5s;
+            }
+            &.open {
+              &:after {
+                content: '';
+                width: 16px;
+                height: 2px;
+                background-color: $secondaryColor;
+                position: absolute;
+                right: 0;
+                top: calc(50% - 1px);
+                transform: rotate(0);
+              }
+            }
+          }
+          ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: none;
+            li {
+              margin-bottom: 0.3em;
+              padding-left: 24px;
+              position: relative;
+              color: #666;
+              font-size: 1.063em;
+              &:before {
+                content: '';
+                border: 7px solid $secondaryColor;
+                border-color: $secondaryColor transparent transparent $secondaryColor;
+                position: absolute;
+                left: 0;
+                top: 5px;
+              }
+              a {
+                display: inline-block;
+                color: $aColor;
+                &:hover {
+                  text-decoration: underline;
+                  color: $aHover;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  // 地理位置
+  .geography_location_block {
+    .geography_location {
+      position: relative;
+      &:before {
+        content: '';
+        border: 30px solid $secondaryColor;
+        border-color: $secondaryColor transparent transparent $secondaryColor;
+        position: absolute;
+        left: 12%;
+        top: -40px;
+      }
+      .subtitle {
+        @extend %subtitle;
+        margin-bottom: 40px;
+      }
+      .geography_pic {
+        text-align: center;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+// 周邊住宿
+.accommodation_block {
+  margin-bottom: 4em;
+  .accommodation_group {
+    .accommodation_list {
+      display: flex;
+      padding-bottom: 60px;
+
+      box-sizing: border-box;
+      align-items: flex-start;
+      position: relative;
+
+      .pic_block {
+        flex: 0 0 auto;
+        flex-basis: 50%;
+        max-width: 50%;
+        position: relative;
+        .pic {
+          @include aspect-ratio(4, 2.5);
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          img {
+            object-fit: cover;
+          }
+        }
+        .more {
+          position: absolute;
+          left: 30px;
+          bottom: -50px;
+          a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.7);
+            font-size: 1.188em;
+            padding: 20px;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            box-sizing: border-box;
+            font-weight: bold;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            position: relative;
+            overflow: hidden;
+            transition: 0.5s;
+            line-height: 1.3;
+            span {
+              position: relative;
+              z-index: 2;
+              color: #333;
+              text-align: center;
+
+              letter-spacing: 0.1em;
+            }
+            &:hover {
+              background-color: rgba(255, 255, 255, 1);
+              span {
+                color: #000;
+              }
+            }
+          }
+        }
+      }
+      .content {
+        flex: 0 0 auto;
+        flex-basis: 50%;
+        max-width: 50%;
+        padding: 1em 0 0 2em;
+        box-sizing: border-box;
+        .logoicon {
+          margin-bottom: 1em;
+          height: 80px;
+          img {
+            max-height: 80px;
+          }
+        }
+        .title {
+          font-size: 1.25em;
+          color: #000;
+          font-weight: bold;
+        }
+        p {
+          @include text-line(5, 1.8em);
+          color: #666;
+          font-size: 1.063em;
+        }
+        .discount {
+          text-align: right;
+          a {
+            display: inline-block;
+            padding: 0.3em 1.2em 0.3em 2.5em;
+            border-radius: 50px;
+            border: 1px solid #666;
+            color: #666;
+            position: relative;
+            overflow: hidden;
+            transition: 0.5s;
+            background-image: url('../images/discount_icon.svg');
+            background-repeat: no-repeat;
+            background-position: 12px 9px;
+            background-size: 20px;
+            &:before {
+              content: '';
+              background-color: #ad954c;
+              position: absolute;
+              left: -10%;
+              top: 0;
+              bottom: 0;
+              right: 100%;
+              border: 1px solid #ad954c;
+              z-index: -1;
+              transition: 0.5s;
+            }
+            &:hover {
+              color: #fff;
+              border: 1px solid #ad954c;
+              background-image: url('../images/discount_icon_hover.svg');
+              &:before {
+                content: '';
+                left: 0;
+                right: 0;
+              }
+            }
+          }
+        }
+      }
+      @include screen('mobile') {
+        flex-wrap: wrap;
+
+        padding-bottom: 30px;
+        margin-bottom: 50px;
+        border-bottom: 1px solid #ddd;
+        .pic_block {
+          flex: 1 1 auto;
+          flex-basis: 100%;
+          max-width: 100%;
+          margin-bottom: 1em;
+          .more {
+            position: absolute;
+            left: auto;
+            right: 30px;
+            bottom: -50px;
+          }
+        }
+        .content {
+          flex: 1 1 auto;
+          flex-basis: 100%;
+          max-width: 100%;
+          padding: 1em 0 0 0;
+        }
+      }
+      @include screen('xs_mobile') {
+        .pic_block {
+          .more {
+            position: absolute;
+            left: auto;
+            right: 10px;
+            bottom: -30px;
+            a {
+              width: 90px;
+              height: 90px;
+            }
           }
         }
       }

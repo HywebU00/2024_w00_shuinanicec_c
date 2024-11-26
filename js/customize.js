@@ -337,3 +337,24 @@ tabFunction({
   width: 767, // 尺寸以上tab功能，尺寸以下手風琴功能
   index: 0, // 預設開啟第幾個
 });
+
+// $(function () {
+//   var _contactbtn = $('.exhibition_services_list .exhibition_content .contact_block span');
+//   _contactbtn.on('click', function () {
+//     if (_contactbtn.siblings('ul').is(':visible')) {
+//       $(this).removeClass('open');
+//       $(this).siblings('ul').slideUp();
+//     } else {
+//       $(this).addClass('open');
+//       $(this).siblings('ul').slideDown();
+//     }
+//   });
+// });
+// 聯絡方式
+$(function () {
+  var _contactbtn = $('.exhibition_services_list .exhibition_content .contact_block span');
+  _contactbtn.on('click', function () {
+    $(this).siblings('ul').stop().slideToggle();
+    $(this).stop().toggleClass('open');
+  });
+});

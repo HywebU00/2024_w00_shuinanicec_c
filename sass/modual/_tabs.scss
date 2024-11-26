@@ -157,8 +157,34 @@
           display: inline-block;
           letter-spacing: 0.05em;
         }
+        @include screen('mobile') {
+          padding-top: 10px;
+          .title {
+            display: none;
+          }
+        }
       }
       .mappic {
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// 會展服務
+.exhibition_services_block {
+  .tabSet {
+    .tabContentGroup {
+      .tabContent {
+        padding: 2em 0;
+        @include screen('mobile') {
+          padding: 0 0;
+          .exhibition_services_group {
+            padding-top: 2em;
+          }
+        }
       }
     }
   }
