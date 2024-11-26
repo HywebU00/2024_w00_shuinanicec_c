@@ -9717,6 +9717,13 @@ p {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.indexPage .cBanner .swiper-pagination-bullets.swiper-pagination-horizontal {
+  right: auto;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9;
+}
 .indexPage .main {
   position: relative;
   padding-top: 6%;

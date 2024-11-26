@@ -11,12 +11,14 @@ let swiperNews = new Swiper('.newsBox .swiper1 .swiper', {
   slidesPerView: 1,
   pagination: {
     el: '.newsBox .swiper1 .swiper-pagination',
+    clickable: true,
   },
 });
 let swiperNews2 = new Swiper('.newsBox .swiper2 .swiper', {
   slidesPerView: 1,
   pagination: {
     el: '.newsBox .swiper2 .swiper-pagination',
+    clickable: true,
   },
 });
 let swiperHot = new Swiper('.hotBox .swiper', {
@@ -42,6 +44,7 @@ let swiperSustainability = new Swiper('.sustainabilityBox .swiper', {
   slidesPerView: 1,
   pagination: {
     el: '.sustainabilityBox .swiper-pagination',
+    clickable: true,
   },
 });
 
@@ -50,6 +53,7 @@ let swiperCarbon = new Swiper('.carbonBox .swiper', {
   spaceBetween: 20,
   pagination: {
     el: '.carbonBox .swiper-pagination',
+    clickable: true,
   },
   breakpoints: {
     0: {
@@ -68,6 +72,7 @@ let swiperCaptured = new Swiper('.capturedBox .swiper', {
   slidesPerView: 1,
   pagination: {
     el: '.capturedBox .swiper-pagination',
+    clickable: true,
   },
 });
 
@@ -76,6 +81,7 @@ let swiperJourney = new Swiper('.journeyBox .swiper', {
   spaceBetween: 50,
   pagination: {
     el: '.journeyBox .swiper-pagination',
+    clickable: true,
   },
   breakpoints: {
     0: {
@@ -186,6 +192,11 @@ window.onload = async function () {
           delay: 5000,
           stopOnLastSlide: false,
           disableOnInteraction: true,
+        },
+        pagination: {
+          el: '.cBanner .swiper-pagination',
+          bulletElement: 'button',
+          clickable: true,
         },
       });
     });
