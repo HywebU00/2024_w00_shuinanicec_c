@@ -307,11 +307,12 @@ $(function () {
   // Fancybox.bind('[data-fancybox="gallery-a"]', {
   //   // Custom options for the first gallery
   // });
+  // Fancybox
   Fancybox.bind('[data-fancybox="gallery-a"]', {
     Toolbar: {
       display: {
-        // left: ['infobar'],
-        // middle: [],
+        left: ['infobar'],
+        middle: [],
         right: ['close'],
       },
     },
@@ -319,9 +320,18 @@ $(function () {
   Fancybox.bind('[data-fancybox="gallery-b"]', {
     Toolbar: {
       display: {
-        // left: ['infobar'],
-        // middle: [],
+        left: ['infobar'],
+        middle: [],
         right: ['close'],
+      },
+    },
+  });
+  Fancybox.bind('[data-fancybox="gallery-c"]', {
+    Toolbar: {
+      display: {
+        left: ['infobar'],
+        middle: [],
+        right: ['iterateZoom', 'close'],
       },
     },
   });
@@ -356,5 +366,14 @@ $(function () {
   _contactbtn.on('click', function () {
     $(this).siblings('ul').stop().slideToggle();
     $(this).stop().toggleClass('open');
+  });
+});
+$(function () {
+  $('.cppic_Slider').slick({
+    dots: false,
+    infinite: false,
+    speed: 500,
+    arrows: true,
+    fade: true,
   });
 });

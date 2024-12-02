@@ -127,6 +127,12 @@
       .tabContent {
         padding: 0;
         border: none;
+        .content {
+          padding-top: 1.5em;
+          &:has(> .sort_block) {
+            padding-top: 0;
+          }
+        }
       }
     }
   }
@@ -182,6 +188,22 @@
         @include screen('mobile') {
           padding: 0 0;
           .exhibition_services_group {
+            padding-top: 2em;
+          }
+        }
+      }
+    }
+  }
+}
+// 即時焦點
+.instant_focus_block {
+  .tabSet {
+    .tabContentGroup {
+      .tabContent {
+        padding: 2em 0;
+        @include screen('mobile') {
+          padding: 0 0;
+          .instant_focus_group {
             padding-top: 2em;
           }
         }

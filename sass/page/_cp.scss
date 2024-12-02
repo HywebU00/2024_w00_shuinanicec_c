@@ -2,15 +2,27 @@
 
 // .tt{ color: #222; }
 .cp {
+  .container {
+    position: relative;
+    &:before {
+      content: '';
+      border: 30px solid $primaryColor;
+      border-color: $primaryColor $primaryColor transparent transparent;
+      position: absolute;
+      right: 0;
+      top: -30px;
+    }
+  }
   .pic {
     float: left;
     margin: 0px 1em 1em 0;
     width: auto;
     width: 45%;
-    max-width: 400px;
+    max-width: 500px;
     background: #f1f1f1;
     overflow: hidden;
-    padding: 0.5em 0.5em 0.2em;
+    padding: 10px;
+
     img {
       float: none;
       width: 100%;
@@ -29,6 +41,86 @@
       margin: 0px auto;
       display: block;
       margin-bottom: 0.5em;
+    }
+  }
+  .cppic_block {
+    width: 50%;
+    max-width: 500px;
+    float: left;
+    margin: 0px 2em 1em 0;
+    position: relative;
+    // outline: 1px solid #eee;
+
+    @include screen('mobile') {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 0 2em;
+      float: none;
+    }
+    .cppic_Slider {
+      .pic_list {
+        position: relative;
+        // @include aspect-ratio(4, 3);
+        img {
+          object-fit: cover;
+          max-width: 100%;
+          max-height: 350px;
+          margin: auto;
+        }
+        .num {
+          position: absolute;
+          right: 20px;
+          bottom: 20px;
+          z-index: 2;
+          padding: 0.3em 1em;
+          background-color: rgba(255, 255, 255, 0.5);
+          border-radius: 50px;
+        }
+        .floor_plan_btn {
+          background-color: #000;
+          width: 46px;
+          height: 46px;
+          position: absolute;
+          left: 20px;
+          bottom: 20px;
+          border-radius: 20px;
+          font-size: 0;
+          transition: 0.5s;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 9;
+          img {
+            width: 20px;
+            height: 20px;
+            transition: 0.5s;
+          }
+
+          &:hover {
+            width: 48px;
+            height: 48px;
+            background-color: $secondaryColor;
+            img {
+              width: 22px;
+              height: 22px;
+            }
+          }
+        }
+      }
+      // 箭頭
+      .slick-prev,
+      .slick-next {
+        background-color: rgba(0, 0, 0, 0.3);
+        width: 50px !important;
+        height: 50px !important;
+        border-radius: 50px;
+      }
+      .slick-next {
+        right: 20px;
+      }
+      .slick-prev {
+        left: 20px;
+      }
     }
   }
   table {
@@ -60,6 +152,52 @@
   }
   a {
     @include aSetting;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  ol {
+    li {
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+  p {
+    span {
+      font-weight: bold;
+    }
+  }
+}
+// 活動條列
+.cp_activity {
+  list-style-type: none;
+  margin: 0 0 1em;
+  padding: 0;
+  overflow: hidden;
+  li {
+    word-break: break-all;
+    padding-left: 110px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+
+    span {
+      margin-left: -110px;
+      display: inline-block;
+      margin-right: 10px;
+      font-weight: bold;
+      min-width: 100px;
+      padding-left: 25px;
+      position: relative;
+      &:before {
+        content: '';
+        border: 7px solid #f9a01d;
+        border-color: #f9a01d transparent transparent #f9a01d;
+        position: absolute;
+        left: 0;
+        top: 7px;
+      }
+    }
   }
 }
 
@@ -275,25 +413,35 @@
 }
 
 .publish_info {
-  font-size: 0.875em;
   line-height: 1.5em;
   list-style: none;
-  margin: 0 0 0.7em 0;
-  border-left: solid 5px $primaryColor;
-  padding: 0.8em 1.5em 0.8em;
-  background: #f2f2f2;
+  padding: 0;
+  margin: 0 0 1.5em 0;
   display: flex;
   flex-wrap: wrap;
   @extend %clearfix;
   box-sizing: border-box;
+
   li {
-    flex: 1 1 calc(100% / 3);
+    flex: 0 0 auto;
     margin-bottom: 0.5em;
-    @include screen('tablet') {
-      flex: 1 1 calc(100% / 2);
+    margin-right: 0.8em;
+    border: 1px solid #999;
+    border-radius: 20px 0 20px 0;
+    padding: 0.3em 1em;
+    border-radius: 50px;
+    background-color: #fff;
+    // box-shadow: $secondaryColor 0px 0px 0px 2px;
+    position: relative;
+
+    &:only-child {
+      margin-bottom: 0em;
+      margin-right: 0;
     }
-    @include screen('mobile') {
-      flex: 1 1 calc(100% / 1);
+
+    @include screen('xs_mobile') {
+      flex: 1 1 100%;
+      margin-right: 0;
     }
   }
 }
