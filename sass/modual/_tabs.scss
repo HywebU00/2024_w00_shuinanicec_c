@@ -211,3 +211,19 @@
     }
   }
 }
+// 會展相簿
+.photo_album_block {
+  .tabSet {
+    .tabContentGroup {
+      .tabContent {
+        padding: 2em 0;
+        @include screen('mobile') {
+          padding: 0 0;
+          .photo_album_group {
+            padding-top: 2em;
+          }
+        }
+      }
+    }
+  }
+}

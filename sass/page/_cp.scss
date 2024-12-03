@@ -123,6 +123,36 @@
       }
     }
   }
+  .cppic {
+    text-align: center;
+    background: #fff;
+    overflow: hidden;
+    width: 400px;
+    margin: 0 auto 1em;
+    img {
+      width: 100%;
+      margin: 0;
+      display: block;
+    }
+    &.keep_right {
+      float: right;
+      margin: 0px 0 1em 2em;
+    }
+    &.keep_left {
+      float: left;
+      margin: 0px 2em 1em 0;
+    }
+    @include screen('mobile') {
+      &.keep_left,
+      &.keep_right {
+        float: none;
+        margin: 0px auto 1em;
+      }
+    }
+    @include screen('xs_mobile') {
+      width: 100%;
+    }
+  }
   table {
     background: #fff;
   }

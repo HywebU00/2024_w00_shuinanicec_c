@@ -335,6 +335,15 @@ $(function () {
       },
     },
   });
+  Fancybox.bind('[data-fancybox="gallery-d"]', {
+    Toolbar: {
+      display: {
+        left: ['infobar'],
+        middle: [],
+        right: ['download', 'iterateZoom', 'close'],
+      },
+    },
+  });
 });
 
 // tab功能
