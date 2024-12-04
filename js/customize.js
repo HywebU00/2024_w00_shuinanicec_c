@@ -386,3 +386,12 @@ $(function () {
     fade: true,
   });
 });
+// FAQ
+$(function () {
+  var _FAQtbtn = $('.FAQ_group .FAQ_list .question');
+  $('.FAQ_group .FAQ_list .answer').hide();
+  _FAQtbtn.on('click', function () {
+    $(this).siblings('.answer').stop().slideToggle();
+    $(this).stop().toggleClass('open');
+  });
+});

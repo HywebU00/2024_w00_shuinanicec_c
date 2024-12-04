@@ -3500,3 +3500,103 @@
     }
   }
 }
+
+// 常見問題
+.FAQ_block {
+  .FAQ_group {
+    .FAQ_list {
+      margin-bottom: 1em;
+      .question,
+      .answer {
+        width: 100%;
+        margin: 0;
+        padding: 25px 110px 15px 15px;
+        font-size: 1.125em;
+        border: none;
+        border-radius: 20px;
+        background-color: #fff;
+        line-height: 1.8em;
+        text-align: left;
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        overflow: hidden;
+        span {
+          flex: 0 0 50px;
+          margin-right: 10px;
+          margin-top: -10px;
+          // margin-left: -75px;
+          background-color: $primaryColor;
+          color: #fff;
+          width: 50px;
+          height: 50px;
+          border-radius: 20px;
+          font-size: 1.5em;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 1em;
+        }
+      }
+      .question {
+        background-color: #fff;
+        margin-bottom: 5px;
+        &:before {
+          content: '';
+          width: 20px;
+          height: 2px;
+          background-color: #fff;
+          position: absolute;
+          right: 28px;
+          top: calc(50% - 1px);
+          z-index: 2;
+        }
+        &:after {
+          content: '';
+          width: 20px;
+          height: 2px;
+          background-color: #fff;
+          position: absolute;
+          right: 28px;
+          top: calc(50% - 1px);
+          transform: rotate(90deg);
+          transition: 0.5s;
+          z-index: 2;
+        }
+        &.open {
+          &:after {
+            content: '';
+            transform: rotate(0);
+          }
+        }
+        &:focus {
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+        span {
+          &:after {
+            content: '';
+            width: 110px;
+            height: auto;
+            background-color: #aaa;
+            position: absolute;
+            right: -30px;
+            top: 0;
+            bottom: 0;
+            transform: skew(-20deg);
+            z-index: 1;
+          }
+        }
+      }
+      .answer {
+        padding: 25px 30px 15px 35px;
+        border: none;
+        background-color: #eee;
+        // display: none;
+        span {
+          background-color: $secondaryColor;
+        }
+      }
+    }
+  }
+}

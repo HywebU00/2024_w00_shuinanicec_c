@@ -227,3 +227,20 @@
     }
   }
 }
+
+// 常見問題
+.FAQ_block {
+  .tabSet {
+    .tabContentGroup {
+      .tabContent {
+        padding: 2em 0;
+        @include screen('mobile') {
+          padding: 0 0;
+          .FAQ_group {
+            padding-top: 2em;
+          }
+        }
+      }
+    }
+  }
+}
