@@ -9270,6 +9270,19 @@ p {
   line-height: 1.8em;
 }
 
+.fancybox__container .fancybox__nav button.is-next {
+  background-color: #999;
+}
+.fancybox__container .fancybox__nav button.is-next:hover {
+  background-color: #666;
+}
+.fancybox__container .fancybox__nav button.is-prev {
+  background-color: #999;
+}
+.fancybox__container .fancybox__nav button.is-prev:hover {
+  background-color: #666;
+}
+
 .main {
   position: relative;
 }
