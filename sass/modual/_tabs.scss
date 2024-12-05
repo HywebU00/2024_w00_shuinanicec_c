@@ -251,12 +251,8 @@
   .tabSet {
     .tabContentGroup {
       .tabContent {
-        padding: 2em 0;
-        @include screen('mobile') {
-          padding: 0 0;
-          .content {
-            padding: 2em;
-          }
+        .content {
+          padding: 2em;
         }
       }
     }

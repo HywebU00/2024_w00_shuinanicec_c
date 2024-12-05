@@ -7580,16 +7580,8 @@ table.table_sprite tr:nth-child(even) {
   }
 }
 
-.fullsearch_block .tabSet .tabContentGroup .tabContent {
-  padding: 2em 0;
-}
-@media screen and (max-width: 767px) {
-  .fullsearch_block .tabSet .tabContentGroup .tabContent {
-    padding: 0 0;
-  }
-  .fullsearch_block .tabSet .tabContentGroup .tabContent .content {
-    padding: 2em;
-  }
+.fullsearch_block .tabSet .tabContentGroup .tabContent .content {
+  padding: 2em;
 }
 
 .thumbnail {
