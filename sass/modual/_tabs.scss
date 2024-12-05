@@ -244,3 +244,21 @@
     }
   }
 }
+
+// 全文檢索
+
+.fullsearch_block {
+  .tabSet {
+    .tabContentGroup {
+      .tabContent {
+        padding: 2em 0;
+        @include screen('mobile') {
+          padding: 0 0;
+          .content {
+            padding: 2em;
+          }
+        }
+      }
+    }
+  }
+}

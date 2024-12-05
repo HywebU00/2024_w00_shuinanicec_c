@@ -7580,6 +7580,18 @@ table.table_sprite tr:nth-child(even) {
   }
 }
 
+.fullsearch_block .tabSet .tabContentGroup .tabContent {
+  padding: 2em 0;
+}
+@media screen and (max-width: 767px) {
+  .fullsearch_block .tabSet .tabContentGroup .tabContent {
+    padding: 0 0;
+  }
+  .fullsearch_block .tabSet .tabContentGroup .tabContent .content {
+    padding: 2em;
+  }
+}
+
 .thumbnail {
   box-shadow: 0 0 3em -1.5em rgba(0, 0, 0, 0.5);
   background: #FFF;
