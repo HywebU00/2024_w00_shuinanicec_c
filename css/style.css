@@ -12217,7 +12217,7 @@ p {
   margin-right: 1em;
 }
 .space_photos_group .space_size_block .directions .directions_list .content {
-  font-size: 2em;
+  font-size: 1.875em;
   color: #0d0a8a;
   font-weight: bold;
 }
@@ -12225,13 +12225,14 @@ p {
   display: block;
   font-size: 1.25rem;
   font-weight: bold;
-  margin-bottom: 0.3em;
+  margin-bottom: 0.5em;
   color: #333;
 }
 .space_photos_group .space_size_block .directions .directions_list .content em {
   font-size: 1.25rem;
   color: #333;
   font-style: normal;
+  margin-left: 10px;
 }
 @media screen and (max-width: 575px) {
   .space_photos_group .space_size_block .directions .directions_list .pic {
