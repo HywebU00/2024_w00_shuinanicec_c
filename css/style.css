@@ -1522,7 +1522,8 @@ br {
   border-bottom: 0 !important;
 }
 
-.gs-result .gs-title, .gs-result .gs-title * {
+.gs-result .gs-title,
+.gs-result .gs-title * {
   color: #0d0a8a !important;
 }
 
@@ -1553,7 +1554,8 @@ br {
   vertical-align: middle;
 }
 
-.gsc-result-info-container, .gsc-orderby-container {
+.gsc-result-info-container,
+.gsc-orderby-container {
   border: 0 !important;
 }
 
