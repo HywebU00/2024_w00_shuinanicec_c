@@ -1,85 +1,114 @@
 /* sitemap */
 
 .sitemap {
-    margin: 0px auto 1em;
-    @extend %clearfix;
-    p {
-        font-size: 0.813em;
-        kbd {
-            border: 1px solid #aaa;
-            background: transparent;
-            color: $color-word;
-            padding: 0 0.3em;
-            margin: 0 0.2em 0.1em;
-            kbd {
-                border: none;
-            }
-        }
+  margin: 0px auto 1em;
+  @extend %clearfix;
+  p {
+    font-size: 0.813em;
+    kbd {
+      border: 1px solid #aaa;
+      background: transparent;
+      color: $color-word;
+      padding: 0 0.3em;
+      margin: 0 0.2em 0.1em;
+      kbd {
+        border: none;
+      }
     }
-    .accesskeyDefine {
-        padding: 1em 2em;
-        background: #eee;
-        border-radius: 6px;
-        li {
-            margin-bottom: 0.2em;
-        }
+  }
+  .accesskeyDefine {
+    padding: 1em 2em;
+    background: #eee;
+    border-radius: 6px;
+    li {
+      margin-bottom: 0.2em;
     }
+  }
 }
 
 $sitemapLength: 4;
 $sitemapWidth: calc(100% / $sitemapLength);
 .cascading {
-    border-top: 1px solid #ccc;
-    @include gutter;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.125em;
+
+  ul {
+    @include li-reset;
+  }
+  li {
+    line-height: 1.5;
+    width: 100%;
+    display: block;
+    vertical-align: top;
+    margin: 0 0 1em 0; // margin-right:改為負5;
     box-sizing: border-box;
-    ul {
-        @include li-reset;
+    padding: 0px 0.5em;
+    a {
+      margin: 0.2em 0;
+      color: #222;
+      padding: 0.5em;
+      display: block;
+      font-size: 1.25em;
+      font-weight: bold;
+      border-bottom: 3px solid $primaryColor;
+      &:hover,
+      &:focus {
+        color: $primaryColor !important;
+        text-decoration: none;
+      }
     }
-    li {
-        line-height: 1.5;
-        width: $sitemapWidth;
-        display: inline-block;
-        vertical-align: top;
-        margin: 0 -5px 1em 0; // margin-right:改為負5;
-        box-sizing: border-box;
-        padding: 0px 0.5em;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+
+      li {
+        flex: 0 0 32%;
+        display: block;
+        padding: 0;
+        margin: 0 0.55%;
         a {
-            margin: 0.2em 0;
-            color: #222;
-            padding: 0.5em;
-            display: block;
-            font-size: 1.25em;
-            font-weight: bold;
-            border-bottom: 2px solid $primaryColor;
-            &:hover,
-            &:focus {
-                color: $primaryColor !important;
-                text-decoration: none;
-            }
+          display: block;
+          font-size: 1em;
+          padding: 0.5em;
+          border-bottom: none;
+          background-color: #ddd;
+          font-weight: normal;
+          border-radius: 5px;
         }
         ul {
-            padding-left: 1em;
-            li {
-                width: 100%;
-                display: block;
-                margin-bottom: 0;
-                padding: 0;
-                a {
-                    display: block;
-                    font-size: 1em;
-                    padding: 0.2em 0;
-                    border-bottom: 1px dotted #ccc;
-                    background-color: transparent;
-                    font-weight: normal;
-                }
+          display: block;
+          margin: 0.5em 1em 1em;
+          li {
+            a {
+              background-color: transparent;
+              border-radius: 0;
+              border-bottom: 1px dashed #ccc;
             }
+          }
         }
+      }
     }
-    @include screen('mobile') {
-        width: 95%;
-        margin: 0px auto;
+  }
+  @include screen('mobile') {
+    ul {
+      ul {
         li {
-            width: 100%;
+          flex: 0 0 48%;
+          margin: 0 1%;
         }
+      }
     }
+  }
+  @include screen('xs_mobile') {
+    ul {
+      ul {
+        display: block;
+        li {
+          flex: 0 0 100%;
+          margin: 0;
+        }
+      }
+    }
+  }
 }

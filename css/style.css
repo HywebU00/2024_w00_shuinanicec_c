@@ -11762,13 +11762,9 @@ p {
 }
 
 .cascading {
-  border-top: 1px solid #ccc;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 0;
   box-sizing: border-box;
-  box-sizing: border-box;
+  font-size: 1.125em;
 }
 .cascading ul {
   margin: 0;
@@ -11777,10 +11773,10 @@ p {
 }
 .cascading li {
   line-height: 1.5;
-  width: 25%;
-  display: inline-block;
+  width: 100%;
+  display: block;
   vertical-align: top;
-  margin: 0 -5px 1em 0;
+  margin: 0 0 1em 0;
   box-sizing: border-box;
   padding: 0px 0.5em;
 }
@@ -11791,36 +11787,53 @@ p {
   display: block;
   font-size: 1.25em;
   font-weight: bold;
-  border-bottom: 2px solid #0d0a8a;
+  border-bottom: 3px solid #0d0a8a;
 }
 .cascading li a:hover, .cascading li a:focus {
   color: #0d0a8a !important;
   text-decoration: none;
 }
 .cascading li ul {
-  padding-left: 1em;
+  display: flex;
+  flex-wrap: wrap;
 }
 .cascading li ul li {
-  width: 100%;
+  flex: 0 0 32%;
   display: block;
-  margin-bottom: 0;
   padding: 0;
+  margin: 0 0.55%;
 }
 .cascading li ul li a {
   display: block;
   font-size: 1em;
-  padding: 0.2em 0;
-  border-bottom: 1px dotted #ccc;
-  background-color: transparent;
+  padding: 0.5em;
+  border-bottom: none;
+  background-color: #ddd;
   font-weight: normal;
+  border-radius: 5px;
+}
+.cascading li ul li ul {
+  display: block;
+  margin: 0.5em 1em 1em;
+}
+.cascading li ul li ul li a {
+  background-color: transparent;
+  border-radius: 0;
+  border-bottom: 1px dashed #ccc;
 }
 @media screen and (max-width: 767px) {
-  .cascading {
-    width: 95%;
-    margin: 0px auto;
+  .cascading ul ul li {
+    flex: 0 0 48%;
+    margin: 0 1%;
   }
-  .cascading li {
-    width: 100%;
+}
+@media screen and (max-width: 575px) {
+  .cascading ul ul {
+    display: block;
+  }
+  .cascading ul ul li {
+    flex: 0 0 100%;
+    margin: 0;
   }
 }
 
