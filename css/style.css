@@ -4825,6 +4825,9 @@ footer .shareBox .line {
 footer .shareBox .tripadvisor {
   background-position: -170px 0;
 }
+footer .shareBox .linkedin {
+  background-position: -204px 0;
+}
 footer .footerBox {
   color: #fff;
   background: #333;
