@@ -202,7 +202,7 @@ $(function () {
     infinite: true,
     autoplay: true,
     autoplaySpeed: 5000,
-    // fade: true,
+    fade: true,
     cssEase: 'linear',
   });
 
@@ -308,6 +308,7 @@ $(function () {
   //   // Custom options for the first gallery
   // });
   // Fancybox
+  // 場地介紹 展覽館
   Fancybox.bind('[data-fancybox="gallery-a"]', {
     Toolbar: {
       display: {
@@ -317,6 +318,7 @@ $(function () {
       },
     },
   });
+  // 場地介紹 會議中心
   Fancybox.bind('[data-fancybox="gallery-b"]', {
     Toolbar: {
       display: {
@@ -326,6 +328,7 @@ $(function () {
       },
     },
   });
+  // cp頁圖片
   Fancybox.bind('[data-fancybox="gallery-c"]', {
     Toolbar: {
       display: {
@@ -335,12 +338,23 @@ $(function () {
       },
     },
   });
+  // 會展相簿cp
   Fancybox.bind('[data-fancybox="gallery-d"]', {
     Toolbar: {
       display: {
         left: ['infobar'],
         middle: [],
         right: ['download', 'iterateZoom', 'close'],
+      },
+    },
+  });
+  // 空間照片
+  Fancybox.bind('[data-fancybox="gallery-e"]', {
+    Toolbar: {
+      display: {
+        left: ['infobar'],
+        middle: [],
+        right: ['iterateZoom', 'close'],
       },
     },
   });

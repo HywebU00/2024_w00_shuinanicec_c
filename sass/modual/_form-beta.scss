@@ -1326,7 +1326,8 @@ input[type='password'],
 input[type='file'],
 input[type='tel'],
 input[type='mail'],
-input[type='number'] {
+input[type='number'],
+textarea {
   &::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
     color: darken($color-gray, 20);

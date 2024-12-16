@@ -3213,9 +3213,9 @@ header.cHeader .mobileBtn::after {
 }
 header.cHeader .logo {
   flex-shrink: 0;
-  width: 130px;
-  height: 68px;
-  background: url("../images/mp/logo.png") center no-repeat;
+  width: 160px;
+  height: 84px;
+  background: url("../images/mp/logo.svg") center no-repeat;
   background-size: contain;
   position: relative;
   transition: all 0.3s ease;
@@ -3224,7 +3224,7 @@ header.cHeader .logo {
   header.cHeader .logo {
     width: 267px;
     height: 34px;
-    background: url("../images/mp/logo2.png") center no-repeat;
+    background: url("../images/mp/logo2.svg") center no-repeat;
     background-size: contain;
   }
 }
@@ -3245,8 +3245,8 @@ header.cHeader.scrolled {
   padding: 20px 0;
 }
 header.cHeader.scrolled .logo {
-  width: 100px;
-  height: 50px;
+  width: 120px;
+  height: 60px;
   filter: invert(1) brightness(10);
 }
 @media screen and (max-width: 991px) {
@@ -3257,6 +3257,14 @@ header.cHeader.scrolled .logo {
 }
 header.cHeader.scrolled .mobileBtn::before, header.cHeader.scrolled .mobileBtn::after {
   filter: brightness(50);
+}
+header.cHeader.scrolled .topNavBox {
+  width: 150px;
+}
+@media screen and (max-width: 991px) {
+  header.cHeader.scrolled .topNavBox {
+    width: auto;
+  }
 }
 header.cHeader.scrolled .topNavBox .cSearch {
   filter: brightness(50);
@@ -6638,7 +6646,8 @@ input[type=password]::-webkit-input-placeholder,
 input[type=file]::-webkit-input-placeholder,
 input[type=tel]::-webkit-input-placeholder,
 input[type=mail]::-webkit-input-placeholder,
-input[type=number]::-webkit-input-placeholder {
+input[type=number]::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   color: #bbbbc7;
 }
@@ -6647,7 +6656,8 @@ input[type=password]::-moz-placeholder,
 input[type=file]::-moz-placeholder,
 input[type=tel]::-moz-placeholder,
 input[type=mail]::-moz-placeholder,
-input[type=number]::-moz-placeholder {
+input[type=number]::-moz-placeholder,
+textarea::-moz-placeholder {
   /* Firefox 19+ */
   color: #bbbbc7;
 }
@@ -6656,7 +6666,8 @@ input[type=password]:-ms-input-placeholder,
 input[type=file]:-ms-input-placeholder,
 input[type=tel]:-ms-input-placeholder,
 input[type=mail]:-ms-input-placeholder,
-input[type=number]:-ms-input-placeholder {
+input[type=number]:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
   /* IE 10+ */
   color: #bbbbc7;
 }
@@ -6665,7 +6676,8 @@ input[type=password]:-moz-placeholder,
 input[type=file]:-moz-placeholder,
 input[type=tel]:-moz-placeholder,
 input[type=mail]:-moz-placeholder,
-input[type=number]:-moz-placeholder {
+input[type=number]:-moz-placeholder,
+textarea:-moz-placeholder {
   /* Firefox 18- */
   color: #bbbbc7;
 }
@@ -9975,11 +9987,12 @@ p {
   padding: 0 20px;
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 60px;
 }
 @media screen and (max-width: 767px) {
   .indexPage .editorBox .content {
     flex-direction: column;
+    gap: 30px;
   }
 }
 .indexPage .editorBox .pic {
@@ -11991,7 +12004,7 @@ p {
   }
 }
 
-.photo_album_block .photo_album_group .photo_album_list .photo_album_content a .title, .audio_video_block .audio_video_group .audio_video_list .content .title, .event_information_block .event_information_group .event_information_list .event_content .link_content .title, .about_TICEC_block .about_TICEC_group .about_TICEC_list .content .title, .instant_focus_block .instant_focus_group .instant_focus_list .instant_content .title, .exhibition_services_block .exhibition_services_group .exhibition_services_list .exhibition_content .title, .gourmet_food_block .gourmet_food_group .gourmet_food_list .content .title, .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content .title {
+.photo_album_block .photo_album_group .photo_album_list .photo_album_content a .title, .audio_video_block .audio_video_group .audio_video_list .content .title, .event_information_block .event_information_group .event_information_list .event_content .link_content .title, .banquet_block .banquet_group .banquet_list .content .title, .about_TICEC_block .about_TICEC_group .about_TICEC_list .content .title, .instant_focus_block .instant_focus_group .instant_focus_list .instant_content .title, .exhibition_services_block .exhibition_services_group .exhibition_services_list .exhibition_content .title, .gourmet_food_block .gourmet_food_group .gourmet_food_list .content .title, .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content .title {
   font-size: 2.25em;
   color: #333333;
   margin-bottom: 1.2em;
@@ -12000,7 +12013,7 @@ p {
   transition: 0.5s;
   line-height: 1.2em;
 }
-.photo_album_block .photo_album_group .photo_album_list .photo_album_content a .title:after, .audio_video_block .audio_video_group .audio_video_list .content .title:after, .event_information_block .event_information_group .event_information_list .event_content .link_content .title:after, .about_TICEC_block .about_TICEC_group .about_TICEC_list .content .title:after, .instant_focus_block .instant_focus_group .instant_focus_list .instant_content .title:after, .exhibition_services_block .exhibition_services_group .exhibition_services_list .exhibition_content .title:after, .gourmet_food_block .gourmet_food_group .gourmet_food_list .content .title:after, .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content .title:after {
+.photo_album_block .photo_album_group .photo_album_list .photo_album_content a .title:after, .audio_video_block .audio_video_group .audio_video_list .content .title:after, .event_information_block .event_information_group .event_information_list .event_content .link_content .title:after, .banquet_block .banquet_group .banquet_list .content .title:after, .about_TICEC_block .about_TICEC_group .about_TICEC_list .content .title:after, .instant_focus_block .instant_focus_group .instant_focus_list .instant_content .title:after, .exhibition_services_block .exhibition_services_group .exhibition_services_list .exhibition_content .title:after, .gourmet_food_block .gourmet_food_group .gourmet_food_list .content .title:after, .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content .title:after {
   content: "";
   width: 70px;
   height: 2px;
@@ -12011,17 +12024,17 @@ p {
   transition: 0.5s;
 }
 @media screen and (max-width: 991px) {
-  .photo_album_block .photo_album_group .photo_album_list .photo_album_content a .title, .audio_video_block .audio_video_group .audio_video_list .content .title, .event_information_block .event_information_group .event_information_list .event_content .link_content .title, .about_TICEC_block .about_TICEC_group .about_TICEC_list .content .title, .instant_focus_block .instant_focus_group .instant_focus_list .instant_content .title, .exhibition_services_block .exhibition_services_group .exhibition_services_list .exhibition_content .title, .gourmet_food_block .gourmet_food_group .gourmet_food_list .content .title, .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content .title {
+  .photo_album_block .photo_album_group .photo_album_list .photo_album_content a .title, .audio_video_block .audio_video_group .audio_video_list .content .title, .event_information_block .event_information_group .event_information_list .event_content .link_content .title, .banquet_block .banquet_group .banquet_list .content .title, .about_TICEC_block .about_TICEC_group .about_TICEC_list .content .title, .instant_focus_block .instant_focus_group .instant_focus_list .instant_content .title, .exhibition_services_block .exhibition_services_group .exhibition_services_list .exhibition_content .title, .gourmet_food_block .gourmet_food_group .gourmet_food_list .content .title, .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content .title {
     font-size: 2em;
   }
-  .photo_album_block .photo_album_group .photo_album_list .photo_album_content a .title:after, .audio_video_block .audio_video_group .audio_video_list .content .title:after, .event_information_block .event_information_group .event_information_list .event_content .link_content .title:after, .about_TICEC_block .about_TICEC_group .about_TICEC_list .content .title:after, .instant_focus_block .instant_focus_group .instant_focus_list .instant_content .title:after, .exhibition_services_block .exhibition_services_group .exhibition_services_list .exhibition_content .title:after, .gourmet_food_block .gourmet_food_group .gourmet_food_list .content .title:after, .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content .title:after {
+  .photo_album_block .photo_album_group .photo_album_list .photo_album_content a .title:after, .audio_video_block .audio_video_group .audio_video_list .content .title:after, .event_information_block .event_information_group .event_information_list .event_content .link_content .title:after, .banquet_block .banquet_group .banquet_list .content .title:after, .about_TICEC_block .about_TICEC_group .about_TICEC_list .content .title:after, .instant_focus_block .instant_focus_group .instant_focus_list .instant_content .title:after, .exhibition_services_block .exhibition_services_group .exhibition_services_list .exhibition_content .title:after, .gourmet_food_block .gourmet_food_group .gourmet_food_list .content .title:after, .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content .title:after {
     content: "";
     width: 60px;
     height: 2px;
   }
 }
 @media (max-width: 850px) {
-  .photo_album_block .photo_album_group .photo_album_list .photo_album_content a .title, .audio_video_block .audio_video_group .audio_video_list .content .title, .event_information_block .event_information_group .event_information_list .event_content .link_content .title, .about_TICEC_block .about_TICEC_group .about_TICEC_list .content .title, .instant_focus_block .instant_focus_group .instant_focus_list .instant_content .title, .exhibition_services_block .exhibition_services_group .exhibition_services_list .exhibition_content .title, .gourmet_food_block .gourmet_food_group .gourmet_food_list .content .title, .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content .title {
+  .photo_album_block .photo_album_group .photo_album_list .photo_album_content a .title, .audio_video_block .audio_video_group .audio_video_list .content .title, .event_information_block .event_information_group .event_information_list .event_content .link_content .title, .banquet_block .banquet_group .banquet_list .content .title, .about_TICEC_block .about_TICEC_group .about_TICEC_list .content .title, .instant_focus_block .instant_focus_group .instant_focus_list .instant_content .title, .exhibition_services_block .exhibition_services_group .exhibition_services_list .exhibition_content .title, .gourmet_food_block .gourmet_food_group .gourmet_food_list .content .title, .venue_introduction_block .container .venue_introduction_group .venue_list a .venue_group .content .title {
     font-size: 1.875em;
   }
 }
@@ -12084,6 +12097,7 @@ p {
 
 .space_photos_group {
   margin-bottom: 0;
+  position: relative;
 }
 .space_photos_group .container {
   display: flex;
@@ -12139,15 +12153,6 @@ p {
   position: relative;
   isolation: isolate;
 }
-.space_photos_group .space_photos_block .space_photos_slider:before {
-  content: "";
-  border: 136px solid rgba(255, 255, 255, 0.6);
-  border-color: transparent rgba(255, 255, 255, 0.6) rgba(255, 255, 255, 0.6) transparent;
-  position: absolute;
-  bottom: 6px;
-  right: 0;
-  z-index: 1;
-}
 .space_photos_group .space_photos_block .space_photos_slider:after {
   content: "";
   border: 174px solid #0d0a8a;
@@ -12158,11 +12163,6 @@ p {
   z-index: -1;
 }
 @media screen and (max-width: 767px) {
-  .space_photos_group .space_photos_block .space_photos_slider:before {
-    content: "";
-    border: 100px solid rgba(255, 255, 255, 0.6);
-    border-color: transparent rgba(255, 255, 255, 0.6) rgba(255, 255, 255, 0.6) transparent;
-  }
   .space_photos_group .space_photos_block .space_photos_slider:after {
     content: "";
     border: 138px solid #0d0a8a;
@@ -12170,11 +12170,6 @@ p {
   }
 }
 @media screen and (max-width: 575px) {
-  .space_photos_group .space_photos_block .space_photos_slider:before {
-    content: "";
-    border: 80px solid rgba(255, 255, 255, 0.6);
-    border-color: transparent rgba(255, 255, 255, 0.6) rgba(255, 255, 255, 0.6) transparent;
-  }
   .space_photos_group .space_photos_block .space_photos_slider:after {
     content: "";
     border: 118px solid #0d0a8a;
@@ -12182,11 +12177,6 @@ p {
   }
 }
 @media (max-width: 450px) {
-  .space_photos_group .space_photos_block .space_photos_slider:before {
-    content: "";
-    border: 60px solid rgba(255, 255, 255, 0.6);
-    border-color: transparent rgba(255, 255, 255, 0.6) rgba(255, 255, 255, 0.6) transparent;
-  }
   .space_photos_group .space_photos_block .space_photos_slider:after {
     content: "";
     border: 98px solid #0d0a8a;
@@ -12200,7 +12190,7 @@ p {
 .space_photos_group .space_photos_block .space_photos_slider .space_photos_list:before {
   display: inline-block;
   content: "";
-  padding-top: 70%;
+  padding-top: 75%;
 }
 .space_photos_group .space_photos_block .space_photos_slider .space_photos_list img {
   display: block;
@@ -12212,6 +12202,35 @@ p {
   width: 100%;
   height: 100%;
   margin: auto;
+}
+.space_photos_group .space_photos_block .space_photos_slider .space_photos_list .pace_photos_btn {
+  background-color: #000;
+  width: 46px;
+  height: 46px;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  border-radius: 20px;
+  font-size: 0;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9;
+}
+.space_photos_group .space_photos_block .space_photos_slider .space_photos_list .pace_photos_btn img {
+  width: 20px;
+  height: 20px;
+  transition: 0.5s;
+}
+.space_photos_group .space_photos_block .space_photos_slider .space_photos_list .pace_photos_btn:hover {
+  width: 48px;
+  height: 48px;
+  background-color: #f9a01d;
+}
+.space_photos_group .space_photos_block .space_photos_slider .space_photos_list .pace_photos_btn:hover img {
+  width: 22px;
+  height: 22px;
 }
 .space_photos_group .space_size_block {
   flex: 1 1 auto;
@@ -14362,15 +14381,15 @@ p {
 }
 .accommodation_block .accommodation_group .accommodation_list {
   display: flex;
-  padding-bottom: 60px;
+  padding-bottom: 85px;
   box-sizing: border-box;
   align-items: flex-start;
   position: relative;
 }
 .accommodation_block .accommodation_group .accommodation_list .pic_block {
   flex: 0 0 auto;
-  flex-basis: 50%;
-  max-width: 50%;
+  flex-basis: 45%;
+  max-width: 45%;
   position: relative;
 }
 .accommodation_block .accommodation_group .accommodation_list .pic_block .pic {
@@ -14380,7 +14399,7 @@ p {
 .accommodation_block .accommodation_group .accommodation_list .pic_block .pic:before {
   display: inline-block;
   content: "";
-  padding-top: 62.5%;
+  padding-top: 75%;
 }
 .accommodation_block .accommodation_group .accommodation_list .pic_block .pic img {
   display: block;
@@ -14435,8 +14454,8 @@ p {
 }
 .accommodation_block .accommodation_group .accommodation_list .content {
   flex: 0 0 auto;
-  flex-basis: 50%;
-  max-width: 50%;
+  flex-basis: 55%;
+  max-width: 55%;
   padding: 1em 0 0 2em;
   box-sizing: border-box;
 }
@@ -14897,6 +14916,228 @@ p {
   }
 }
 
+.banquet_block {
+  margin-bottom: 4em;
+}
+.banquet_block .banquet_group .banquet_list {
+  display: flex;
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 20px;
+  margin-bottom: 2em;
+  box-sizing: border-box;
+  align-items: flex-start;
+}
+.banquet_block .banquet_group .banquet_list:hover .pic_block img {
+  transform: scale(1.05);
+}
+.banquet_block .banquet_group .banquet_list:nth-of-type(2n) .pic_block {
+  order: 2;
+}
+.banquet_block .banquet_group .banquet_list:nth-of-type(2n) .content {
+  order: 1;
+  padding: 1em 2em 0 1em;
+}
+.banquet_block .banquet_group .banquet_list:nth-of-type(2n) .content .more {
+  display: flex;
+  justify-content: flex-start;
+}
+.banquet_block .banquet_group .banquet_list .pic_block {
+  flex: 0 0 auto;
+  flex-basis: 500px;
+  max-width: 500px;
+  position: relative;
+  overflow: hidden;
+}
+.banquet_block .banquet_group .banquet_list .pic_block:before {
+  display: inline-block;
+  content: "";
+  padding-top: 56.25%;
+}
+.banquet_block .banquet_group .banquet_list .pic_block img {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+.banquet_block .banquet_group .banquet_list .pic_block img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.5s;
+}
+.banquet_block .banquet_group .banquet_list .content {
+  flex: 0 0 auto;
+  flex-basis: calc(100% - 500px);
+  max-width: calc(100% - 500px);
+  padding: 1em 0 0 2em;
+  box-sizing: border-box;
+}
+.banquet_block .banquet_group .banquet_list .content p {
+  overflow: hidden;
+  text-overflow: -o-ellipsis-lastline;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  line-height: 1.8em;
+  height: calc(1.8em * 4);
+  color: #666;
+  font-size: 1.063em;
+  padding: 0;
+  margin: 0;
+}
+.banquet_block .banquet_group .banquet_list .content .banquet_link {
+  margin: 1em 0;
+}
+.banquet_block .banquet_group .banquet_list .content .banquet_link ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.banquet_block .banquet_group .banquet_list .content .banquet_link ul li {
+  margin-right: 10px;
+  display: inline-block;
+  isolation: isolate;
+}
+.banquet_block .banquet_group .banquet_list .content .banquet_link ul li a {
+  display: inline-block;
+  padding: 0.3em 1.2em 0.3em 2.5em;
+  border-radius: 5px;
+  border: 1px solid #999;
+  color: #666;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+  background-image: url("../images/icon/icon_photo.svg");
+  background-repeat: no-repeat;
+  background-position: 12px 10px;
+  background-size: 18px;
+}
+.banquet_block .banquet_group .banquet_list .content .banquet_link ul li a.download {
+  background-image: url("../images/icon/icon_download.svg");
+  background-position: 12px 8px;
+}
+.banquet_block .banquet_group .banquet_list .content .banquet_link ul li a:before {
+  content: "";
+  background-color: #ad954c;
+  position: absolute;
+  left: -10%;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  border: 1px solid #ad954c;
+  z-index: -1;
+  transition: 0.5s;
+}
+.banquet_block .banquet_group .banquet_list .content .banquet_link ul li a:hover {
+  color: #fff;
+  border: 1px solid #ad954c;
+  background-image: url("../images/icon/icon_photo2.svg");
+}
+.banquet_block .banquet_group .banquet_list .content .banquet_link ul li a:hover:before {
+  content: "";
+  left: 0;
+  right: 0;
+}
+.banquet_block .banquet_group .banquet_list .content .banquet_link ul li a:hover.download {
+  background-image: url("../images/icon/icon_download2.svg");
+}
+.banquet_block .banquet_group .banquet_list .content .more {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1em;
+}
+.banquet_block .banquet_group .banquet_list .content .more a {
+  display: inline-block;
+  padding: 0.5em 4.5em 0.5em 1.5em;
+  background-color: #ad954c;
+  color: #fff;
+  letter-spacing: 0.08em;
+  transition: 0.5s;
+  position: relative;
+  border-radius: 50px;
+  font-size: 0.938em;
+}
+.banquet_block .banquet_group .banquet_list .content .more a:before {
+  content: "";
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transition: 0.5s;
+}
+.banquet_block .banquet_group .banquet_list .content .more a:after {
+  content: "";
+  width: 8px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  right: 18px;
+  top: calc(50% - 3px);
+  transform: rotate(45deg);
+  transition: 0.5s;
+}
+.banquet_block .banquet_group .banquet_list .content .more a:hover {
+  background-color: #9b8644;
+}
+.banquet_block .banquet_group .banquet_list .content .more a:hover:before {
+  right: 25px;
+}
+.banquet_block .banquet_group .banquet_list .content .more a:hover:after {
+  content: "";
+  right: 25px;
+}
+@media screen and (max-width: 991px) {
+  .banquet_block .banquet_group .banquet_list {
+    flex-wrap: wrap;
+  }
+  .banquet_block .banquet_group .banquet_list .pic_block {
+    flex: 0 0 auto;
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+  .banquet_block .banquet_group .banquet_list .content {
+    flex: 1 0 auto;
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .banquet_block .banquet_group .banquet_list {
+    flex-wrap: wrap;
+  }
+  .banquet_block .banquet_group .banquet_list .pic_block {
+    flex: 1 1 auto;
+    flex-basis: 100%;
+    max-width: 100%;
+    margin-bottom: 1em;
+  }
+  .banquet_block .banquet_group .banquet_list .content {
+    flex: 1 1 auto;
+    flex-basis: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+  .banquet_block .banquet_group .banquet_list:nth-of-type(2n) .pic_block {
+    order: 1;
+  }
+  .banquet_block .banquet_group .banquet_list:nth-of-type(2n) .content {
+    order: 2;
+    padding: 0;
+  }
+  .banquet_block .banquet_group .banquet_list:nth-of-type(2n) .content .more {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
 .contact_us_block .contact_us_content {
   background-color: #fff;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -14914,8 +15155,11 @@ p {
 }
 
 .notrobot {
-  margin: 1em 0;
-  text-align: center;
+  margin: 20px auto;
+  width: 312px;
+}
+.notrobot img {
+  width: 312px;
 }
 
 .traffic_information_block .traffic_information_group {
@@ -14930,10 +15174,11 @@ p {
 .traffic_information_block .traffic_information_group .mode span {
   margin-bottom: 1.5em;
   padding: 0.5em 1em 0.5em 2.8em;
-  border: 2px solid #eee;
+  border: 1px solid #eee;
   border-radius: 50px;
   display: inline-block;
   background-color: #fff;
+  box-shadow: 0 8px 0 0 #999;
   color: #333;
   font-weight: bold;
 }
@@ -14968,22 +15213,47 @@ p {
   margin-bottom: 2em;
 }
 .traffic_information_block .traffic_information_group .searchlink a {
-  background-color: #ddd;
+  background-color: #eee;
   color: #333;
   font-size: 1.125em;
   display: inline-block;
-  padding: 0.5em 1.5em 0.5em 3em;
+  padding: 0.5em 2em 0.5em 3em;
   background-image: url("../images/search_icon.png");
   background-position: left 1.2em center;
   background-repeat: no-repeat;
   background-size: 20px;
-  border-radius: 5px;
+  border-radius: 50px;
+  transition: 0.5s;
+  position: relative;
   transition: 0.5s;
 }
+.traffic_information_block .traffic_information_group .searchlink a:before {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background-color: #555;
+  position: absolute;
+  right: -20px;
+  top: 50%;
+}
+.traffic_information_block .traffic_information_group .searchlink a:after {
+  content: "";
+  border: 1px solid #555;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  border-color: #555 #555 transparent transparent;
+  position: absolute;
+  right: -18px;
+  top: calc(50% - 3px);
+  transform: rotate(45deg);
+}
 .traffic_information_block .traffic_information_group .searchlink a:hover {
-  background-color: #666;
+  background-color: #999;
   color: #fff;
   background-image: url("../images/search_icon_hover.png");
+  padding: 0.5em 2.6em 0.5em 3.6em;
+  background-position: left 1.8em center;
 }
 .traffic_information_block .traffic_information_group .searchlink.car a {
   background-image: url("../images/google_maps.png");
@@ -15019,17 +15289,21 @@ p {
   padding: 1em;
 }
 .traffic_information_block .traffic_information_group .information_content ul {
-  margin: 0 0 1em;
+  margin: 0 0 3em;
   padding: 0;
   list-style-type: none;
 }
 .traffic_information_block .traffic_information_group .information_content ul li {
   margin-bottom: 0.8em;
-  padding: 8px 0 8px 50px;
+  padding: 20px 12px 12px 70px;
   background-image: url("../images/traffic_explain.png");
-  background-position: left top;
+  background-position: 12px 12px;
   background-repeat: no-repeat;
   background-size: 40px;
+  background-color: #eee;
+  min-height: 65px;
+  display: block;
+  border-radius: 5px;
 }
 .traffic_information_block .traffic_information_group .information_content ul li.path {
   background-image: url("../images/traffic_path.png");

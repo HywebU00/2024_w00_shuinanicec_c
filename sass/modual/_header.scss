@@ -94,9 +94,9 @@ header.cHeader {
 
   .logo {
     flex-shrink: 0;
-    width: 130px;
-    height: 68px;
-    background: url('../images/mp/logo.png') center no-repeat;
+    width: 160px;
+    height: 84px;
+    background: url('../images/mp/logo.svg') center no-repeat;
     background-size: contain;
     position: relative;
     @include transition(all, 0.3);
@@ -104,7 +104,7 @@ header.cHeader {
     @include screen('tablet') {
       width: 267px;
       height: 34px;
-      background: url('../images/mp/logo2.png') center no-repeat;
+      background: url('../images/mp/logo2.svg') center no-repeat;
       background-size: contain;
     }
 
@@ -125,8 +125,8 @@ header.cHeader {
     padding: 20px 0;
 
     .logo {
-      width: 100px;
-      height: 50px;
+      width: 120px;
+      height: 60px;
       filter: invert(1) brightness(10);
 
       @include screen('tablet') {
@@ -136,6 +136,7 @@ header.cHeader {
     }
 
     .mobileBtn {
+
       &::before,
       &::after {
         filter: brightness(50);
@@ -143,6 +144,12 @@ header.cHeader {
     }
 
     .topNavBox {
+      width: 150px;
+
+      @include screen('tablet') {
+        width: auto;
+      }
+
       .cSearch {
         filter: brightness(50);
       }
@@ -155,6 +162,7 @@ header.cHeader {
 
   &.menuOpen {
     .mobileBtn {
+
       &::before,
       &::after {
         width: 16px;
