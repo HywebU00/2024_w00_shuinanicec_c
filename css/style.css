@@ -15150,6 +15150,12 @@ p {
   font-size: 1.125em;
 }
 
+.g-recaptcha {
+  text-align: center;
+  width: 304px;
+  margin: 20px auto;
+}
+
 .explain_block {
   font-size: 1.125rem;
   color: #555;
