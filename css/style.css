@@ -13146,8 +13146,9 @@ p {
 }
 .exhibition_hall_block .container .exhibition_hall_group .exhibition_hall_slider {
   flex: 0 0 auto;
-  flex-basis: 52%;
-  max-width: 52%;
+  flex-basis: 50%;
+  max-width: 50%;
+  margin-right: 2%;
   position: relative;
 }
 .exhibition_hall_block .container .exhibition_hall_group .exhibition_hall_slider .exhibition_floor_list .floor_plan_btn {
@@ -13259,14 +13260,17 @@ p {
 .exhibition_hall_block .container .exhibition_hall_group .floor_pic_block .floor_pic_group {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
+}
+.exhibition_hall_block .container .exhibition_hall_group .floor_pic_block .floor_pic_group:has(> .floor_pic_list:only-child) {
+  justify-content: center;
 }
 .exhibition_hall_block .container .exhibition_hall_group .floor_pic_block .floor_pic_group .floor_pic_list {
   flex: 0 0 auto;
   flex-basis: 160px;
   width: 160px;
   height: 150px;
-  margin: 0 4px 4px 0;
+  margin: 0 0px 4px 4px;
   position: relative;
 }
 .exhibition_hall_block .container .exhibition_hall_group .floor_pic_block .floor_pic_group .floor_pic_list a {

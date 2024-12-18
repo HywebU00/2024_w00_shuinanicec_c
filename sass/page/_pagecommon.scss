@@ -1162,11 +1162,14 @@
       position: relative;
       display: flex;
       // flex-wrap: wrap;
+
       .exhibition_hall_slider {
         flex: 0 0 auto;
-        flex-basis: 52%;
-        max-width: 52%;
+        flex-basis: 50%;
+        max-width: 50%;
+        margin-right: 2%;
         position: relative;
+
         .exhibition_floor_list {
           .floor_plan_btn {
             background-color: #000;
@@ -1282,16 +1285,20 @@
         flex-basis: 48%;
         max-width: 48%;
         position: relative;
+
         .floor_pic_group {
           display: flex;
           flex-wrap: wrap;
-          justify-content: flex-end;
+          justify-content: flex-start;
+          &:has(> .floor_pic_list:only-child) {
+            justify-content: center;
+          }
           .floor_pic_list {
             flex: 0 0 auto;
             flex-basis: 160px;
             width: 160px;
             height: 150px;
-            margin: 0 4px 4px 0;
+            margin: 0 0px 4px 4px;
             position: relative;
 
             a {
