@@ -1863,6 +1863,7 @@
     }
     .adTb {
       font-size: 1.125em;
+      margin-bottom: 1em;
       table {
         background-color: #fff;
         th {
@@ -1887,6 +1888,49 @@
           td {
             display: block;
             width: 100%;
+          }
+        }
+      }
+    }
+    .download_link {
+      display: flex;
+      justify-content: flex-end;
+      a {
+        display: inline-block;
+        padding: 0.3em 1.2em 0.3em 2.5em;
+        border-radius: 5px;
+        border: 1px solid #999;
+        color: #666;
+        position: relative;
+        overflow: hidden;
+        transition: 0.5s;
+        background-image: url('../images/icon/icon_download.svg');
+        background-position: 12px 8px;
+        background-repeat: no-repeat;
+
+        background-size: 18px;
+
+        &:before {
+          content: '';
+          background-color: #ad954c;
+          position: absolute;
+          left: -10%;
+          top: 0;
+          bottom: 0;
+          right: 100%;
+          border: 1px solid #ad954c;
+          z-index: -1;
+          transition: 0.5s;
+        }
+        &:hover {
+          color: #fff;
+          border: 1px solid #ad954c;
+          background-image: url('../images/icon/icon_download2.svg');
+
+          &:before {
+            content: '';
+            left: 0;
+            right: 0;
           }
         }
       }

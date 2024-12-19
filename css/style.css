@@ -13914,6 +13914,7 @@ p {
 .form_download_block .ad_slot_content .adTb,
 .ad_slot_block .ad_slot_content .adTb {
   font-size: 1.125em;
+  margin-bottom: 1em;
 }
 .form_download_block .ad_slot_content .adTb table,
 .ad_slot_block .ad_slot_content .adTb table {
@@ -13946,6 +13947,51 @@ p {
     display: block;
     width: 100%;
   }
+}
+.form_download_block .ad_slot_content .download_link,
+.ad_slot_block .ad_slot_content .download_link {
+  display: flex;
+  justify-content: flex-end;
+}
+.form_download_block .ad_slot_content .download_link a,
+.ad_slot_block .ad_slot_content .download_link a {
+  display: inline-block;
+  padding: 0.3em 1.2em 0.3em 2.5em;
+  border-radius: 5px;
+  border: 1px solid #999;
+  color: #666;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+  background-image: url("../images/icon/icon_download.svg");
+  background-position: 12px 8px;
+  background-repeat: no-repeat;
+  background-size: 18px;
+}
+.form_download_block .ad_slot_content .download_link a:before,
+.ad_slot_block .ad_slot_content .download_link a:before {
+  content: "";
+  background-color: #ad954c;
+  position: absolute;
+  left: -10%;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  border: 1px solid #ad954c;
+  z-index: -1;
+  transition: 0.5s;
+}
+.form_download_block .ad_slot_content .download_link a:hover,
+.ad_slot_block .ad_slot_content .download_link a:hover {
+  color: #fff;
+  border: 1px solid #ad954c;
+  background-image: url("../images/icon/icon_download2.svg");
+}
+.form_download_block .ad_slot_content .download_link a:hover:before,
+.ad_slot_block .ad_slot_content .download_link a:hover:before {
+  content: "";
+  left: 0;
+  right: 0;
 }
 
 .friendly_space_block {
