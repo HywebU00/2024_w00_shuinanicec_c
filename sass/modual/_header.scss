@@ -254,6 +254,7 @@ header.cHeader {
       margin-left: auto;
       display: flex;
       gap: 14px;
+      min-width: 530px;
 
       @include screen('tablet') {
         flex-direction: column;

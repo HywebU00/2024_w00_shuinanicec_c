@@ -3340,6 +3340,7 @@ header.cHeader .menuBox > ul {
   margin-left: auto;
   display: flex;
   gap: 14px;
+  min-width: 530px;
 }
 @media screen and (max-width: 991px) {
   header.cHeader .menuBox > ul {
