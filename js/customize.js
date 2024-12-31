@@ -257,6 +257,7 @@ $(function () {
     infinite: true,
     speed: 500,
     fade: true,
+    adaptiveHeight: true,
     // autoplay: false,
     lazyLoaded: true,
     lazyLoad: 'ondemand',

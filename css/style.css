@@ -13158,13 +13158,16 @@ p {
   margin-right: 2%;
   position: relative;
 }
+.exhibition_hall_block .container .exhibition_hall_group .exhibition_hall_slider .exhibition_floor_list {
+  position: relative;
+}
 .exhibition_hall_block .container .exhibition_hall_group .exhibition_hall_slider .exhibition_floor_list .floor_plan_btn {
   background-color: #000;
   width: 46px;
   height: 46px;
   position: absolute;
-  left: 0;
-  top: 0px;
+  right: 20px;
+  top: 20px;
   border-radius: 20px;
   font-size: 0;
   transition: 0.5s;
@@ -13194,6 +13197,7 @@ p {
   margin-bottom: 2em;
 }
 .exhibition_hall_block .container .exhibition_hall_group .exhibition_hall_slider .exhibition_floor_list .floor_plan_block .floor {
+  display: none;
   color: #0d0a8a;
   font-size: 1.125em;
   font-weight: bold;
