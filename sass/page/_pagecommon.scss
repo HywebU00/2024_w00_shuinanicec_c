@@ -1779,6 +1779,7 @@
   // 廣告區域內容
   .ad_slot_content {
     padding: 20px 60px;
+    margin-bottom: 2em;
     @include screen('tablet') {
       padding: 20px 30px;
     }
@@ -1932,6 +1933,30 @@
             left: 0;
             right: 0;
           }
+        }
+      }
+    }
+  }
+  // 地理位置
+  .geography_location_block {
+    .geography_location {
+      position: relative;
+      &:before {
+        content: '';
+        border: 30px solid $secondaryColor;
+        border-color: $secondaryColor transparent transparent $secondaryColor;
+        position: absolute;
+        left: 12%;
+        top: -40px;
+      }
+      .subtitle {
+        @extend %subtitle;
+        margin-bottom: 40px;
+      }
+      .geography_pic {
+        text-align: center;
+        img {
+          max-width: 100%;
         }
       }
     }

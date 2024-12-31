@@ -11993,7 +11993,8 @@ p {
   color: #0066cc;
 }
 
-.exhibition_services_block .geography_location_block .geography_location .subtitle, .geography_location_block .container .geography_location .subtitle, .maplocation_block .container .subtitle, .form_download_block .ad_slot_content .title,
+.exhibition_services_block .geography_location_block .geography_location .subtitle, .geography_location_block .container .geography_location .subtitle, .maplocation_block .container .subtitle, .form_download_block .geography_location_block .geography_location .subtitle,
+.ad_slot_block .geography_location_block .geography_location .subtitle, .form_download_block .ad_slot_content .title,
 .ad_slot_block .ad_slot_content .title, .consult_block .container .consult_group .subtitle, .event_photos_block .subtitle, .space_equipment_block .subtitle, .pattern_numpeople_block .subtitle, .space_photos_group .space_size_block .subtitle {
   font-size: 2.75em;
   letter-spacing: 0.03em;
@@ -12005,7 +12006,8 @@ p {
   transition: 0.5s;
 }
 @media screen and (max-width: 575px) {
-  .exhibition_services_block .geography_location_block .geography_location .subtitle, .geography_location_block .container .geography_location .subtitle, .maplocation_block .container .subtitle, .form_download_block .ad_slot_content .title,
+  .exhibition_services_block .geography_location_block .geography_location .subtitle, .geography_location_block .container .geography_location .subtitle, .maplocation_block .container .subtitle, .form_download_block .geography_location_block .geography_location .subtitle,
+  .ad_slot_block .geography_location_block .geography_location .subtitle, .form_download_block .ad_slot_content .title,
   .ad_slot_block .ad_slot_content .title, .consult_block .container .consult_group .subtitle, .event_photos_block .subtitle, .space_equipment_block .subtitle, .pattern_numpeople_block .subtitle, .space_photos_group .space_size_block .subtitle {
     font-size: 2em;
     margin-bottom: 40px;
@@ -13786,6 +13788,7 @@ p {
 .form_download_block .ad_slot_content,
 .ad_slot_block .ad_slot_content {
   padding: 20px 60px;
+  margin-bottom: 2em;
 }
 @media screen and (max-width: 991px) {
   .form_download_block .ad_slot_content,
@@ -13997,6 +14000,31 @@ p {
   content: "";
   left: 0;
   right: 0;
+}
+.form_download_block .geography_location_block .geography_location,
+.ad_slot_block .geography_location_block .geography_location {
+  position: relative;
+}
+.form_download_block .geography_location_block .geography_location:before,
+.ad_slot_block .geography_location_block .geography_location:before {
+  content: "";
+  border: 30px solid #f9a01d;
+  border-color: #f9a01d transparent transparent #f9a01d;
+  position: absolute;
+  left: 12%;
+  top: -40px;
+}
+.form_download_block .geography_location_block .geography_location .subtitle,
+.ad_slot_block .geography_location_block .geography_location .subtitle {
+  margin-bottom: 40px;
+}
+.form_download_block .geography_location_block .geography_location .geography_pic,
+.ad_slot_block .geography_location_block .geography_location .geography_pic {
+  text-align: center;
+}
+.form_download_block .geography_location_block .geography_location .geography_pic img,
+.ad_slot_block .geography_location_block .geography_location .geography_pic img {
+  max-width: 100%;
 }
 
 .friendly_space_block {
