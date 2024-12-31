@@ -9620,11 +9620,11 @@ p {
   display: none;
 }
 .indexPage .welcome {
-  position: absolute;
-  width: 100%;
+  position: fixed;
   height: 100vh;
   height: 100dvh;
   left: 0;
+  right: 0;
   top: 0;
   pointer-events: none;
   z-index: 10;
@@ -9643,7 +9643,11 @@ p {
   opacity: 0;
   color: #fff;
 }
+.indexPage .welcome.active .ml11 .letters {
+  display: flex;
+}
 .indexPage .welcome.active .ml11 .letter {
+  display: block;
   transition: all 0.3s ease;
 }
 .indexPage .welcome.active .bgT svg.active {

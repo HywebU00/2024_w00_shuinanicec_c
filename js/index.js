@@ -176,7 +176,7 @@ window.onload = async function () {
       }, 1); // 每50毫秒移除一個隨機三角形
     };
 
-    welcome.style.height = `${bannerHeight}px`;
+    // welcome.style.height = `${bannerHeight}px`;
     welcome.classList.add('active');
     resizeCanvas();
     inFn();
