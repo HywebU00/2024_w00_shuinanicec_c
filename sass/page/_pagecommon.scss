@@ -3812,11 +3812,11 @@
   .photo_album_cp {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     .photo_list {
       flex: 0 0 auto;
-      flex-basis: 32%;
-      margin-bottom: 1.4em;
+      flex-basis: 31%;
+      margin: 0 1.16% 1.4em;
       position: relative;
       @include aspect-ratio(4, 3);
       img {
@@ -3857,6 +3857,14 @@
             height: 22px;
           }
         }
+      }
+      @include screen('tablet') {
+        flex-basis: 47%;
+        margin: 0 1.5% 1.4em;
+      }
+      @include screen('xs_mobile') {
+        flex-basis: 100%;
+        margin: 0 0 1.4em;
       }
     }
   }

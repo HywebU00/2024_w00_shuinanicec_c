@@ -15952,12 +15952,12 @@ p {
 .photo_album_block .photo_album_cp {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .photo_album_block .photo_album_cp .photo_list {
   flex: 0 0 auto;
-  flex-basis: 32%;
-  margin-bottom: 1.4em;
+  flex-basis: 31%;
+  margin: 0 1.16% 1.4em;
   position: relative;
   overflow: hidden;
 }
@@ -16013,6 +16013,18 @@ p {
 .photo_album_block .photo_album_cp .photo_list .floor_plan_btn:hover img {
   width: 22px;
   height: 22px;
+}
+@media screen and (max-width: 991px) {
+  .photo_album_block .photo_album_cp .photo_list {
+    flex-basis: 47%;
+    margin: 0 1.5% 1.4em;
+  }
+}
+@media screen and (max-width: 575px) {
+  .photo_album_block .photo_album_cp .photo_list {
+    flex-basis: 100%;
+    margin: 0 0 1.4em;
+  }
 }
 
 .FAQ_block .FAQ_group .FAQ_list {
