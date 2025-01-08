@@ -873,8 +873,10 @@
 
         time {
           position: absolute;
-          right: 20px;
-          top: 30px;
+          right: 10px;
+          top: 10px;
+          padding: 5px;
+          background: rgba(#000, 0.5);
           font-size: Rem(16);
 
           &::before {
@@ -1094,8 +1096,10 @@
 
       time {
         position: absolute;
-        right: 20px;
-        top: 30px;
+        right: 10px;
+        top: 10px;
+        padding: 5px;
+        background: rgba(#000, 0.5);
         text-align: center;
         font-size: Rem(22);
         color: #fff;
