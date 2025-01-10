@@ -70,9 +70,15 @@ let swiperCarbon = new Swiper('.carbonBox .swiper', {
 });
 let swiperCaptured = new Swiper('.capturedBox .swiper', {
   slidesPerView: 1,
+  spaceBetween: 20,
   pagination: {
     el: '.capturedBox .swiper-pagination',
     clickable: true,
+  },
+  breakpoints: {
+    767: {
+      slidesPerView: 2,
+    },
   },
 });
 

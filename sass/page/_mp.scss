@@ -791,6 +791,10 @@
         }
 
         &.swiper1 {
+          .pic {
+            aspect-ratio: 408/576;
+          }
+
           .title {
             padding-right: 70px;
           }
@@ -825,6 +829,12 @@
             @include screen('mobile') {
               width: 100%;
             }
+
+            .pic {
+              max-width: 302px;
+              aspect-ratio: 302/282;
+              overflow: hidden;
+            }
           }
 
           .item {
@@ -833,6 +843,9 @@
         }
 
         .pic {
+          max-width: 408px;
+          aspect-ratio: 408/383;
+          overflow: hidden;
           position: relative;
           isolation: isolate;
           box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
@@ -1035,7 +1048,7 @@
 
     .more {
       width: 120px;
-      aspect-ratio: 1;
+      height: 120px;
       color: #fff;
       background: $mainColor;
       border-radius: 50%;
@@ -1046,6 +1059,7 @@
       display: none;
 
       @include screen('tablet') {
+        height: auto;
         border-radius: 40px;
         padding: 15px;
         display: flex;
@@ -1062,14 +1076,13 @@
       padding-top: 8%;
 
       @include screen('tablet') {
-        width: calc(100% - var(--contentPadding) * 2);
-        margin: 0 var(--contentPadding) 20px;
+        width: calc(100% - 40px * 2);
+        margin: 0 40px 20px;
         padding: 0;
       }
 
       @media screen and (max-width: 767px) {
-        max-width: 408px;
-        margin: 0 auto 20px;
+        margin: 0 auto 40px;
       }
 
       a {
@@ -1087,6 +1100,8 @@
       }
 
       .pic {
+        max-width: 408px;
+        aspect-ratio: 408/383;
         overflow: hidden;
 
         img {
@@ -1098,7 +1113,7 @@
         position: absolute;
         right: 10px;
         top: 10px;
-        padding: 5px;
+        padding: 0 5px;
         background: rgba(#000, 0.5);
         text-align: center;
         font-size: Rem(22);
@@ -1190,6 +1205,9 @@
     }
 
     .pic {
+      max-width: 1280px;
+      aspect-ratio: 1280/693;
+      overflow: hidden;
       overflow: hidden;
       clip-path: polygon(160px 0%, 100% 0, 100% 100%, 0 100%, 0% 160px);
 
@@ -1319,6 +1337,9 @@
       }
 
       .pic {
+        max-width: 570px;
+        aspect-ratio: 570/534;
+        overflow: hidden;
         margin-bottom: 20px;
 
         @include screen('mobile') {
@@ -1474,6 +1495,10 @@
 
         &:nth-child(2) {
           width: 40%;
+
+          .pic {
+            aspect-ratio: 408/576;
+          }
         }
       }
     }
@@ -1492,6 +1517,13 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+
+        .item:nth-child(2) {
+          a .pic {
+            max-width: 607px;
+            aspect-ratio: 607/354;
+          }
+        }
       }
 
       .item {
@@ -1513,6 +1545,7 @@
           }
 
           .pic {
+            max-width: 408px;
             overflow: hidden;
 
             img {
@@ -1623,6 +1656,9 @@
         }
 
         .pic {
+          max-width: 350px;
+          aspect-ratio: 350/327;
+          overflow: hidden;
           margin-bottom: 10px;
           box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
         }
@@ -1746,28 +1782,46 @@
         &:nth-child(1) {
           .pic {
             margin-top: 120px;
+            max-width: 408px;
+            aspect-ratio: 408/383;
+            overflow: hidden;
           }
         }
 
         &:nth-child(2) {
-          & > .item {
-            &:nth-child(1) {
-              position: relative;
 
-              &::before {
-                content: '';
-                position: absolute;
-                display: block;
-                clip-path: polygon(0 0, 0% 100%, 100% 0);
-                width: 100px;
-                aspect-ratio: 1;
-                background: #fff;
-                right: -105px;
-                bottom: 0;
-                z-index: -1;
-              }
+          & > .pic {
+            max-width: 408px;
+            aspect-ratio: 408/383;
+            overflow: hidden;
+          }
+
+          .list {
+            .pic {
+              max-width: 322px;
+              aspect-ratio: 322/302;
+              overflow: hidden;
             }
           }
+
+          // & > .item {
+          //   &:nth-child(1) {
+          //     position: relative;
+
+          //     &::before {
+          //       content: '';
+          //       position: absolute;
+          //       display: block;
+          //       clip-path: polygon(0 0, 0% 100%, 100% 0);
+          //       width: 100px;
+          //       aspect-ratio: 1;
+          //       background: #fff;
+          //       right: -105px;
+          //       bottom: 0;
+          //       z-index: -1;
+          //     }
+          //   }
+          // }
         }
       }
 
@@ -1790,6 +1844,13 @@
 
       @include screen('tablet') {
         display: block;
+      }
+
+      .pic {
+        max-width: 408px;
+        aspect-ratio: 408/383;
+        overflow: hidden;
+        margin: 0 auto;
       }
 
       .swiper-pagination-bullets.swiper-pagination-horizontal {
@@ -1862,7 +1923,10 @@
       }
 
       .pic {
+        max-width: 350px;
+        overflow: hidden;
         position: relative;
+        aspect-ratio: 350/327;
 
         &::before {
           content: '';
