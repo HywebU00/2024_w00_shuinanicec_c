@@ -2266,12 +2266,13 @@
           @extend %third_title;
         }
         p {
-          // @include text-line(5, 1.8em);
-          max-height: calc(1.8em * 5);
+          @include text-line(5, 1.8em);
           overflow: hidden;
           color: #666;
           font-size: 1.063em;
           line-height: 1.8;
+          height: auto;
+          max-height: calc(1.8em * 5);
         }
 
         .contact_block {
