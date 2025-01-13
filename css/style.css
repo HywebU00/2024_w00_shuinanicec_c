@@ -15483,13 +15483,14 @@ p {
 .event_information_block .event_information_group {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-bottom: 3em;
 }
 .event_information_block .event_information_group .event_information_list {
   flex: 0 0 auto;
-  flex-basis: 32%;
-  max-width: 32%;
+  flex-basis: 31%;
+  max-width: 31%;
+  margin: 0 1.16% 1.4em;
   background-color: #fff;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   padding: 20px;
@@ -15499,14 +15500,16 @@ p {
 }
 @media screen and (max-width: 991px) {
   .event_information_block .event_information_group .event_information_list {
-    flex-basis: 48.5%;
-    max-width: 48.5%;
+    flex-basis: 47%;
+    max-width: 47%;
+    margin: 0 1.5% 1.4em;
   }
 }
 @media screen and (max-width: 767px) {
   .event_information_block .event_information_group .event_information_list {
     flex-basis: 100%;
     max-width: 100%;
+    margin: 0 0 1.4em;
   }
 }
 .event_information_block .event_information_group .event_information_list:hover .pic_block img {

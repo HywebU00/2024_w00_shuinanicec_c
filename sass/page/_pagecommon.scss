@@ -3293,13 +3293,14 @@
   .event_information_group {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-bottom: 3em;
 
     .event_information_list {
       flex: 0 0 auto;
-      flex-basis: 32%;
-      max-width: 32%;
+      flex-basis: 31%;
+      max-width: 31%;
+      margin: 0 1.16% 1.4em;
       background-color: #fff;
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       padding: 20px;
@@ -3307,12 +3308,14 @@
       box-sizing: border-box;
       position: relative;
       @include screen('tablet') {
-        flex-basis: 48.5%;
-        max-width: 48.5%;
+        flex-basis: 47%;
+        max-width: 47%;
+        margin: 0 1.5% 1.4em;
       }
       @include screen('mobile') {
         flex-basis: 100%;
         max-width: 100%;
+        margin: 0 0 1.4em;
       }
       &:hover {
         .pic_block {
