@@ -290,14 +290,26 @@ window.onload = async function () {
   const count2 = document.querySelector('.countBox .count2 span');
   const count3 = document.querySelector('.countBox .count3 span');
   const count4 = document.querySelector('.countBox .count4 span');
+  const countAll = document.querySelectorAll('.countBox span');
   const check = document.querySelector('.countBox .listBox');
+  const checkInWindow = check.getBoundingClientRect().top;
+
+  function scrollCheck() {
+    if (window.scrollY > checkInWindow - 100) {
+      check.classList.add('active');
+    } else {
+      check.classList.remove('active');
+    }
+  }
+
   const options = {
     root: null,
     rootMargin: '0px 0px 0px 0px',
     threshold: 0.2,
   };
   const callback = (entries, observer) => {
-    if (entries[0].isIntersecting && !check.classList.contains('active')) {
+    // if (entries[0].isIntersecting && !check.classList.contains('active')) {
+    if (entries[0].isIntersecting) {
       check.classList.add('active');
       setTimeout(() => {
         animateNumber(count1, 0, 25000, 2000);
@@ -305,6 +317,8 @@ window.onload = async function () {
         animateNumber(count3, 0, 2185, 2000);
         animateNumber(count4, 0, 4250, 2000);
       }, 500);
+    } else {
+      countAll.forEach((item) => (item.textContent = '0'));
     }
   };
 
