@@ -276,8 +276,8 @@ window.onload = async function () {
   const informationBoxPic = document.querySelector('.informationBox .picBox img');
   const informationBoxTitle = document.querySelector('.informationBox .picBox .title');
   const informationBoxBtn = document.querySelectorAll('.informationBox .listBox button');
-  informationBoxBtn[0].parentNode.classList.add('active');
-  informationBoxBtn.forEach((item) => {
+  informationBoxBtn[0]?.parentNode.classList.add('active');
+  informationBoxBtn?.forEach((item) => {
     item.addEventListener('click', () => {
       informationBoxBtn.forEach((i) => i.parentNode.classList.remove('active'));
       item.parentNode.classList.add('active');
