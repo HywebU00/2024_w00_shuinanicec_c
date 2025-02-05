@@ -14429,6 +14429,12 @@ p {
   padding: 1em 0 0 0;
   box-sizing: border-box;
 }
+.exhibition_services_block .exhibition_services_group .exhibition_services_list .exhibition_content .title a {
+  color: #333;
+}
+.exhibition_services_block .exhibition_services_group .exhibition_services_list .exhibition_content .title a:hover {
+  color: #0066cc;
+}
 .exhibition_services_block .exhibition_services_group .exhibition_services_list .exhibition_content p {
   overflow: hidden;
   text-overflow: -o-ellipsis-lastline;
@@ -14641,8 +14647,60 @@ p {
   color: #666;
   font-size: 1.063em;
 }
+.accommodation_block .accommodation_group .accommodation_list .content .notes_area {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+@media screen and (max-width: 991px) {
+  .accommodation_block .accommodation_group .accommodation_list .content .notes_area {
+    flex-wrap: wrap;
+  }
+}
+.accommodation_block .accommodation_group .accommodation_list .content .remarks {
+  flex: 1 1 auto;
+  margin-right: 1em;
+}
+@media screen and (max-width: 991px) {
+  .accommodation_block .accommodation_group .accommodation_list .content .remarks {
+    flex-basis: 100%;
+    margin-bottom: 0.5em;
+    margin-right: 0em;
+  }
+}
+.accommodation_block .accommodation_group .accommodation_list .content .remarks ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.accommodation_block .accommodation_group .accommodation_list .content .remarks ul li {
+  margin-bottom: 0.3em;
+  padding-left: 24px;
+  position: relative;
+  color: #666;
+  font-size: 1.063em;
+}
+.accommodation_block .accommodation_group .accommodation_list .content .remarks ul li em {
+  font-weight: bold;
+  font-style: normal;
+  padding: 0 3px;
+}
+.accommodation_block .accommodation_group .accommodation_list .content .remarks ul li:before {
+  content: "";
+  border: 7px solid #f9a01d;
+  border-color: #f9a01d transparent transparent #f9a01d;
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
 .accommodation_block .accommodation_group .accommodation_list .content .discount {
+  flex: 0 0 auto;
   text-align: right;
+}
+@media screen and (max-width: 991px) {
+  .accommodation_block .accommodation_group .accommodation_list .content .discount {
+    flex: 1 1 auto;
+  }
 }
 .accommodation_block .accommodation_group .accommodation_list .content .discount a {
   display: inline-block;
@@ -15435,6 +15493,11 @@ p {
   padding: 10px 40px;
   font-size: 1.063em;
 }
+@media screen and (max-width: 575px) {
+  .traffic_information_block .traffic_information_group .information_content {
+    padding: 10px 0px;
+  }
+}
 .traffic_information_block .traffic_information_group .information_content .information_subtitle {
   color: #0d0a8a;
   font-size: 1.125rem;
@@ -15456,27 +15519,49 @@ p {
   margin: 0 0 3em;
   padding: 0;
   list-style-type: none;
+  isolation: isolate;
 }
 .traffic_information_block .traffic_information_group .information_content ul li {
   margin-bottom: 0.8em;
-  padding: 20px 12px 12px 70px;
-  background-image: url("../images/traffic_explain.png");
-  background-position: 12px 12px;
-  background-repeat: no-repeat;
-  background-size: 40px;
-  background-color: #eee;
+  padding: 18px 12px 12px 70px;
+  background-color: #ffecb5;
   min-height: 65px;
   display: block;
   border-radius: 5px;
+  position: relative;
+  z-index: 1;
 }
-.traffic_information_block .traffic_information_group .information_content ul li.path {
+.traffic_information_block .traffic_information_group .information_content ul li:before {
+  content: "";
+  background-image: url("../images/traffic_explain.png");
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  width: 40px;
+  height: 40px;
+}
+.traffic_information_block .traffic_information_group .information_content ul li.path:before {
   background-image: url("../images/traffic_path.png");
 }
-.traffic_information_block .traffic_information_group .information_content ul li.electriccar {
+.traffic_information_block .traffic_information_group .information_content ul li.electriccar:before {
   background-image: url("../images/traffic_electriccar.png");
 }
-.traffic_information_block .traffic_information_group .information_content ul li.time {
+.traffic_information_block .traffic_information_group .information_content ul li.time:before {
   background-image: url("../images/traffic_time.png");
+}
+.traffic_information_block .traffic_information_group .information_content ul li:after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background-color: #f9a01d;
+  border-radius: 50%;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: -1;
 }
 
 .event_information_block {

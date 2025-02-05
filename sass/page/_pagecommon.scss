@@ -2264,6 +2264,12 @@
         box-sizing: border-box;
         .title {
           @extend %third_title;
+          a {
+            color: #333;
+            &:hover {
+              color: $aHover;
+            }
+          }
         }
         p {
           @include text-line(5, 1.8em);
@@ -2460,8 +2466,57 @@
           color: #666;
           font-size: 1.063em;
         }
+        .notes_area {
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+
+          @include screen('tablet') {
+            flex-wrap: wrap;
+          }
+        }
+        .remarks {
+          flex: 1 1 auto;
+          margin-right: 1em;
+
+          @include screen('tablet') {
+            flex-basis: 100%;
+            margin-bottom: 0.5em;
+            margin-right: 0em;
+          }
+          ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            li {
+              margin-bottom: 0.3em;
+              padding-left: 24px;
+              position: relative;
+              color: #666;
+              font-size: 1.063em;
+              em {
+                font-weight: bold;
+                font-style: normal;
+                padding: 0 3px;
+              }
+              &:before {
+                content: '';
+                border: 7px solid $secondaryColor;
+                border-color: $secondaryColor transparent transparent $secondaryColor;
+                position: absolute;
+                left: 0;
+                top: 5px;
+              }
+            }
+          }
+        }
         .discount {
+          flex: 0 0 auto;
           text-align: right;
+
+          @include screen('tablet') {
+            flex: 1 1 auto;
+          }
           a {
             display: inline-block;
             padding: 0.3em 1.2em 0.3em 2.5em;
@@ -3239,6 +3294,9 @@
     .information_content {
       padding: 10px 40px;
       font-size: 1.063em;
+      @include screen('xs_mobile') {
+        padding: 10px 0px;
+      }
       .information_subtitle {
         color: $primaryColor;
         font-size: 1.125rem;
@@ -3261,26 +3319,54 @@
         margin: 0 0 3em;
         padding: 0;
         list-style-type: none;
+        isolation: isolate;
         li {
           margin-bottom: 0.8em;
-          padding: 20px 12px 12px 70px;
-          background-image: url('../images/traffic_explain.png');
-          background-position: 12px 12px;
-          background-repeat: no-repeat;
-          background-size: 40px;
-          background-color: #eee;
+          padding: 18px 12px 12px 70px;
+
+          background-color: lighten($color: $lightColor, $amount: 35);
           min-height: 65px;
           display: block;
           border-radius: 5px;
-
+          position: relative;
+          z-index: 1;
+          &:before {
+            content: '';
+            background-image: url('../images/traffic_explain.png');
+            background-position: 0;
+            background-repeat: no-repeat;
+            background-size: 40px;
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            width: 40px;
+            height: 40px;
+          }
           &.path {
-            background-image: url('../images/traffic_path.png');
+            &:before {
+              background-image: url('../images/traffic_path.png');
+            }
           }
           &.electriccar {
-            background-image: url('../images/traffic_electriccar.png');
+            &:before {
+              background-image: url('../images/traffic_electriccar.png');
+            }
           }
           &.time {
-            background-image: url('../images/traffic_time.png');
+            &:before {
+              background-image: url('../images/traffic_time.png');
+            }
+          }
+          &:after {
+            content: '';
+            width: 40px;
+            height: 40px;
+            background-color: $secondaryColor;
+            border-radius: 50%;
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: -1;
           }
         }
       }
