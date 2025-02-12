@@ -9325,11 +9325,20 @@ p {
           clip-path: polygon(0 0, 100% 0, 100% 82%, 0% 100%);
   position: relative;
   overflow: hidden;
+  height: 708px;
+  background-size: cover;
+  background-position: center;
 }
 @media screen and (max-width: 991px) {
   .cBanner .listBox {
+    height: 500px;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
             clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+  }
+}
+@media screen and (max-width: 767px) {
+  .cBanner .listBox {
+    height: 300px;
   }
 }
 .cBanner .pic {
@@ -9347,6 +9356,8 @@ p {
 .cBanner img {
   width: 100%;
   min-height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .cBanner .video {
   line-height: 0;
