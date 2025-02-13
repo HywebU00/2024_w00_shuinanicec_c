@@ -3133,7 +3133,7 @@ header.cHeader {
   left: 0;
   isolation: isolate;
   z-index: 10;
-  padding: 50px 0;
+  padding: 20px 0;
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 991px) {
@@ -3379,6 +3379,7 @@ header.cHeader .menuBox > ul > li > a {
   display: block;
   padding: 8px 20px;
   white-space: nowrap;
+  line-height: 1.6;
   font-size: 1.25rem;
   color: #fff;
   border: 1px solid #fff;
@@ -9277,8 +9278,9 @@ p {
   top: 0;
   left: 0;
   width: 100%;
-  bottom: 70%;
-  background: linear-gradient(to bottom, rgba(45, 134, 251, 0.75) 0%, rgba(45, 134, 251, 0) 100%);
+  bottom: 60%;
+  background: linear-gradient(to bottom, rgb(45, 182, 251) 0%, rgba(45, 182, 251, 0) 100%);
+  opacity: 0.5;
   display: block;
   z-index: 5;
 }
@@ -9288,17 +9290,13 @@ p {
           clip-path: polygon(0 0, 100% 0, 100% calc(100% - 100px), 0% 100%);
   position: relative;
   overflow: hidden;
-  height: 500px;
+  height: 400px;
   background-size: cover;
-  background-position: bottom;
-}
-@media screen and (max-width: 1440px) {
-  .cBanner .listBox {
-    height: 300px;
-  }
+  background-position: center;
 }
 @media screen and (max-width: 991px) {
   .cBanner .listBox {
+    height: 300px;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 0% 100%);
             clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 0% 100%);
   }
@@ -9312,15 +9310,6 @@ p {
 }
 .cBanner .pic {
   line-height: 0;
-}
-.cBanner .pic::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  display: block;
-  background: #000;
-  opacity: 0.1;
-  z-index: 1;
 }
 .cBanner img {
   width: 100%;
@@ -9799,8 +9788,9 @@ p {
 }
 .indexPage .cBanner .listBox {
   height: auto !important;
-  -webkit-clip-path: none !important;
-          clip-path: none !important;
+}
+.indexPage .cBanner .listBox::after {
+  display: none;
 }
 .indexPage .cBanner img {
   width: 100%;

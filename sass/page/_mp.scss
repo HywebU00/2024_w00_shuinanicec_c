@@ -423,7 +423,10 @@
 
     .listBox {
       height: auto !important;
-      clip-path: none !important;
+
+      &::after {
+        display: none;
+      }
     }
 
     img {

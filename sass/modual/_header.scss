@@ -14,7 +14,7 @@ header.cHeader {
   left: 0;
   isolation: isolate;
   z-index: 10;
-  padding: 50px 0;
+  padding: 20px 0;
   @include transition(all, 0.3);
 
   @media screen and (max-width: 1440px) {
@@ -291,6 +291,7 @@ header.cHeader {
           display: block;
           padding: 8px 20px;
           white-space: nowrap;
+          line-height: 1.6;
           font-size: Rem(20);
           color: #fff;
           border: 1px solid #fff;
