@@ -3141,6 +3141,11 @@ header.cHeader {
     --contentPadding: 20px;
   }
 }
+@media screen and (max-width: 1440px) {
+  header.cHeader {
+    padding: 20px 0;
+  }
+}
 @media screen and (max-width: 991px) {
   header.cHeader {
     padding: 15px 0;
@@ -9266,26 +9271,43 @@ p {
 .cBanner {
   position: relative;
 }
+.cBanner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  bottom: 70%;
+  background: linear-gradient(to bottom, rgba(45, 134, 251, 0.75) 0%, rgba(45, 134, 251, 0) 100%);
+  display: block;
+  z-index: 5;
+}
 .cBanner .listBox {
   width: 100%;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 82%, 0% 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 82%, 0% 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 100px), 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% calc(100% - 100px), 0% 100%);
   position: relative;
   overflow: hidden;
-  height: 708px;
+  height: 500px;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
+}
+@media screen and (max-width: 1440px) {
+  .cBanner .listBox {
+    height: 300px;
+  }
 }
 @media screen and (max-width: 991px) {
   .cBanner .listBox {
-    height: 500px;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 0% 100%);
   }
 }
 @media screen and (max-width: 767px) {
   .cBanner .listBox {
-    height: 300px;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), 0% 100%);
+    height: 200px;
   }
 }
 .cBanner .pic {
@@ -9759,6 +9781,8 @@ p {
   content: "";
   display: block;
   position: absolute;
+  left: auto;
+  top: auto;
   right: 0;
   bottom: 0%;
   line-height: 0;
@@ -9772,6 +9796,11 @@ p {
   .indexPage .cBanner::before {
     display: none;
   }
+}
+.indexPage .cBanner .listBox {
+  height: auto !important;
+  -webkit-clip-path: none !important;
+          clip-path: none !important;
 }
 .indexPage .cBanner img {
   width: 100%;

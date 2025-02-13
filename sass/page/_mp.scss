@@ -405,6 +405,8 @@
       content: '';
       display: block;
       position: absolute;
+      left: auto;
+      top: auto;
       right: 0;
       bottom: 0%;
       line-height: 0;
@@ -417,6 +419,11 @@
       @include screen('tablet') {
         display: none;
       }
+    }
+
+    .listBox {
+      height: auto !important;
+      clip-path: none !important;
     }
 
     img {
