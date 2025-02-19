@@ -40,6 +40,28 @@ let swiperHot = new Swiper('.hotBox .swiper', {
     },
   },
 });
+let swiperLink = new Swiper('section.linkBox .swiper', {
+  slidesPerView: 3,
+  spaceBetween: 5,
+  navigation: {
+    nextEl: 'section.linkBox .swiper-button-next',
+    prevEl: 'section.linkBox .swiper-button-prev',
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    550: {
+      slidesPerView: 2,
+    },
+    767: {
+      slidesPerView: 3,
+    },
+    1000: {
+      slidesPerView: 4,
+    },
+  },
+});
 let swiperSustainability = new Swiper('.sustainabilityBox .swiper', {
   slidesPerView: 1,
   pagination: {

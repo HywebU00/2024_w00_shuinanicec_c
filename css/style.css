@@ -10329,6 +10329,11 @@ p {
     font-size: 1.75rem;
   }
 }
+@media screen and (max-width: 550px) {
+  .indexPage .hotBox .titleBox .blockTitle {
+    margin-bottom: 20px;
+  }
+}
 .indexPage .hotBox .titleBox .blockTitle .en {
   margin: 0 0 10px;
 }
@@ -10403,9 +10408,15 @@ p {
     margin: 0 auto 40px;
   }
 }
+@media screen and (max-width: 550px) {
+  .indexPage .hotBox .infoBox {
+    max-width: 428px;
+  }
+}
 .indexPage .hotBox .infoBox a {
   color: #000;
   display: block;
+  padding: 10px 10px 0;
   position: relative;
 }
 .indexPage .hotBox .infoBox a:hover .pic img {
@@ -10465,6 +10476,169 @@ p {
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
 }
 .indexPage .hotBox .infoBox .pic img {
+  aspect-ratio: 408/383;
+}
+.indexPage .linkBox {
+  isolation: isolate;
+  position: relative;
+  padding-top: 0;
+  background: #fff;
+  padding: 0 30px;
+}
+@media screen and (max-width: 991px) {
+  .indexPage .linkBox {
+    padding: 0;
+  }
+}
+.indexPage .linkBox .content {
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+}
+@media screen and (max-width: 991px) {
+  .indexPage .linkBox .content {
+    flex-direction: column;
+  }
+}
+.indexPage .linkBox .blockTitle {
+  font-size: 2.875rem;
+  line-height: 1.2;
+}
+@media screen and (max-width: 991px) {
+  .indexPage .linkBox .blockTitle {
+    font-size: 2rem;
+    max-width: none;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  .indexPage .linkBox .blockTitle {
+    font-size: 1.75rem;
+  }
+}
+@media screen and (max-width: 550px) {
+  .indexPage .linkBox .blockTitle {
+    margin-bottom: 20px;
+  }
+}
+.indexPage .linkBox .blockTitle .en {
+  margin: 0 0 10px;
+}
+.indexPage .linkBox .swiper-button {
+  background: url("../images/mp/icon/icon_ar.png") center no-repeat;
+  top: 50%;
+  transform: translateY(-50%) translateX(-100%);
+  left: 0;
+}
+@media screen and (max-width: 991px) {
+  .indexPage .linkBox .swiper-button {
+    left: 10px;
+    transform: translateY(-50%) translateX(0%);
+  }
+}
+.indexPage .linkBox .swiper-button::after {
+  display: none;
+}
+.indexPage .linkBox .swiper-button.swiper-button-next {
+  left: auto;
+  right: 0;
+  transform: translateY(-50%) scaleX(-1) translateX(-100%);
+}
+@media screen and (max-width: 991px) {
+  .indexPage .linkBox .swiper-button.swiper-button-next {
+    right: 10px;
+    transform: translateY(-50%) scaleX(-1) translateX(0%);
+  }
+}
+.indexPage .linkBox .listBox {
+  position: relative;
+}
+.indexPage .linkBox .swiper {
+  width: 100%;
+  position: relative;
+}
+@media screen and (max-width: 991px) {
+  .indexPage .linkBox .swiper {
+    width: calc(100% - 80px);
+    margin: 0 40px 20px;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .indexPage .linkBox .swiper {
+    margin: 0 auto 40px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .indexPage .linkBox .swiper {
+    max-width: 428px;
+  }
+}
+.indexPage .linkBox .swiper a {
+  color: #000;
+  display: block;
+  position: relative;
+  padding: 10px 10px 0;
+}
+.indexPage .linkBox .swiper a:hover .pic img {
+  transform: scale(1.5);
+}
+.indexPage .linkBox .swiper .pic {
+  max-width: 408px;
+  aspect-ratio: 408/383;
+  overflow: hidden;
+}
+.indexPage .linkBox .swiper .pic img {
+  transition: all 10s ease;
+}
+.indexPage .linkBox .swiper time {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 0 5px;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  font-size: 1.375rem;
+  color: #fff;
+  font-weight: 500;
+}
+.indexPage .linkBox .swiper time::before {
+  content: "";
+  position: absolute;
+  top: 55%;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 1px;
+  background: #fff;
+}
+.indexPage .linkBox .swiper time span {
+  font-weight: normal;
+  display: block;
+  margin-top: 8px;
+  font-size: 1rem;
+}
+.indexPage .linkBox .swiper .title {
+  font-size: 1.25rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin: 10px 0 0;
+  padding-right: 25px;
+}
+@media screen and (max-width: 991px) {
+  .indexPage .linkBox .swiper .title {
+    font-size: 1.125rem;
+  }
+}
+.indexPage .linkBox .swiper .pic {
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+}
+.indexPage .linkBox .swiper .pic img {
   aspect-ratio: 408/383;
 }
 .indexPage .vrBox {
