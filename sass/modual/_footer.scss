@@ -59,6 +59,52 @@ footer {
     margin-bottom: 10px;
   }
 
+  .info {
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      li {
+        position: relative;
+
+        &[class] {
+          padding-left: 28px;
+        }
+
+        &::before {
+          content: '';
+          width: 20px;
+          height: 20px;
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 3px;
+        }
+
+        &.address::before {
+          background: url('../images/icon/icon_footer_location.svg') center no-repeat;
+        }
+
+        &.tel::before {
+          background: url('../images/icon/icon_footer_tel.svg') center no-repeat;
+        }
+
+        &.fax::before {
+          background: url('../images/icon/icon_footer_fax.svg') center no-repeat;
+        }
+
+        &.mail::before {
+          background: url('../images/icon/icon_footer_mail.svg') center no-repeat;
+        }
+
+        &.time::before {
+          background: url('../images/icon/icon_footer_time.svg') center no-repeat;
+        }
+      }
+    }
+  }
+
   .shareBox {
     ul {
       display: flex;

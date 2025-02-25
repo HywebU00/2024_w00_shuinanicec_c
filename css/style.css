@@ -4800,6 +4800,41 @@ footer .footerTop {
   padding-top: 10px;
   margin-bottom: 10px;
 }
+footer .info ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+footer .info ul li {
+  position: relative;
+}
+footer .info ul li[class] {
+  padding-left: 28px;
+}
+footer .info ul li::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 3px;
+}
+footer .info ul li.address::before {
+  background: url("../images/icon/icon_footer_location.svg") center no-repeat;
+}
+footer .info ul li.tel::before {
+  background: url("../images/icon/icon_footer_tel.svg") center no-repeat;
+}
+footer .info ul li.fax::before {
+  background: url("../images/icon/icon_footer_fax.svg") center no-repeat;
+}
+footer .info ul li.mail::before {
+  background: url("../images/icon/icon_footer_mail.svg") center no-repeat;
+}
+footer .info ul li.time::before {
+  background: url("../images/icon/icon_footer_time.svg") center no-repeat;
+}
 footer .shareBox ul {
   display: flex;
   gap: 10px;
@@ -10478,7 +10513,7 @@ p {
 .indexPage .hotBox .infoBox .pic img {
   aspect-ratio: 408/383;
 }
-.indexPage .linkBox {
+.indexPage main .linkBox {
   isolation: isolate;
   position: relative;
   padding-top: 0;
@@ -10486,11 +10521,11 @@ p {
   padding: 0 30px;
 }
 @media screen and (max-width: 991px) {
-  .indexPage .linkBox {
+  .indexPage main .linkBox {
     padding: 0;
   }
 }
-.indexPage .linkBox .content {
+.indexPage main .linkBox .content {
   display: flex;
   flex-direction: column;
   max-width: 1280px;
@@ -10498,102 +10533,102 @@ p {
   position: relative;
 }
 @media screen and (max-width: 991px) {
-  .indexPage .linkBox .content {
+  .indexPage main .linkBox .content {
     flex-direction: column;
   }
 }
-.indexPage .linkBox .blockTitle {
+.indexPage main .linkBox .blockTitle {
   font-size: 2.875rem;
   line-height: 1.2;
 }
 @media screen and (max-width: 991px) {
-  .indexPage .linkBox .blockTitle {
+  .indexPage main .linkBox .blockTitle {
     font-size: 2rem;
     max-width: none;
     justify-content: center;
   }
 }
 @media screen and (max-width: 767px) {
-  .indexPage .linkBox .blockTitle {
+  .indexPage main .linkBox .blockTitle {
     font-size: 1.75rem;
   }
 }
 @media screen and (max-width: 550px) {
-  .indexPage .linkBox .blockTitle {
+  .indexPage main .linkBox .blockTitle {
     margin-bottom: 20px;
   }
 }
-.indexPage .linkBox .blockTitle .en {
+.indexPage main .linkBox .blockTitle .en {
   margin: 0 0 10px;
 }
-.indexPage .linkBox .swiper-button {
+.indexPage main .linkBox .swiper-button {
   background: url("../images/mp/icon/icon_ar.png") center no-repeat;
   top: 50%;
   transform: translateY(-50%) translateX(-100%);
   left: 0;
 }
 @media screen and (max-width: 991px) {
-  .indexPage .linkBox .swiper-button {
+  .indexPage main .linkBox .swiper-button {
     left: 10px;
     transform: translateY(-50%) translateX(0%);
   }
 }
-.indexPage .linkBox .swiper-button::after {
+.indexPage main .linkBox .swiper-button::after {
   display: none;
 }
-.indexPage .linkBox .swiper-button.swiper-button-next {
+.indexPage main .linkBox .swiper-button.swiper-button-next {
   left: auto;
   right: 0;
   transform: translateY(-50%) scaleX(-1) translateX(-100%);
 }
 @media screen and (max-width: 991px) {
-  .indexPage .linkBox .swiper-button.swiper-button-next {
+  .indexPage main .linkBox .swiper-button.swiper-button-next {
     right: 10px;
     transform: translateY(-50%) scaleX(-1) translateX(0%);
   }
 }
-.indexPage .linkBox .listBox {
+.indexPage main .linkBox .listBox {
   position: relative;
 }
-.indexPage .linkBox .swiper {
+.indexPage main .linkBox .swiper {
   width: 100%;
   position: relative;
 }
 @media screen and (max-width: 991px) {
-  .indexPage .linkBox .swiper {
+  .indexPage main .linkBox .swiper {
     width: calc(100% - 80px);
     margin: 0 40px 20px;
     padding: 0;
   }
 }
 @media screen and (max-width: 767px) {
-  .indexPage .linkBox .swiper {
+  .indexPage main .linkBox .swiper {
     margin: 0 auto 40px;
   }
 }
 @media screen and (max-width: 550px) {
-  .indexPage .linkBox .swiper {
+  .indexPage main .linkBox .swiper {
     max-width: 428px;
   }
 }
-.indexPage .linkBox .swiper a {
+.indexPage main .linkBox .swiper a {
   color: #000;
   display: block;
   position: relative;
   padding: 10px 10px 0;
 }
-.indexPage .linkBox .swiper a:hover .pic img {
+.indexPage main .linkBox .swiper a:hover .pic img {
   transform: scale(1.5);
 }
-.indexPage .linkBox .swiper .pic {
+.indexPage main .linkBox .swiper .pic {
   max-width: 408px;
   aspect-ratio: 408/383;
   overflow: hidden;
 }
-.indexPage .linkBox .swiper .pic img {
+.indexPage main .linkBox .swiper .pic img {
   transition: all 10s ease;
 }
-.indexPage .linkBox .swiper time {
+.indexPage main .linkBox .swiper time {
   position: absolute;
   right: 10px;
   top: 10px;
@@ -10604,7 +10639,7 @@ p {
   color: #fff;
   font-weight: 500;
 }
-.indexPage .linkBox .swiper time::before {
+.indexPage main .linkBox .swiper time::before {
   content: "";
   position: absolute;
   top: 55%;
@@ -10614,13 +10649,13 @@ p {
   height: 1px;
   background: #fff;
 }
-.indexPage .linkBox .swiper time span {
+.indexPage main .linkBox .swiper time span {
   font-weight: normal;
   display: block;
   margin-top: 8px;
   font-size: 1rem;
 }
-.indexPage .linkBox .swiper .title {
+.indexPage main .linkBox .swiper .title {
   font-size: 1.25rem;
   overflow: hidden;
   display: -webkit-box;
@@ -10630,15 +10665,15 @@ p {
   padding-right: 25px;
 }
 @media screen and (max-width: 991px) {
-  .indexPage .linkBox .swiper .title {
+  .indexPage main .linkBox .swiper .title {
     font-size: 1.125rem;
   }
 }
-.indexPage .linkBox .swiper .pic {
+.indexPage main .linkBox .swiper .pic {
   margin-bottom: 20px;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
 }
-.indexPage .linkBox .swiper .pic img {
+.indexPage main .linkBox .swiper .pic img {
   aspect-ratio: 408/383;
 }
 .indexPage .vrBox {
