@@ -10161,6 +10161,13 @@ p {
   position: relative;
   height: 100%;
 }
+.indexPage .newsBox .contentBox .side a:hover .pic::before {
+  opacity: 0;
+}
+.indexPage .newsBox .contentBox .side a:hover .title,
+.indexPage .newsBox .contentBox .side a:hover .tag {
+  text-shadow: 1px 1px 5px #000;
+}
 .indexPage .newsBox .contentBox .side > .box {
   max-width: 408px;
 }
@@ -10225,6 +10232,7 @@ p {
   display: block;
   background: #000;
   opacity: 0.3;
+  transition: all 0.3s ease;
 }
 .indexPage .newsBox .contentBox .side .pic img {
   width: 100%;
@@ -10242,6 +10250,7 @@ p {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  transition: all 0.3s ease;
 }
 @media screen and (max-width: 991px) {
   .indexPage .newsBox .contentBox .side .title {
@@ -10276,6 +10285,7 @@ p {
   font-size: 1.125rem;
   bottom: 20px;
   left: 20px;
+  transition: all 0.3s ease;
 }
 .indexPage .newsBox .contentBox .side .tag::before, .indexPage .newsBox .contentBox .side .tag::after {
   display: none;
@@ -11060,18 +11070,18 @@ p {
   text-align: center;
   top: 50%;
   transform: translate(-50%, -50%);
-  text-shadow: 0 0 5px #000;
+  text-shadow: 1px 1px 5px #000;
 }
 .indexPage .sustainabilityBox .listBox .item .title {
   white-space: nowrap;
   font-size: 1.375rem;
   position: absolute;
   top: 30px;
-  left: 30px;
-  right: 30px;
+  left: 0;
+  padding: 0 30px;
   margin: 0;
-  transition: all 0.3s ease;
   font-weight: 400;
+  transition: all 0.3s ease;
 }
 .indexPage .carbonBox {
   position: relative;
@@ -11362,6 +11372,14 @@ p {
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
   position: relative;
 }
+.indexPage .journeyBox .listBox a:hover .pic::before {
+  opacity: 0;
+}
+.indexPage .journeyBox .listBox a:hover .title {
+  text-shadow: 1px 1px 5px #000;
+  bottom: 50%;
+  transform: translateY(50%);
+}
 .indexPage .journeyBox .listBox .pic {
   max-width: 350px;
   overflow: hidden;
@@ -11375,6 +11393,11 @@ p {
   display: block;
   background: #000;
   opacity: 0.4;
+  transition: all 0.3s ease;
+}
+.indexPage .journeyBox .listBox .pic img {
+  width: 100%;
+  transition: all 15s ease;
 }
 .indexPage .journeyBox .listBox .title {
   font-weight: 500;
@@ -11383,7 +11406,10 @@ p {
   left: 20px;
   right: 20px;
   text-align: center;
+  line-height: 1;
+  margin: 0;
   color: #fff;
+  transition: all 0.3s ease;
 }
 .indexPage .journeyBox .swiper-pagination-bullets.swiper-pagination-horizontal {
   width: 100%;
@@ -15559,7 +15585,9 @@ p {
   font-size: 1.125rem;
   color: #555;
   line-height: 1.7;
-  margin-bottom: 0.5em;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto 0.5em;
 }
 
 .notrobot {

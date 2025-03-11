@@ -795,6 +795,17 @@
           color: #fff;
           position: relative;
           height: 100%;
+
+          &:hover {
+            .pic::before {
+              opacity: 0;
+            }
+
+            .title,
+            .tag {
+              text-shadow: 1px 1px 5px #000;
+            }
+          }
         }
 
         & > .box {
@@ -869,6 +880,7 @@
             display: block;
             background: #000;
             opacity: 0.3;
+            @include transition(all, 0.3);
           }
 
           img {
@@ -889,6 +901,7 @@
           display: -webkit-box;
           -webkit-line-clamp: 3;
           -webkit-box-orient: vertical;
+          @include transition(all, 0.3);
 
           @include screen('tablet') {
             font-size: Rem(18);
@@ -926,6 +939,7 @@
           font-size: Rem(18);
           bottom: 20px;
           left: 20px;
+          @include transition(all, 0.3);
 
           &::before,
           &::after {
@@ -1767,7 +1781,11 @@
               text-align: center;
               top: 50%;
               transform: translate(-50%, -50%);
-              text-shadow: 0 0 5px #000;
+              // bottom: 30px;
+              // display: flex;
+              // justify-content: center;
+              // align-items: center;
+              text-shadow: 1px 1px 5px #000;
             }
           }
         }
@@ -1777,11 +1795,11 @@
           font-size: Rem(22);
           position: absolute;
           top: 30px;
-          left: 30px;
-          right: 30px;
+          left: 0;
+          padding: 0 30px;
           margin: 0;
-          @include transition(all, 0.3);
           font-weight: 400;
+          @include transition(all, 0.3);
         }
       }
     }
@@ -2120,6 +2138,24 @@
         position: relative;
       }
 
+      a {
+        &:hover {
+
+          // img {
+          //   transform: scale(1.5);
+          // }
+          .pic::before {
+            opacity: 0;
+          }
+
+          .title {
+            text-shadow: 1px 1px 5px #000;
+            bottom: 50%;
+            transform: translateY(50%);
+          }
+        }
+      }
+
       .pic {
         max-width: 350px;
         overflow: hidden;
@@ -2133,6 +2169,12 @@
           display: block;
           background: #000;
           opacity: 0.4;
+          @include transition(all, 0.3);
+        }
+
+        img {
+          width: 100%;
+          transition: all 15s ease;
         }
       }
 
@@ -2143,7 +2185,12 @@
         left: 20px;
         right: 20px;
         text-align: center;
+        // padding: 15px 10px;
+        line-height: 1;
+        margin: 0;
         color: #fff;
+        // background: rgba(#000, .4);
+        @include transition(all, 0.3);
       }
     }
 
