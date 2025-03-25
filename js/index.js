@@ -7,22 +7,40 @@ new WOW({
   live: true, // default
 }).init();
 
-let swiperNews = new Swiper('.newsBox .swiper1 .swiper', {
+// let swiperNews = new Swiper('.newsBox .swiper1 .swiper', {
+//   slidesPerView: 1,
+//   pagination: {
+//     el: '.newsBox .swiper1 .swiper-pagination',
+//     clickable: true,
+//   },
+// });
+// let swiperNews2 = new Swiper('.newsBox .swiper2 .swiper', {
+//   slidesPerView: 1,
+//   pagination: {
+//     el: '.newsBox .swiper2 .swiper-pagination',
+//     clickable: true,
+//   },
+// });
+
+let swiperNews = new Swiper('.newsBox .mobileUse .swiper', {
   slidesPerView: 1,
-  pagination: {
-    el: '.newsBox .swiper1 .swiper-pagination',
-    clickable: true,
+  spaceBetween: 20,
+  navigation: {
+    nextEl: '.newsBox .mobileUse .swiper-button-next',
+    prevEl: '.newsBox .mobileUse .swiper-button-prev',
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    550: {
+      slidesPerView: 2,
+    },
   },
 });
-let swiperNews2 = new Swiper('.newsBox .swiper2 .swiper', {
-  slidesPerView: 1,
-  pagination: {
-    el: '.newsBox .swiper2 .swiper-pagination',
-    clickable: true,
-  },
-});
+
 let swiperHot = new Swiper('.hotBox .swiper', {
-  slidesPerView: 3,
+  slidesPerView: 1,
   spaceBetween: 5,
   navigation: {
     nextEl: '.hotBox .swiper-button-next',
@@ -63,11 +81,28 @@ let swiperLink = new Swiper('section.linkBox .swiper', {
     },
   },
 });
-let swiperSustainability = new Swiper('.sustainabilityBox .swiper', {
+// let swiperSustainability = new Swiper('.sustainabilityBox .swiper', {
+//   slidesPerView: 1,
+//   pagination: {
+//     el: '.sustainabilityBox .swiper-pagination',
+//     clickable: true,
+//   },
+// });
+
+let swiperSustainability = new Swiper('.sustainabilityBox .mobileUse .swiper', {
   slidesPerView: 1,
-  pagination: {
-    el: '.sustainabilityBox .swiper-pagination',
-    clickable: true,
+  spaceBetween: 20,
+  navigation: {
+    nextEl: '.sustainabilityBox .mobileUse .swiper-button-next',
+    prevEl: '.sustainabilityBox .mobileUse .swiper-button-prev',
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+    },
+    550: {
+      slidesPerView: 2,
+    },
   },
 });
 

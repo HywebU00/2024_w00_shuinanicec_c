@@ -9613,17 +9613,6 @@ p {
 .indexPage .editor {
   line-height: 1.6;
 }
-.indexPage.loading {
-  height: 100vh;
-  height: 100dvh;
-  overflow: hidden;
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.indexPage.loading header {
-  display: none;
-}
 .indexPage .welcome {
   position: fixed;
   width: 100%;
@@ -10059,10 +10048,13 @@ p {
   background: #f3f3f5;
   isolation: isolate;
   overflow: hidden;
+  padding-right: 40px;
+  padding-left: 40px;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 767px) {
   .indexPage .newsBox {
-    display: none;
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 .indexPage .newsBox::after {
@@ -10076,6 +10068,11 @@ p {
   right: 28.8%;
   background: url("../images/mp/d8.png") no-repeat;
   background-size: contain;
+}
+@media screen and (max-width: 767px) {
+  .indexPage .newsBox .blockTitle {
+    justify-content: center;
+  }
 }
 .indexPage .newsBox .content {
   max-width: 1022px;
@@ -10109,10 +10106,138 @@ p {
   bottom: -1px;
   z-index: -1;
 }
+@media screen and (max-width: 767px) {
+  .indexPage .newsBox .content::after {
+    display: none;
+  }
+}
+.indexPage .newsBox .content .mobileUse {
+  position: relative;
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .indexPage .newsBox .content .mobileUse {
+    display: block;
+  }
+}
+.indexPage .newsBox .content .mobileUse .swiper-button {
+  background: url("../images/mp/icon/icon_ar.png") center no-repeat;
+  top: 50%;
+  transform: translateY(-50%) translateX(-100%);
+  left: 0;
+}
+@media screen and (max-width: 991px) {
+  .indexPage .newsBox .content .mobileUse .swiper-button {
+    left: 10px;
+    transform: translateY(-50%) translateX(0%);
+  }
+}
+.indexPage .newsBox .content .mobileUse .swiper-button::after {
+  display: none;
+}
+.indexPage .newsBox .content .mobileUse .swiper-button.swiper-button-next {
+  left: auto;
+  right: 0;
+  transform: translateY(-50%) scaleX(-1) translateX(-100%);
+}
+@media screen and (max-width: 991px) {
+  .indexPage .newsBox .content .mobileUse .swiper-button.swiper-button-next {
+    right: 10px;
+    transform: translateY(-50%) scaleX(-1) translateX(0%);
+  }
+}
+.indexPage .newsBox .content .mobileUse .swiper {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (max-width: 767px) {
+  .indexPage .newsBox .content .mobileUse .swiper {
+    width: calc(100% - 80px);
+    margin: 0 40px 20px;
+    padding: 0;
+  }
+}
+.indexPage .newsBox .content .mobileUse .swiper .pic {
+  aspect-ratio: 1;
+  overflow: hidden;
+  margin-bottom: 10px;
+  position: relative;
+}
+.indexPage .newsBox .content .mobileUse .swiper .pic img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.indexPage .newsBox .content .mobileUse .swiper .title {
+  font-size: 1.375rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  color: #333333;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 991px) {
+  .indexPage .newsBox .content .mobileUse .swiper .title {
+    font-size: 1.125rem;
+  }
+}
+.indexPage .newsBox .content .mobileUse .swiper time {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #fff;
+}
+.indexPage .newsBox .content .mobileUse .swiper time::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 1px;
+  background: #fff;
+}
+.indexPage .newsBox .content .mobileUse .swiper time span {
+  display: block;
+  letter-spacing: 2px;
+  margin-top: 8px;
+}
+.indexPage .newsBox .content .mobileUse .swiper .tag {
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  font-size: 1.125rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  line-height: 1.4;
+  margin-bottom: 0;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+.indexPage .newsBox .content .mobileUse .swiper .tag::before, .indexPage .newsBox .content .mobileUse .swiper .tag::after {
+  display: none;
+}
 .indexPage .newsBox .contentBox {
   display: flex;
   align-items: flex-start;
   gap: 5px;
+}
+@media screen and (max-width: 767px) {
+  .indexPage .newsBox .contentBox {
+    display: none;
+  }
 }
 @media screen and (max-width: 400px) {
   .indexPage .newsBox .contentBox {
@@ -10171,16 +10296,18 @@ p {
 .indexPage .newsBox .contentBox .side > .box {
   max-width: 408px;
 }
-.indexPage .newsBox .contentBox .side.swiper1 .pic {
+.indexPage .newsBox .contentBox .side:first-child .pic, .indexPage .newsBox .contentBox .side.swiper1 .pic {
   aspect-ratio: 408/576;
 }
-.indexPage .newsBox .contentBox .side.swiper1 .title {
+.indexPage .newsBox .contentBox .side:first-child .title, .indexPage .newsBox .contentBox .side.swiper1 .title {
   padding-right: 70px;
 }
+.indexPage .newsBox .contentBox .side .box2,
 .indexPage .newsBox .contentBox .side .swiper2 {
   background: #0d0a8a;
 }
 @media screen and (max-width: 767px) {
+  .indexPage .newsBox .contentBox .side .box2,
   .indexPage .newsBox .contentBox .side .swiper2 {
     aspect-ratio: 1;
   }
@@ -10951,11 +11078,17 @@ p {
 .indexPage .sustainabilityBox {
   padding-top: 100px;
   background: #fff url("../images/mp/sustainability_bg.jpg") top center no-repeat;
+  padding-right: 40px;
+  padding-left: 40px;
 }
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 767px) {
   .indexPage .sustainabilityBox {
-    display: none;
+    padding-right: 0;
+    padding-left: 0;
   }
+}
+.indexPage .sustainabilityBox .container {
+  padding: 0;
 }
 .indexPage .sustainabilityBox .content {
   max-width: 1230px;
@@ -10989,6 +11122,11 @@ p {
     width: 50px;
   }
 }
+@media screen and (max-width: 767px) {
+  .indexPage .sustainabilityBox .content .blockTitle::before {
+    display: none;
+  }
+}
 .indexPage .sustainabilityBox .content .listBox {
   max-width: 1020px;
   margin: 0 auto;
@@ -11015,10 +11153,91 @@ p {
 .indexPage .sustainabilityBox .content .side:nth-child(2) .pic {
   aspect-ratio: 408/576;
 }
+.indexPage .sustainabilityBox .content .mobileUse {
+  position: relative;
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .indexPage .sustainabilityBox .content .mobileUse {
+    display: block;
+  }
+}
+.indexPage .sustainabilityBox .content .mobileUse .swiper-button {
+  background: url("../images/mp/icon/icon_ar.png") center no-repeat;
+  top: 50%;
+  transform: translateY(-50%) translateX(-100%);
+  left: 0;
+}
+@media screen and (max-width: 991px) {
+  .indexPage .sustainabilityBox .content .mobileUse .swiper-button {
+    left: 10px;
+    transform: translateY(-50%) translateX(0%);
+  }
+}
+.indexPage .sustainabilityBox .content .mobileUse .swiper-button::after {
+  display: none;
+}
+.indexPage .sustainabilityBox .content .mobileUse .swiper-button.swiper-button-next {
+  left: auto;
+  right: 0;
+  transform: translateY(-50%) scaleX(-1) translateX(-100%);
+}
+@media screen and (max-width: 991px) {
+  .indexPage .sustainabilityBox .content .mobileUse .swiper-button.swiper-button-next {
+    right: 10px;
+    transform: translateY(-50%) scaleX(-1) translateX(0%);
+  }
+}
+.indexPage .sustainabilityBox .content .mobileUse .swiper {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (max-width: 991px) {
+  .indexPage .sustainabilityBox .content .mobileUse .swiper {
+    width: calc(100% - 80px);
+    margin: 0 40px 20px;
+    padding: 0;
+  }
+}
+.indexPage .sustainabilityBox .content .mobileUse .swiper .pic {
+  aspect-ratio: 1;
+  overflow: hidden;
+  margin-bottom: 10px;
+  position: relative;
+}
+.indexPage .sustainabilityBox .content .mobileUse .swiper .pic img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.indexPage .sustainabilityBox .content .mobileUse .swiper .title {
+  font-size: 1.375rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  color: #333333;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 991px) {
+  .indexPage .sustainabilityBox .content .mobileUse .swiper .title {
+    font-size: 1.125rem;
+  }
+}
 .indexPage .sustainabilityBox .listBox {
   display: flex;
   align-items: flex-start;
   gap: 5px;
+}
+@media screen and (max-width: 767px) {
+  .indexPage .sustainabilityBox .listBox {
+    display: none;
+  }
 }
 @media screen and (max-width: 767px) {
   .indexPage .sustainabilityBox .listBox {
