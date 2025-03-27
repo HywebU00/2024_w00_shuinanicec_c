@@ -2053,9 +2053,9 @@
     background: #f3f3f5;
     overflow: hidden;
 
-    @include screen('tablet') {
-      display: none;
-    }
+    // @include screen('tablet') {
+    //   display: none;
+    // }
 
     .content {
       max-width: 1150px;
@@ -2403,6 +2403,7 @@
         overflow: hidden;
         position: relative;
         aspect-ratio: 350/327;
+        text-align: center;
 
         &::before {
           content: '';

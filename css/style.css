@@ -11307,11 +11307,6 @@ p {
   background: #f3f3f5;
   overflow: hidden;
 }
-@media screen and (max-width: 991px) {
-  .indexPage .carbonBox {
-    display: none;
-  }
-}
 .indexPage .carbonBox .content {
   max-width: 1150px;
   padding: 4% 0 4.5%;
@@ -11604,6 +11599,7 @@ p {
   overflow: hidden;
   position: relative;
   aspect-ratio: 350/327;
+  text-align: center;
 }
 .indexPage .journeyBox .listBox .pic::before {
   content: "";

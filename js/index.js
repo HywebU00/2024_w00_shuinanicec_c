@@ -115,10 +115,10 @@ let swiperCarbon = new Swiper('.carbonBox .swiper', {
   },
   breakpoints: {
     0: {
-      slidesPerView: 1.5,
+      slidesPerView: 1.3,
     },
     550: {
-      slidesPerView: 2.5,
+      slidesPerView: 2.3,
     },
     767: {
       slidesPerView: 3,
@@ -149,10 +149,12 @@ let swiperJourney = new Swiper('.journeyBox .swiper', {
   },
   breakpoints: {
     0: {
-      slidesPerView: 1,
+      slidesPerView: 1.3,
+      spaceBetween: 20,
     },
     550: {
-      slidesPerView: 2,
+      slidesPerView: 2.3,
+      spaceBetween: 20,
     },
     767: {
       slidesPerView: 3,
