@@ -2328,7 +2328,7 @@
     min-height: 696px;
 
     @include screen('tablet') {
-      display: none;
+      min-height: auto;
     }
 
     &::before {

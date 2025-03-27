@@ -11542,7 +11542,7 @@ p {
 }
 @media screen and (max-width: 991px) {
   .indexPage .journeyBox {
-    display: none;
+    min-height: auto;
   }
 }
 .indexPage .journeyBox::before {

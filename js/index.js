@@ -149,10 +149,10 @@ let swiperJourney = new Swiper('.journeyBox .swiper', {
   },
   breakpoints: {
     0: {
-      slidesPerView: 1.5,
+      slidesPerView: 1,
     },
     550: {
-      slidesPerView: 2.5,
+      slidesPerView: 2,
     },
     767: {
       slidesPerView: 3,
