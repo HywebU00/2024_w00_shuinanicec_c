@@ -3403,7 +3403,7 @@ header.cHeader .menuBox > ul > li > a {
   }
 }
 header.cHeader .menuBox > ul > li > ul {
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   display: flex;
@@ -3471,7 +3471,8 @@ header.cHeader .menuBox > ul > li.active > a::before {
 }
 header.cHeader .menuBox > ul > li.active > ul {
   display: flex;
-  max-width: 680px;
+  margin: 0 auto;
+  max-width: 1000px;
   width: 100%;
   justify-content: flex-end;
 }
@@ -16337,10 +16338,10 @@ p {
   text-overflow: -o-ellipsis-lastline;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
   line-height: 1.8em;
-  height: calc(1.8em * 4);
+  height: calc(1.8em * 6);
   color: #666;
   font-size: 1.063em;
   padding: 0;

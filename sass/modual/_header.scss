@@ -335,7 +335,7 @@ header.cHeader {
         }
 
         & > ul {
-          position: absolute;
+          position: fixed;
           left: 0;
           right: 0;
           display: flex;
@@ -415,7 +415,8 @@ header.cHeader {
 
           & > ul {
             display: flex;
-            max-width: 680px;
+            margin: 0 auto;
+            max-width: 1000px;
             width: 100%;
             justify-content: flex-end;
 
